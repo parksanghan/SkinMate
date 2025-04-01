@@ -14,24 +14,41 @@ public partial class Login_RegisterPage : ContentPage
         authController = new AuthController();  
 
     }
-    private void OnLoginClicked(object sender, EventArgs e)
+    private async void OnLoginClicked(object sender, EventArgs e)
     {
-        LoginRequest req = new LoginRequest
+        try
         {
-            UserId = usernameEntry.Text,
-            Password = passwordEntry.Text
-        };
-        Task<string> res=authController.LoginAsync(req);
-     
-         // 로그인 기능 구현
+            LoginRequest req = new LoginRequest
+            {
+                UserId = usernameEntry.Text,
+                Password = passwordEntry.Text
+            };
+            string res = await authController.LoginAsync(req);
+            if (res.Trim().ToLower() == "ok") await DisplayAlert("로그인", res, "확인");
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlert("에러", ex.Message, "확인");
+        }
+        // 로그인 기능 구현
     }
-    private void OnRegisterClicked(object sender, EventArgs e)
+    private async void OnRegisterClicked(object sender, EventArgs e)
     {
-        LoginRequest req = new LoginRequest
+        try
         {
-            UserId = usernameEntry.Text,
-            Password = passwordEntry.Text
-        };
+            RegisterRequest req = new RegisterRequest
+            {
+                UserId = usernameEntry.Text,
+                Password = passwordEntry.Text
+                ,Name = usernameEntry.Text  
+            };
+            string res = await authController.RegisterAsync(req);
+            if (res.Trim().ToLower() == "ok") await DisplayAlert("가입", res, "확인");
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlert("에러", ex.Message, "확인");
+        }
         // 가입 기능 구현
 
     }
