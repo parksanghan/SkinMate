@@ -23,7 +23,7 @@ public partial class Login_RegisterPage : ContentPage
                 UserId = usernameEntry.Text,
                 Password = passwordEntry.Text
             };
-            string res = await authController.LoginAsync(req);
+            string res = await authController.LoginAsync(req); 
             if (res.Trim().ToLower() == "ok") await DisplayAlert("로그인", res, "확인");
         }
         catch (Exception ex)
