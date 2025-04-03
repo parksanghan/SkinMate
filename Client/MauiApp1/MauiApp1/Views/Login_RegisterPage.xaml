@@ -10,6 +10,7 @@
         <Entry x:Name="passwordEntry" Placeholder="비밀번호 입력" IsPassword="True" />
 
         <Button Text="로그인" Clicked="OnLoginClicked" />
+        <Entry x:Name="NameEntry" Placeholder="이름 입력"/>
         <Button Text="가입" Clicked="OnRegisterClicked" />
         <Label x:Name="messageLabel" TextColor="Red" HorizontalOptions="Center" />
     </VerticalStackLayout>

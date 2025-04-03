@@ -116,8 +116,4 @@
 	  </Compile>
 	</ItemGroup>
 
-	<ItemGroup>
-	  <Folder Include="Utills\" />
-	</ItemGroup>
-
 </Project>

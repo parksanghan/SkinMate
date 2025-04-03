@@ -39,6 +39,7 @@ namespace MauiApp1.Controller
             var res = await _httpClient.PostAsync(url, content);
             if (res.IsSuccessStatusCode)
             {
+                //var result = JsonSerializer.Deserialize<LoginResponse>(responseJson);
                 return await res.Content.ReadAsStringAsync();
             }
             else

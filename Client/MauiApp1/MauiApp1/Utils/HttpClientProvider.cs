@@ -11,3 +11,4 @@ namespace MauiApp1.Utils
         public static readonly HttpClient Instance = new HttpClient();
     }
 }
+ 
