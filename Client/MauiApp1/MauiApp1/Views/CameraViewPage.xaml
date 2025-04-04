@@ -5,48 +5,33 @@
              xmlns:local="clr-namespace:MauiApp1.Views"
              x:Class="MauiApp1.Views.CameraViewPage"
              Title="CameraViewPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
 
-            HorizontalOptions="Center" />
-        <Grid ColumnDefinitions="*,*,*" RowDefinitions="*,30,30">
-            <toolkit:CameraView 
-             x:Name="cameraView"
-             Grid.ColumnSpan="3" 
-             Grid.Row="0" 
-             SelectedCamera="{Binding SelectedCamera}"
-             MediaCaptured="CameraView_MediaCaptured"
-         
-             />
-        </Grid>
-        <Button
-           Text="진단"
-           Clicked="SendBtnClicked"
-           HorizontalOptions="Center"
-           />
-        <Button 
-           Text="카메라 후면"
-           Clicked="RearBtnClicked"
-           HorizontalOptions="Center" 
- />
-        <Button
-           Text="카메라 전면"
-           Clicked="FrontBtnClicked"
-           HorizontalOptions="Center"
- />
-        <Button
-          Text="캡처"
-          Clicked="CaptureBtnClicked"
-          HorizontalOptions="Center"
-/>
-        <Button
-           Text="갤러리"
-           Clicked="FileBtnClicked"
-           HorizontalOptions="Center"
-           />
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
 
+            <Label 
+                Text="Welcome to .NET MAUI!"
+                HorizontalOptions="Center"
+                FontSize="20"
+                FontAttributes="Bold" />
 
-    </VerticalStackLayout>
+            <!-- 📷 CameraView -->
+            <Grid ColumnDefinitions="*,*,*" RowDefinitions="*,30,30" HeightRequest="400">
+                <toolkit:CameraView 
+                    x:Name="cameraView"
+                    Grid.ColumnSpan="3" 
+                    Grid.Row="0" 
+                    SelectedCamera="{Binding SelectedCamera}"
+                    MediaCaptured="CameraView_MediaCaptured" />
+            </Grid>
+
+            <!-- 🎯 버튼들 -->
+            <Button Text="진단" Clicked="SendBtnClicked" HorizontalOptions="Center" />
+            <Button Text="카메라 후면" Clicked="RearBtnClicked" HorizontalOptions="Center" />
+            <Button Text="카메라 전면" Clicked="FrontBtnClicked" HorizontalOptions="Center" />
+            <Button Text="캡처" Clicked="CaptureBtnClicked" HorizontalOptions="Center" />
+            <Button Text="갤러리" Clicked="FileBtnClicked" HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

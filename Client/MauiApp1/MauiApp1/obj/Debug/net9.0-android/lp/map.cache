@@ -242,3 +242,10 @@ image-1.0.0-beta1.aar
 visioncommon-17.3.0.aar
 playservicesmlkitfacedetection-17.1.0.aar
 facedetection-16.1.7.aar
+Microcharts.Maui.dll
+SkiaSharp.dll
+SkiaSharp.Views.Android.dll
+SkiaSharp.Views.Maui.Controls.dll
+SkiaSharp.Views.Maui.Core.dll
+SkiaSharp.Views.Android.aar
+Microcharts.Droid.dll

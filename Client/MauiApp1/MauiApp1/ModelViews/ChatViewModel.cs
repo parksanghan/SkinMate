@@ -47,9 +47,10 @@ namespace MauiApp1.ModelViews
         //    }
         //}
         public event PropertyChangedEventHandler? PropertyChanged;
-        //protected void OnPropertyChanged(string propertyName)
-        //{
-        //    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        //} 해당함수가 ui를 자동으로 갱신
+        protected void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+        //해당함수가 ui를 자동으로 갱신
     }
 }

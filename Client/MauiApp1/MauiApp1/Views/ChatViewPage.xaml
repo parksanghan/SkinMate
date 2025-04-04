@@ -6,42 +6,54 @@
              Title="ChatViewPage">
 
     <ContentPage.Resources>
-        <!-- UserTemplate 바인딩으로 추가되면 자동으로 추가됨 -->
+        <!-- ✅ 템플릿 정의는 그대로 유지 -->
         <DataTemplate x:Key="UserTemplate">
             <Border BackgroundColor="LightBlue" Padding="10" Margin="5"
-                  StrokeShape="RoundRectangle 20,0,20,20"
-                   HorizontalOptions="End">
-                <Label Text="{Binding Text}" TextColor="Black"/>
+                    StrokeShape="RoundRectangle 20,0,20,20"
+                    HorizontalOptions="End"
+                    MaximumWidthRequest="250">
+                <Label Text="{Binding Text}" TextColor="Black" />
             </Border>
         </DataTemplate>
 
-        <!-- BotTemplate 바인딩으로 자동으로 추가됨 -->
         <DataTemplate x:Key="BotTemplate">
-            <Border  BackgroundColor="LightGray" Padding="10" Margin="5"
-                  StrokeShape="RoundRectangle 20,0,20,20"
-                   HorizontalOptions="Start">
-                <Label Text="{Binding Text}" TextColor="Black"/>
+            <Border BackgroundColor="LightGray" Padding="10" Margin="5"
+                    StrokeShape="RoundRectangle 20,0,20,20"
+                    HorizontalOptions="Start"
+                    MaximumWidthRequest="250">
+                <Label Text="{Binding Text}" TextColor="Black" />
             </Border>
         </DataTemplate>
 
-        <!-- 템플릿 선택자 -->
         <local:ChatTemplateSelector x:Key="ChatSelector"
                                     UserTemplate="{StaticResource UserTemplate}"
                                     BotTemplate="{StaticResource BotTemplate}" />
     </ContentPage.Resources>
 
-    <!-- 실제 화면 레이아웃 -->
-    <VerticalStackLayout Padding="10">
-        <!-- 채팅 메시지 목록 -->
-        <CollectionView ItemsSource="{Binding Messages}"
+    <!-- ✅ 전체 레이아웃은 Grid로 분리 -->
+    <Grid RowDefinitions="*,Auto" Padding="10">
+
+        <!-- ✅ 채팅 목록 -->
+        <CollectionView Grid.Row="0"
+                        ItemsSource="{Binding Messages}"
                         ItemTemplate="{StaticResource ChatSelector}"
                         x:Name="chatCollectionView"
-                         />
+                        />
 
-        <!-- 사용자 입력 및 전송 버튼 -->
-        <HorizontalStackLayout>
-            <Entry x:Name="chatEntry" Placeholder="메시지를 입력하세요"/>
-            <Button Text="전송" Clicked="OnSendClicked"/>
-        </HorizontalStackLayout>
-    </VerticalStackLayout>
+        <!-- ✅ 입력창 + 버튼 하단 고정 -->
+        <Grid Grid.Row="1" ColumnDefinitions="*,Auto" Padding="5">
+            <Entry x:Name="chatEntry"
+                   Placeholder="메시지를 입력하세요"
+                   Grid.Column="0"
+                   HeightRequest="40"
+                   VerticalOptions="Center" />
+
+            <Button Text="전송"
+                    Clicked="OnSendClicked"
+                    Grid.Column="1"
+                    HeightRequest="40"
+                    VerticalOptions="Center" />
+        </Grid>
+
+    </Grid>
 </ContentPage>
