@@ -139,6 +139,8 @@ public partial class CameraViewPage : ContentPage
             {
                 await DisplayAlert("저장 완료", $"이미지가 저장되었습니다.\n{filePath}", "확인");
             });
+
+             
 #else
             return;
 #endif
