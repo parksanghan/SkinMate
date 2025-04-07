@@ -1,12 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "NM+iisiR8C0=",
+  "dgSpecHash": "ieMpdbTgdYk=",
   "success": true,
   "projectFilePath": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\MauiApp1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\박상한\\.nuget\\packages\\communitytoolkit.maui.camera\\2.0.2\\communitytoolkit.maui.camera.2.0.2.nupkg.sha512",
     "C:\\Users\\박상한\\.nuget\\packages\\googlegson\\2.11.0.3\\googlegson.2.11.0.3.nupkg.sha512",
-    "C:\\Users\\박상한\\.nuget\\packages\\microcharts\\0.9.5.9\\microcharts.0.9.5.9.nupkg.sha512",
     "C:\\Users\\박상한\\.nuget\\packages\\microcharts.maui\\1.0.0\\microcharts.maui.1.0.0.nupkg.sha512",
     "C:\\Users\\박상한\\.nuget\\packages\\microsoft.extensions.configuration\\9.0.0\\microsoft.extensions.configuration.9.0.0.nupkg.sha512",
     "C:\\Users\\박상한\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\9.0.0\\microsoft.extensions.configuration.abstractions.9.0.0.nupkg.sha512",
@@ -43,7 +42,6 @@
     "C:\\Users\\박상한\\.nuget\\packages\\skiasharp.views.maui.core\\3.119.0-preview.1.2\\skiasharp.views.maui.core.3.119.0-preview.1.2.nupkg.sha512",
     "C:\\Users\\박상한\\.nuget\\packages\\skiasharp.views.winui\\3.119.0-preview.1.2\\skiasharp.views.winui.3.119.0-preview.1.2.nupkg.sha512",
     "C:\\Users\\박상한\\.nuget\\packages\\system.runtime.interopservices.nfloat.internal\\6.0.1\\system.runtime.interopservices.nfloat.internal.6.0.1.nupkg.sha512",
-    "C:\\Users\\박상한\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
     "C:\\Users\\박상한\\.nuget\\packages\\xamarin.android.glide\\4.16.0.6\\xamarin.android.glide.4.16.0.6.nupkg.sha512",
     "C:\\Users\\박상한\\.nuget\\packages\\xamarin.android.glide.annotations\\4.16.0.6\\xamarin.android.glide.annotations.4.16.0.6.nupkg.sha512",
     "C:\\Users\\박상한\\.nuget\\packages\\xamarin.android.glide.disklrucache\\4.16.0.6\\xamarin.android.glide.disklrucache.4.16.0.6.nupkg.sha512",

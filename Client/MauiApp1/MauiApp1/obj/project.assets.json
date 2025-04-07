@@ -43,21 +43,6 @@
           }
         }
       },
-      "Microcharts/0.9.5.9": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "2.80.2",
-          "SkiaSharp.Views": "2.80.2"
-        },
-        "compile": {
-          "lib/MonoAndroid10/Microcharts.Droid.dll": {},
-          "lib/MonoAndroid10/Microcharts.dll": {}
-        },
-        "runtime": {
-          "lib/MonoAndroid10/Microcharts.Droid.dll": {},
-          "lib/MonoAndroid10/Microcharts.dll": {}
-        }
-      },
       "Microcharts.Maui/1.0.0": {
         "type": "package",
         "dependencies": {
@@ -3183,21 +3168,6 @@
           }
         }
       },
-      "Microcharts/0.9.5.9": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "2.80.2",
-          "SkiaSharp.Views": "2.80.2"
-        },
-        "compile": {
-          "lib/MonoAndroid10/Microcharts.Droid.dll": {},
-          "lib/MonoAndroid10/Microcharts.dll": {}
-        },
-        "runtime": {
-          "lib/MonoAndroid10/Microcharts.Droid.dll": {},
-          "lib/MonoAndroid10/Microcharts.dll": {}
-        }
-      },
       "Microcharts.Maui/1.0.0": {
         "type": "package",
         "dependencies": {
@@ -6306,21 +6276,6 @@
           "lib/net8.0-android34.0/GoogleGson.dll": {
             "related": ".aar;.pdb;.xml"
           }
-        }
-      },
-      "Microcharts/0.9.5.9": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "2.80.2",
-          "SkiaSharp.Views": "2.80.2"
-        },
-        "compile": {
-          "lib/MonoAndroid10/Microcharts.Droid.dll": {},
-          "lib/MonoAndroid10/Microcharts.dll": {}
-        },
-        "runtime": {
-          "lib/MonoAndroid10/Microcharts.Droid.dll": {},
-          "lib/MonoAndroid10/Microcharts.dll": {}
         }
       },
       "Microcharts.Maui/1.0.0": {
@@ -9433,21 +9388,6 @@
           }
         }
       },
-      "Microcharts/0.9.5.9": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "2.80.2",
-          "SkiaSharp.Views": "2.80.2"
-        },
-        "compile": {
-          "lib/MonoAndroid10/Microcharts.Droid.dll": {},
-          "lib/MonoAndroid10/Microcharts.dll": {}
-        },
-        "runtime": {
-          "lib/MonoAndroid10/Microcharts.Droid.dll": {},
-          "lib/MonoAndroid10/Microcharts.dll": {}
-        }
-      },
       "Microcharts.Maui/1.0.0": {
         "type": "package",
         "dependencies": {
@@ -12553,21 +12493,6 @@
           "lib/net8.0-android34.0/GoogleGson.dll": {
             "related": ".aar;.pdb;.xml"
           }
-        }
-      },
-      "Microcharts/0.9.5.9": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "2.80.2",
-          "SkiaSharp.Views": "2.80.2"
-        },
-        "compile": {
-          "lib/MonoAndroid10/Microcharts.Droid.dll": {},
-          "lib/MonoAndroid10/Microcharts.dll": {}
-        },
-        "runtime": {
-          "lib/MonoAndroid10/Microcharts.Droid.dll": {},
-          "lib/MonoAndroid10/Microcharts.dll": {}
         }
       },
       "Microcharts.Maui/1.0.0": {
@@ -15677,21 +15602,6 @@
           }
         }
       },
-      "Microcharts/0.9.5.9": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "2.80.2",
-          "SkiaSharp.Views": "2.80.2"
-        },
-        "compile": {
-          "lib/MonoAndroid10/Microcharts.Droid.dll": {},
-          "lib/MonoAndroid10/Microcharts.dll": {}
-        },
-        "runtime": {
-          "lib/MonoAndroid10/Microcharts.Droid.dll": {},
-          "lib/MonoAndroid10/Microcharts.dll": {}
-        }
-      },
       "Microcharts.Maui/1.0.0": {
         "type": "package",
         "dependencies": {
@@ -18774,19 +18684,6 @@
           }
         }
       },
-      "Microcharts/0.9.5.9": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "2.80.2",
-          "System.ValueTuple": "4.5.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microcharts.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microcharts.dll": {}
-        }
-      },
       "Microcharts.Maui/1.0.0": {
         "type": "package",
         "dependencies": {
@@ -19312,15 +19209,6 @@
             "related": ".xml"
           }
         }
-      },
-      "System.ValueTuple/4.5.0": {
-        "type": "package",
-        "compile": {
-          "ref/netcoreapp2.0/_._": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.0/_._": {}
-        }
       }
     },
     "net9.0-ios18.2/android-arm64": {
@@ -19338,19 +19226,6 @@
           "lib/net9.0-ios18.0/CommunityToolkit.Maui.Camera.dll": {
             "related": ".xml"
           }
-        }
-      },
-      "Microcharts/0.9.5.9": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "2.80.2",
-          "System.ValueTuple": "4.5.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microcharts.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microcharts.dll": {}
         }
       },
       "Microcharts.Maui/1.0.0": {
@@ -19851,15 +19726,6 @@
           "ref/net6.0/System.Runtime.InteropServices.dll": {
             "related": ".xml"
           }
-        }
-      },
-      "System.ValueTuple/4.5.0": {
-        "type": "package",
-        "compile": {
-          "ref/netcoreapp2.0/_._": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.0/_._": {}
         }
       }
     },
@@ -19880,19 +19746,6 @@
           }
         }
       },
-      "Microcharts/0.9.5.9": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "2.80.2",
-          "System.ValueTuple": "4.5.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microcharts.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microcharts.dll": {}
-        }
-      },
       "Microcharts.Maui/1.0.0": {
         "type": "package",
         "dependencies": {
@@ -20391,15 +20244,6 @@
           "ref/net6.0/System.Runtime.InteropServices.dll": {
             "related": ".xml"
           }
-        }
-      },
-      "System.ValueTuple/4.5.0": {
-        "type": "package",
-        "compile": {
-          "ref/netcoreapp2.0/_._": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.0/_._": {}
         }
       }
     },
@@ -20420,19 +20264,6 @@
           }
         }
       },
-      "Microcharts/0.9.5.9": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "2.80.2",
-          "System.ValueTuple": "4.5.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microcharts.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microcharts.dll": {}
-        }
-      },
       "Microcharts.Maui/1.0.0": {
         "type": "package",
         "dependencies": {
@@ -20936,15 +20767,6 @@
           "ref/net6.0/System.Runtime.InteropServices.dll": {
             "related": ".xml"
           }
-        }
-      },
-      "System.ValueTuple/4.5.0": {
-        "type": "package",
-        "compile": {
-          "ref/netcoreapp2.0/_._": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.0/_._": {}
         }
       }
     },
@@ -20965,19 +20787,6 @@
           }
         }
       },
-      "Microcharts/0.9.5.9": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "2.80.2",
-          "System.ValueTuple": "4.5.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microcharts.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microcharts.dll": {}
-        }
-      },
       "Microcharts.Maui/1.0.0": {
         "type": "package",
         "dependencies": {
@@ -21482,15 +21291,6 @@
             "related": ".xml"
           }
         }
-      },
-      "System.ValueTuple/4.5.0": {
-        "type": "package",
-        "compile": {
-          "ref/netcoreapp2.0/_._": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.0/_._": {}
-        }
       }
     },
     "net9.0-ios18.2/win10-x64": {
@@ -21508,19 +21308,6 @@
           "lib/net9.0-ios18.0/CommunityToolkit.Maui.Camera.dll": {
             "related": ".xml"
           }
-        }
-      },
-      "Microcharts/0.9.5.9": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "2.80.2",
-          "System.ValueTuple": "4.5.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microcharts.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microcharts.dll": {}
         }
       },
       "Microcharts.Maui/1.0.0": {
@@ -22022,15 +21809,6 @@
             "related": ".xml"
           }
         }
-      },
-      "System.ValueTuple/4.5.0": {
-        "type": "package",
-        "compile": {
-          "ref/netcoreapp2.0/_._": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.0/_._": {}
-        }
       }
     },
     "net9.0-maccatalyst18.2": {
@@ -22048,19 +21826,6 @@
           "lib/net9.0-maccatalyst18.0/CommunityToolkit.Maui.Camera.dll": {
             "related": ".xml"
           }
-        }
-      },
-      "Microcharts/0.9.5.9": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "2.80.2",
-          "System.ValueTuple": "4.5.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microcharts.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microcharts.dll": {}
         }
       },
       "Microcharts.Maui/1.0.0": {
@@ -22568,15 +22333,6 @@
             "related": ".xml"
           }
         }
-      },
-      "System.ValueTuple/4.5.0": {
-        "type": "package",
-        "compile": {
-          "ref/netcoreapp2.0/_._": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.0/_._": {}
-        }
       }
     },
     "net9.0-maccatalyst18.2/android-arm64": {
@@ -22594,19 +22350,6 @@
           "lib/net9.0-maccatalyst18.0/CommunityToolkit.Maui.Camera.dll": {
             "related": ".xml"
           }
-        }
-      },
-      "Microcharts/0.9.5.9": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "2.80.2",
-          "System.ValueTuple": "4.5.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microcharts.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microcharts.dll": {}
         }
       },
       "Microcharts.Maui/1.0.0": {
@@ -23107,15 +22850,6 @@
           "ref/net6.0/System.Runtime.InteropServices.dll": {
             "related": ".xml"
           }
-        }
-      },
-      "System.ValueTuple/4.5.0": {
-        "type": "package",
-        "compile": {
-          "ref/netcoreapp2.0/_._": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.0/_._": {}
         }
       }
     },
@@ -23136,19 +22870,6 @@
           }
         }
       },
-      "Microcharts/0.9.5.9": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "2.80.2",
-          "System.ValueTuple": "4.5.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microcharts.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microcharts.dll": {}
-        }
-      },
       "Microcharts.Maui/1.0.0": {
         "type": "package",
         "dependencies": {
@@ -23647,15 +23368,6 @@
           "ref/net6.0/System.Runtime.InteropServices.dll": {
             "related": ".xml"
           }
-        }
-      },
-      "System.ValueTuple/4.5.0": {
-        "type": "package",
-        "compile": {
-          "ref/netcoreapp2.0/_._": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.0/_._": {}
         }
       }
     },
@@ -23676,19 +23388,6 @@
           }
         }
       },
-      "Microcharts/0.9.5.9": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "2.80.2",
-          "System.ValueTuple": "4.5.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microcharts.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microcharts.dll": {}
-        }
-      },
       "Microcharts.Maui/1.0.0": {
         "type": "package",
         "dependencies": {
@@ -24188,15 +23887,6 @@
             "related": ".xml"
           }
         }
-      },
-      "System.ValueTuple/4.5.0": {
-        "type": "package",
-        "compile": {
-          "ref/netcoreapp2.0/_._": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.0/_._": {}
-        }
       }
     },
     "net9.0-maccatalyst18.2/maccatalyst-x64": {
@@ -24214,19 +23904,6 @@
           "lib/net9.0-maccatalyst18.0/CommunityToolkit.Maui.Camera.dll": {
             "related": ".xml"
           }
-        }
-      },
-      "Microcharts/0.9.5.9": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "2.80.2",
-          "System.ValueTuple": "4.5.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microcharts.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microcharts.dll": {}
         }
       },
       "Microcharts.Maui/1.0.0": {
@@ -24731,15 +24408,6 @@
             "related": ".xml"
           }
         }
-      },
-      "System.ValueTuple/4.5.0": {
-        "type": "package",
-        "compile": {
-          "ref/netcoreapp2.0/_._": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.0/_._": {}
-        }
       }
     },
     "net9.0-maccatalyst18.2/win10-x64": {
@@ -24757,19 +24425,6 @@
           "lib/net9.0-maccatalyst18.0/CommunityToolkit.Maui.Camera.dll": {
             "related": ".xml"
           }
-        }
-      },
-      "Microcharts/0.9.5.9": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "2.80.2",
-          "System.ValueTuple": "4.5.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microcharts.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microcharts.dll": {}
         }
       },
       "Microcharts.Maui/1.0.0": {
@@ -25271,15 +24926,6 @@
             "related": ".xml"
           }
         }
-      },
-      "System.ValueTuple/4.5.0": {
-        "type": "package",
-        "compile": {
-          "ref/netcoreapp2.0/_._": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.0/_._": {}
-        }
       }
     },
     "net9.0-windows10.0.19041": {
@@ -25297,19 +24943,6 @@
           "lib/net9.0-windows10.0.19041/CommunityToolkit.Maui.Camera.dll": {
             "related": ".xml"
           }
-        }
-      },
-      "Microcharts/0.9.5.9": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "2.80.2",
-          "System.ValueTuple": "4.5.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microcharts.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microcharts.dll": {}
         }
       },
       "Microcharts.Maui/1.0.0": {
@@ -26112,15 +25745,6 @@
             "related": ".pdb"
           }
         }
-      },
-      "System.ValueTuple/4.5.0": {
-        "type": "package",
-        "compile": {
-          "ref/netcoreapp2.0/_._": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.0/_._": {}
-        }
       }
     },
     "net9.0-windows10.0.19041/android-arm64": {
@@ -26138,19 +25762,6 @@
           "lib/net9.0-windows10.0.19041/CommunityToolkit.Maui.Camera.dll": {
             "related": ".xml"
           }
-        }
-      },
-      "Microcharts/0.9.5.9": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "2.80.2",
-          "System.ValueTuple": "4.5.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microcharts.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microcharts.dll": {}
         }
       },
       "Microcharts.Maui/1.0.0": {
@@ -26834,15 +26445,6 @@
           "lib/net8.0-windows10.0.19041/SkiaSharp.Views.Windows.dll": {
             "related": ".pdb"
           }
-        }
-      },
-      "System.ValueTuple/4.5.0": {
-        "type": "package",
-        "compile": {
-          "ref/netcoreapp2.0/_._": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.0/_._": {}
         }
       }
     },
@@ -26863,19 +26465,6 @@
           }
         }
       },
-      "Microcharts/0.9.5.9": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "2.80.2",
-          "System.ValueTuple": "4.5.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microcharts.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microcharts.dll": {}
-        }
-      },
       "Microcharts.Maui/1.0.0": {
         "type": "package",
         "dependencies": {
@@ -27557,15 +27146,6 @@
           "lib/net8.0-windows10.0.19041/SkiaSharp.Views.Windows.dll": {
             "related": ".pdb"
           }
-        }
-      },
-      "System.ValueTuple/4.5.0": {
-        "type": "package",
-        "compile": {
-          "ref/netcoreapp2.0/_._": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.0/_._": {}
         }
       }
     },
@@ -27586,19 +27166,6 @@
           }
         }
       },
-      "Microcharts/0.9.5.9": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "2.80.2",
-          "System.ValueTuple": "4.5.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microcharts.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microcharts.dll": {}
-        }
-      },
       "Microcharts.Maui/1.0.0": {
         "type": "package",
         "dependencies": {
@@ -28280,15 +27847,6 @@
           "lib/net8.0-windows10.0.19041/SkiaSharp.Views.Windows.dll": {
             "related": ".pdb"
           }
-        }
-      },
-      "System.ValueTuple/4.5.0": {
-        "type": "package",
-        "compile": {
-          "ref/netcoreapp2.0/_._": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.0/_._": {}
         }
       }
     },
@@ -28309,19 +27867,6 @@
           }
         }
       },
-      "Microcharts/0.9.5.9": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "2.80.2",
-          "System.ValueTuple": "4.5.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microcharts.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microcharts.dll": {}
-        }
-      },
       "Microcharts.Maui/1.0.0": {
         "type": "package",
         "dependencies": {
@@ -29004,15 +28549,6 @@
             "related": ".pdb"
           }
         }
-      },
-      "System.ValueTuple/4.5.0": {
-        "type": "package",
-        "compile": {
-          "ref/netcoreapp2.0/_._": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.0/_._": {}
-        }
       }
     },
     "net9.0-windows10.0.19041/win10-x64": {
@@ -29030,19 +28566,6 @@
           "lib/net9.0-windows10.0.19041/CommunityToolkit.Maui.Camera.dll": {
             "related": ".xml"
           }
-        }
-      },
-      "Microcharts/0.9.5.9": {
-        "type": "package",
-        "dependencies": {
-          "SkiaSharp": "2.80.2",
-          "System.ValueTuple": "4.5.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microcharts.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microcharts.dll": {}
         }
       },
       "Microcharts.Maui/1.0.0": {
@@ -29745,15 +29268,6 @@
             "related": ".pdb"
           }
         }
-      },
-      "System.ValueTuple/4.5.0": {
-        "type": "package",
-        "compile": {
-          "ref/netcoreapp2.0/_._": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.0/_._": {}
-        }
       }
     }
   },
@@ -29802,26 +29316,6 @@
         "lib/net8.0-android34.0/GoogleGson.pdb",
         "lib/net8.0-android34.0/GoogleGson.xml",
         "readme.md"
-      ]
-    },
-    "Microcharts/0.9.5.9": {
-      "sha512": "oiaPjsC+l211tRXw17bxT7D1uPHLZG4wZq7w9h9w7LFX76s4ppLN9UGVkUQJ2vBammdFH0JXtbvEUVtbOq85UQ==",
-      "type": "package",
-      "path": "microcharts/0.9.5.9",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/MonoAndroid10/Microcharts.Droid.dll",
-        "lib/MonoAndroid10/Microcharts.dll",
-        "lib/netstandard2.0/Microcharts.dll",
-        "lib/uap10.0/Microcharts.Uwp.dll",
-        "lib/uap10.0/Microcharts.dll",
-        "lib/xamarinios1.0/Microcharts.dll",
-        "lib/xamarinios1.0/Microcharts.iOS.dll",
-        "lib/xamarinmac2.0/Microcharts.dll",
-        "lib/xamarinmac2.0/Microcharts.macOS.dll",
-        "microcharts.0.9.5.9.nupkg.sha512",
-        "microcharts.nuspec"
       ]
     },
     "Microcharts.Maui/1.0.0": {
@@ -32039,50 +31533,6 @@
         "system.runtime.interopservices.nfloat.internal.6.0.1.nupkg.sha512",
         "system.runtime.interopservices.nfloat.internal.nuspec",
         "useSharedDesignerContext.txt"
-      ]
-    },
-    "System.ValueTuple/4.5.0": {
-      "sha512": "okurQJO6NRE/apDIP23ajJ0hpiNmJ+f0BwOlB/cSqTLQlw5upkf+5+96+iG2Jw40G1fCVCyPz/FhIABUjMR+RQ==",
-      "type": "package",
-      "path": "system.valuetuple/4.5.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net461/System.ValueTuple.dll",
-        "lib/net461/System.ValueTuple.xml",
-        "lib/net47/System.ValueTuple.dll",
-        "lib/net47/System.ValueTuple.xml",
-        "lib/netcoreapp2.0/_._",
-        "lib/netstandard1.0/System.ValueTuple.dll",
-        "lib/netstandard1.0/System.ValueTuple.xml",
-        "lib/netstandard2.0/_._",
-        "lib/portable-net40+sl4+win8+wp8/System.ValueTuple.dll",
-        "lib/portable-net40+sl4+win8+wp8/System.ValueTuple.xml",
-        "lib/uap10.0.16299/_._",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/net461/System.ValueTuple.dll",
-        "ref/net47/System.ValueTuple.dll",
-        "ref/netcoreapp2.0/_._",
-        "ref/netstandard2.0/_._",
-        "ref/portable-net40+sl4+win8+wp8/System.ValueTuple.dll",
-        "ref/uap10.0.16299/_._",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "system.valuetuple.4.5.0.nupkg.sha512",
-        "system.valuetuple.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
       ]
     },
     "Xamarin.Android.Glide/4.16.0.6": {
@@ -34739,7 +34189,6 @@
   "projectFileDependencyGroups": {
     "net9.0-android35.0": [
       "CommunityToolkit.Maui.Camera >= 2.0.2",
-      "Microcharts >= 0.9.5.9",
       "Microcharts.Maui >= 1.0.0",
       "Microsoft.Extensions.Logging.Debug >= 9.0.0",
       "Microsoft.Maui.Controls >= 9.0.30",
@@ -34750,7 +34199,6 @@
     ],
     "net9.0-ios18.2": [
       "CommunityToolkit.Maui.Camera >= 2.0.2",
-      "Microcharts >= 0.9.5.9",
       "Microcharts.Maui >= 1.0.0",
       "Microsoft.Extensions.Logging.Debug >= 9.0.0",
       "Microsoft.Maui.Controls >= 9.0.30",
@@ -34759,7 +34207,6 @@
     ],
     "net9.0-maccatalyst18.2": [
       "CommunityToolkit.Maui.Camera >= 2.0.2",
-      "Microcharts >= 0.9.5.9",
       "Microcharts.Maui >= 1.0.0",
       "Microsoft.Extensions.Logging.Debug >= 9.0.0",
       "Microsoft.Maui.Controls >= 9.0.30",
@@ -34768,7 +34215,6 @@
     ],
     "net9.0-windows10.0.19041": [
       "CommunityToolkit.Maui.Camera >= 2.0.2",
-      "Microcharts >= 0.9.5.9",
       "Microcharts.Maui >= 1.0.0",
       "Microsoft.Extensions.Logging.Debug >= 9.0.0",
       "Microsoft.Maui.Controls >= 9.0.30",
@@ -34846,10 +34292,6 @@
             "target": "Package",
             "version": "[2.0.2, )"
           },
-          "Microcharts": {
-            "target": "Package",
-            "version": "[0.9.5.9, )"
-          },
           "Microcharts.Maui": {
             "target": "Package",
             "version": "[1.0.0, )"
@@ -34909,10 +34351,6 @@
             "target": "Package",
             "version": "[2.0.2, )"
           },
-          "Microcharts": {
-            "target": "Package",
-            "version": "[0.9.5.9, )"
-          },
           "Microcharts.Maui": {
             "target": "Package",
             "version": "[1.0.0, )"
@@ -34963,10 +34401,6 @@
           "CommunityToolkit.Maui.Camera": {
             "target": "Package",
             "version": "[2.0.2, )"
-          },
-          "Microcharts": {
-            "target": "Package",
-            "version": "[0.9.5.9, )"
           },
           "Microcharts.Maui": {
             "target": "Package",
@@ -35019,10 +34453,6 @@
           "CommunityToolkit.Maui.Camera": {
             "target": "Package",
             "version": "[2.0.2, )"
-          },
-          "Microcharts": {
-            "target": "Package",
-            "version": "[0.9.5.9, )"
           },
           "Microcharts.Maui": {
             "target": "Package",

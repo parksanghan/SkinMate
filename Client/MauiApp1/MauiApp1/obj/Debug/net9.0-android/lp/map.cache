@@ -1,11 +1,16 @@
 CommunityToolkit.Maui.Camera.dll
 GoogleGson.dll
 Jsr305Binding.dll
+Microcharts.Maui.dll
 Microsoft.Maui.Controls.dll
 Microsoft.Maui.Controls.Xaml.dll
 Microsoft.Maui.dll
 Microsoft.Maui.Essentials.dll
 Microsoft.Maui.Graphics.dll
+SkiaSharp.dll
+SkiaSharp.Views.Android.dll
+SkiaSharp.Views.Maui.Controls.dll
+SkiaSharp.Views.Maui.Core.dll
 Xamarin.Android.Glide.Annotations.dll
 Xamarin.Android.Glide.DiskLruCache.dll
 Xamarin.Android.Glide.dll
@@ -200,6 +205,7 @@ Microsoft.Maui.Controls.aar
 maui.aar
 Microsoft.Maui.aar
 Microsoft.Maui.Essentials.aar
+SkiaSharp.Views.Android.aar
 Xamarin.Firebase.Annotations.aar
 firebase-components.aar
 Xamarin.Firebase.Encoders.aar
@@ -242,10 +248,3 @@ image-1.0.0-beta1.aar
 visioncommon-17.3.0.aar
 playservicesmlkitfacedetection-17.1.0.aar
 facedetection-16.1.7.aar
-Microcharts.Maui.dll
-SkiaSharp.dll
-SkiaSharp.Views.Android.dll
-SkiaSharp.Views.Maui.Controls.dll
-SkiaSharp.Views.Maui.Core.dll
-SkiaSharp.Views.Android.aar
-Microcharts.Droid.dll

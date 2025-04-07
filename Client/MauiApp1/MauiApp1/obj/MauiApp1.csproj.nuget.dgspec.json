@@ -71,10 +71,6 @@
               "target": "Package",
               "version": "[2.0.2, )"
             },
-            "Microcharts": {
-              "target": "Package",
-              "version": "[0.9.5.9, )"
-            },
             "Microcharts.Maui": {
               "target": "Package",
               "version": "[1.0.0, )"
@@ -134,10 +130,6 @@
               "target": "Package",
               "version": "[2.0.2, )"
             },
-            "Microcharts": {
-              "target": "Package",
-              "version": "[0.9.5.9, )"
-            },
             "Microcharts.Maui": {
               "target": "Package",
               "version": "[1.0.0, )"
@@ -188,10 +180,6 @@
             "CommunityToolkit.Maui.Camera": {
               "target": "Package",
               "version": "[2.0.2, )"
-            },
-            "Microcharts": {
-              "target": "Package",
-              "version": "[0.9.5.9, )"
             },
             "Microcharts.Maui": {
               "target": "Package",
@@ -244,10 +232,6 @@
             "CommunityToolkit.Maui.Camera": {
               "target": "Package",
               "version": "[2.0.2, )"
-            },
-            "Microcharts": {
-              "target": "Package",
-              "version": "[0.9.5.9, )"
             },
             "Microcharts.Maui": {
               "target": "Package",

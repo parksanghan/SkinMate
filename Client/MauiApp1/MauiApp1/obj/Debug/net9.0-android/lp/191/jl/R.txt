@@ -1,13 +1,11 @@
-int attr implementationMode 0x0
-int attr scaleType 0x0
-int id compatible 0x0
-int id fillCenter 0x0
-int id fillEnd 0x0
-int id fillStart 0x0
-int id fitCenter 0x0
-int id fitEnd 0x0
-int id fitStart 0x0
-int id performance 0x0
-int[] styleable PreviewView { 0x0, 0x0 }
-int styleable PreviewView_implementationMode 0
-int styleable PreviewView_scaleType 1
+int attr defaultNavHost 0x0
+int dimen sliding_pane_detail_pane_width 0x0
+int id nav_host_fragment_container 0x0
+int id sliding_pane_detail_container 0x0
+int id sliding_pane_layout 0x0
+int[] styleable DialogFragmentNavigator { 0x1010003 }
+int styleable DialogFragmentNavigator_android_name 0
+int[] styleable FragmentNavigator { 0x1010003 }
+int styleable FragmentNavigator_android_name 0
+int[] styleable NavHostFragment { 0x0 }
+int styleable NavHostFragment_defaultNavHost 0

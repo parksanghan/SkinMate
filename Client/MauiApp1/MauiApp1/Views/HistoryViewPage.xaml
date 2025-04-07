@@ -11,6 +11,8 @@
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
         <microcharts:ChartView x:Name="chartView" HeightRequest="300" />
+
+        <!-- 오각형 그래프 (SkiaSharp) -->
         <skia:SKCanvasView PaintSurface="OnCanvasViewPaintSurface" HeightRequest="300"/>
     </VerticalStackLayout>
 </ContentPage>

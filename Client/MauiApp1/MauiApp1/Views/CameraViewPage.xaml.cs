@@ -2,47 +2,29 @@
 using CommunityToolkit.Maui.Core;
 using CommunityToolkit.Maui.Views;
 
+using MauiApp1.Utils;
 namespace MauiApp1.Views;
 
 public partial class CameraViewPage : ContentPage
 {
     public CameraInfo? SelectedCamera { get; set; }
+    public CameraUtil CameraUtil { get; set; }  
     public CameraViewPage()
     {
         InitializeComponent();
         BindingContext = this;
-
+        CameraUtil = new CameraUtil();   
     }
-    // 권한 설정
-    private async Task<bool> RequestGalleryPermissionAsync()
-    {
-
-        if (DeviceInfo.Version.Major >= 13)
-        {
-            var status = await Permissions.RequestAsync<Permissions.Media>();
-            return status == PermissionStatus.Granted;
-        }
-        else
-        {
-            var status = await Permissions.RequestAsync<Permissions.StorageRead>();
-            return status == PermissionStatus.Granted;
-        }
-        return true;
-    }
-    private async Task<bool> CheckCameraPermission()
-    {
-        var status = await Permissions.RequestAsync<Permissions.Camera>();
-        return status == PermissionStatus.Granted;
-    }
+    
     //  전면 카메라 변경
     private async void FrontBtnClicked(object sender, EventArgs e)
     {
         try
         {
-#if WINDOWS
-            bool result = await CheckCameraPermission();
+//#if WINDOWS
+            bool result = await CameraUtil.CheckCameraPermission();
             if (!result) return;
-#endif
+//#endif
             var cameras = await cameraView.GetAvailableCameras(CancellationToken.None);
             if (cameras == null || cameras.Count == 0)
             {
@@ -72,7 +54,7 @@ public partial class CameraViewPage : ContentPage
         try
         {
 #if WINDOWS
-            bool result = await CheckCameraPermission();
+            bool result = await CameraUtil.CheckCameraPermission();
             if (!result) return;
 #endif
             var cameras = await cameraView.GetAvailableCameras(CancellationToken.None);
@@ -127,9 +109,6 @@ public partial class CameraViewPage : ContentPage
     private async void CameraView_MediaCaptured(object sender, MediaCapturedEventArgs e)
     {
         Console.WriteLine("📸 MediaCaptured 이벤트 호출됨");
-
- 
-
         try
         {
             using var memoryStream = new MemoryStream();
@@ -176,7 +155,7 @@ public partial class CameraViewPage : ContentPage
     {
         try
         {
-            if (!await RequestGalleryPermissionAsync())
+            if (!await CameraUtil.RequestGalleryPermissionAsync())
             {
                 await DisplayAlert("권한 거부", "갤러리 접근 권한이 필요합니다.", "확인");
                 return;
