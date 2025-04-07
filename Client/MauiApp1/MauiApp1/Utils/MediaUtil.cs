@@ -58,5 +58,50 @@ namespace MauiApp1.Utils
                     Console.WriteLine($"❌ 예외 발생: {ex}"); return path;
             }
     }
+        public static async Task<MultipartFormDataContent?> DataFromFilePickerAsync()
+        {
+            try
+            {
+                 
+
+                var results = await FilePicker.PickMultipleAsync(new PickOptions
+                {
+                    PickerTitle = "이미지 선택",
+                    FileTypes = FilePickerFileType.Images
+                });
+
+                if (results == null || !results.Any())
+                    return null;
+
+                var form = new MultipartFormDataContent();
+                int i = 0;
+                foreach (var file in results)
+                {
+                    var stream = await file.OpenReadAsync();
+
+                    // 바이트 크기 측정용 메모리 스트림 복사
+                    using var memory = new MemoryStream();
+                    await stream.CopyToAsync(memory);
+                    var imageBytes = memory.ToArray();
+
+                    var byteContent = new ByteArrayContent(imageBytes);
+                    byteContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("image/jpeg");
+
+                    // 디버깅 출력
+                    Console.WriteLine($"{i}+[DEBUG] 파일 이름: {file.FileName}");
+                    Console.WriteLine($"{i}[DEBUG] Content-Type: {byteContent.Headers.ContentType}");
+                    Console.WriteLine($"{i}[DEBUG] Byte 크기: {imageBytes.Length}");
+
+                    form.Add(byteContent, "files", file.FileName);
+                    i++;
+                }
+                return form;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[DEBUG]  DataFromFilePickerAsync 예외: {ex.Message}");
+                return null;    
+            }
+        }
     }
 }

@@ -144,44 +144,14 @@ public partial class CameraViewPage : ContentPage
                 await DisplayAlert("권한 거부", "갤러리 접근 권한이 필요합니다.", "확인");
                 return;
             }
-
-            var results = await FilePicker.PickMultipleAsync(new PickOptions
-            {
-                PickerTitle = "이미지 선택",
-                FileTypes = FilePickerFileType.Images
-            });
-
-            if (results == null || !results.Any())
-                return;
-
-            using var form = new MultipartFormDataContent();
-            int i = 0;
-            foreach (var file in results)
-            {
-                var stream = await file.OpenReadAsync();
-
-                // 바이트 크기 측정용 메모리 스트림 복사
-                using var memory = new MemoryStream();
-                await stream.CopyToAsync(memory);
-                var imageBytes = memory.ToArray();
-
-                var byteContent = new ByteArrayContent(imageBytes);
-                byteContent.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("image/jpeg");
-
-                // 디버깅 출력
-                Console.WriteLine($"{i}+[DEBUG] 파일 이름: {file.FileName}");
-                Console.WriteLine($"{i}[DEBUG] Content-Type: {byteContent.Headers.ContentType}");
-                Console.WriteLine($"{i}[DEBUG] Byte 크기: {imageBytes.Length}");
-
-                form.Add(byteContent, "files", file.FileName);
-                i++;
-            }
-          
+            MultipartFormDataContent? data=await MediaUtil.DataFromFilePickerAsync();
+            if (data == null) await DisplayAlert("오류", "파일을 선택하세요.", "확인");
+            // data 보내는코드 
         }
         catch (Exception ex)
         {
             await DisplayAlert("예외", ex.Message, "확인");
-        }
+}
     }
  
 }
