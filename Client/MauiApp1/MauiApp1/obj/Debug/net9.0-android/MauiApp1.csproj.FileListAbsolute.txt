@@ -1096,7 +1096,6 @@ F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\android\assets\x86
 F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\android\assets\x86_64\zh-HK\Microsoft.Maui.Controls.resources.dll
 F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\android\assets\x86_64\_Microsoft.Android.Resource.Designer.dll
 F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\android\typemaps.arm64-v8a.ll
-F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\android\typemaps.x86_64.ll
 F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\AndroidManifest.xml
 F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\android\AndroidManifest.xml
 F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\android\src\mono\MonoRuntimeProvider.java
@@ -1106,7 +1105,6 @@ F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\android\bin\mono.a
 F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\static.flag
 F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\__environment__.txt
 F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\android\environment.arm64-v8a.ll
-F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\android\environment.x86_64.ll
 F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\android\src\androidx\activity\ktx\R.java
 F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\android\src\androidx\activity\R.java
 F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\android\src\androidx\annotation\experimental\R.java
@@ -1539,19 +1537,12 @@ F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\android\bin\packag
 F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\android\src\com\companyname\mauiapp1\R.java
 F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\_CompileJava.FileList.txt
 F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\android\compressed_assemblies.arm64-v8a.ll
-F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\android\compressed_assemblies.x86_64.ll
 F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\android\typemaps.arm64-v8a.o
-F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\android\typemaps.x86_64.o
 F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\android\environment.arm64-v8a.o
-F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\android\environment.x86_64.o
 F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\android\compressed_assemblies.arm64-v8a.o
-F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\android\compressed_assemblies.x86_64.o
 F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\android\marshal_methods.arm64-v8a.o
-F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\android\marshal_methods.x86_64.o
 F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\android\jni_remap.arm64-v8a.o
-F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\android\jni_remap.x86_64.o
 F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\app_shared_libraries\arm64-v8a\libxamarin-app.so
-F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\app_shared_libraries\x86_64\libxamarin-app.so
 F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\android\bin\classes.dex
 F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\android\bin\classes2.dex
 F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\android\bin\classes3.dex

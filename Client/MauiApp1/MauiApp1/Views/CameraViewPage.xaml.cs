@@ -1,19 +1,20 @@
 ﻿using CommunityToolkit.Maui.Core.Primitives;
 using CommunityToolkit.Maui.Core;
 using CommunityToolkit.Maui.Views;
-
 using MauiApp1.Utils;
+ 
 namespace MauiApp1.Views;
 
 public partial class CameraViewPage : ContentPage
 {
     public CameraInfo? SelectedCamera { get; set; }
-    public CameraUtil CameraUtil { get; set; }  
+    public MediaUtil MediaUtil { get; set; }    
     public CameraViewPage()
     {
         InitializeComponent();
         BindingContext = this;
-        CameraUtil = new CameraUtil();   
+        MediaUtil = new MediaUtil();    
+
     }
     
     //  전면 카메라 변경
@@ -21,10 +22,10 @@ public partial class CameraViewPage : ContentPage
     {
         try
         {
-//#if WINDOWS
-            bool result = await CameraUtil.CheckCameraPermission();
+#if WINDOWS
+            bool result = await MediaUtil.CheckCameraPermission();
             if (!result) return;
-//#endif
+#endif
             var cameras = await cameraView.GetAvailableCameras(CancellationToken.None);
             if (cameras == null || cameras.Count == 0)
             {
@@ -54,7 +55,7 @@ public partial class CameraViewPage : ContentPage
         try
         {
 #if WINDOWS
-            bool result = await CameraUtil.CheckCameraPermission();
+            bool result = await MediaUtil.CheckCameraPermission();
             if (!result) return;
 #endif
             var cameras = await cameraView.GetAvailableCameras(CancellationToken.None);
@@ -109,14 +110,15 @@ public partial class CameraViewPage : ContentPage
     private async void CameraView_MediaCaptured(object sender, MediaCapturedEventArgs e)
     {
         Console.WriteLine("📸 MediaCaptured 이벤트 호출됨");
+
+ 
+
         try
         {
             using var memoryStream = new MemoryStream();
             await e.Media.CopyToAsync(memoryStream);
             var imageBytes = memoryStream.ToArray();
-
             Console.WriteLine($"[DEBUG] 이미지 바이트 크기: {imageBytes.Length}");
-
 #if ANDROID
 
             var dcimDir = Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryDcim);
@@ -137,6 +139,8 @@ public partial class CameraViewPage : ContentPage
             {
                 await DisplayAlert("저장 완료", $"이미지가 저장되었습니다.\n{filePath}", "확인");
             });
+#else
+            return;
 #endif
         }
         catch (Exception ex)
@@ -155,7 +159,7 @@ public partial class CameraViewPage : ContentPage
     {
         try
         {
-            if (!await CameraUtil.RequestGalleryPermissionAsync())
+            if (!await MediaUtil.RequestGalleryPermissionAsync())
             {
                 await DisplayAlert("권한 거부", "갤러리 접근 권한이 필요합니다.", "확인");
                 return;

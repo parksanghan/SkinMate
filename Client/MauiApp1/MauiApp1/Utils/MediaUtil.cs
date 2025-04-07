@@ -12,6 +12,7 @@ namespace MauiApp1.Utils
         {
 
             if (DeviceInfo.Version.Major >= 13)
+
             {
                 var status = await Permissions.RequestAsync<Permissions.Media>();
                 return status == PermissionStatus.Granted;
