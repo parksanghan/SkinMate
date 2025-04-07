@@ -8,13 +8,11 @@ namespace MauiApp1.Views;
 public partial class CameraViewPage : ContentPage
 {
     public CameraInfo? SelectedCamera { get; set; }
-    public MediaUtil MediaUtil { get; set; }    
+ 
     public CameraViewPage()
     {
         InitializeComponent();
         BindingContext = this;
-        MediaUtil = new MediaUtil();    
-
     }
     
     //  전면 카메라 변경
@@ -22,10 +20,10 @@ public partial class CameraViewPage : ContentPage
     {
         try
         {
-#if WINDOWS
+#if ANDROID
             bool result = await MediaUtil.CheckCameraPermission();
             if (!result) return;
-#endif
+ 
             var cameras = await cameraView.GetAvailableCameras(CancellationToken.None);
             if (cameras == null || cameras.Count == 0)
             {
@@ -42,7 +40,9 @@ public partial class CameraViewPage : ContentPage
 
             cameraView.SelectedCamera = SelectedCamera;
             await cameraView.StartCameraPreview(CancellationToken.None);
+#endif
         }
+
         catch (Exception ex)
         {
             await DisplayAlert("에러", ex.Message, "확인");
@@ -54,10 +54,10 @@ public partial class CameraViewPage : ContentPage
     {
         try
         {
-#if WINDOWS
+#if ANDROID
             bool result = await MediaUtil.CheckCameraPermission();
             if (!result) return;
-#endif
+ 
             var cameras = await cameraView.GetAvailableCameras(CancellationToken.None);
 
             if (cameras == null || cameras.Count == 0)
@@ -75,6 +75,7 @@ public partial class CameraViewPage : ContentPage
 
             cameraView.SelectedCamera = SelectedCamera;
             await cameraView.StartCameraPreview(CancellationToken.None);
+#endif
         }
         catch (Exception ex)
         {
@@ -110,40 +111,17 @@ public partial class CameraViewPage : ContentPage
     private async void CameraView_MediaCaptured(object sender, MediaCapturedEventArgs e)
     {
         Console.WriteLine("📸 MediaCaptured 이벤트 호출됨");
-
- 
-
         try
         {
             using var memoryStream = new MemoryStream();
             await e.Media.CopyToAsync(memoryStream);
             var imageBytes = memoryStream.ToArray();
             Console.WriteLine($"[DEBUG] 이미지 바이트 크기: {imageBytes.Length}");
-#if ANDROID
-
-            var dcimDir = Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryDcim);
-            var cameraDir = new Java.IO.File(dcimDir, "Camera");
-            if (!cameraDir.Exists()) cameraDir.Mkdir();
-            var filePath = System.IO.Path.Combine(cameraDir.AbsolutePath, $"captured_{DateTime.Now:yyyyMMdd_HHmmss}.jpg");
-
-
-            await File.WriteAllBytesAsync(filePath, imageBytes);
-            Console.WriteLine($"✅ 이미지 저장됨: {filePath}");
-            // ✅ 저장 후 MediaScanner 호출
-            Android.Content.Context context = Android.App.Application.Context;
-            Android.Content.Intent mediaScanIntent = new(Android.Content.Intent.ActionMediaScannerScanFile);
-            var contentUri = Android.Net.Uri.FromFile(new Java.IO.File(filePath));
-            mediaScanIntent.SetData(contentUri);
-            context.SendBroadcast(mediaScanIntent);
+            var filePath = await MediaUtil.SaveCapturedImageAsync(imageBytes);
             await MainThread.InvokeOnMainThreadAsync(async () =>
             {
                 await DisplayAlert("저장 완료", $"이미지가 저장되었습니다.\n{filePath}", "확인");
             });
-
-             
-#else
-            return;
-#endif
         }
         catch (Exception ex)
         {
