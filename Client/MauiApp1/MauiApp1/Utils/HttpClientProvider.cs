@@ -9,6 +9,8 @@ namespace MauiApp1.Utils
     public static class HttpClientProvider
     {
         public static readonly HttpClient Instance = new HttpClient();
+
+     
     }
 }
  
