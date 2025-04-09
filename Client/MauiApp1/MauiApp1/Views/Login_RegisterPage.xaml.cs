@@ -1,5 +1,6 @@
 using MauiApp1.Controller;
 using MauiApp1.Model;
+using MauiApp1.Services;
 
 namespace MauiApp1.Views;
 
@@ -23,7 +24,7 @@ public partial class Login_RegisterPage : ContentPage
                 UserId = usernameEntry.Text,
                 Password = passwordEntry.Text
             };
-            string res = await authController.LoginAsync(req); 
+            string res = await HttpService.Instance.LoginAsync(req); 
             if (res.Trim().ToLower() == "ok") await DisplayAlert("로그인", res, "확인");
         }
         catch (Exception ex)

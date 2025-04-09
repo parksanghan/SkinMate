@@ -2,13 +2,16 @@
 using CommunityToolkit.Maui.Core;
 using CommunityToolkit.Maui.Views;
 using MauiApp1.Utils;
- 
+using MauiApp1.Services;
+
 namespace MauiApp1.Views;
 
 public partial class CameraViewPage : ContentPage
 {
     public CameraInfo? SelectedCamera { get; set; }
- 
+    // FilePickerData
+    private MultipartFormDataContent? _selectedFileFormData;
+
     public CameraViewPage()
     {
         InitializeComponent();
@@ -81,11 +84,28 @@ public partial class CameraViewPage : ContentPage
         {
             await DisplayAlert("에러", ex.Message, "확인");
         }
+         
     }
     // 진단 버튼
     private async void SendBtnClicked(object sender, EventArgs e)
     {
-       
+        try
+        {
+            // 진단버튼시 FilePicker로 가져온 데이터 MultipartFormDataContent
+            if (SelectedCamera == null) return;
+            else if (_selectedFileFormData != null)
+            {
+                string result = await HttpService.Instance.UploadFilesAsync(_selectedFileFormData);
+                await DisplayAlert("업로드 성공", result, "확인");
+
+            }
+        }
+        catch (Exception ex)
+        {
+            await DisplayAlert("업로드 실패", ex.Message, "확인");
+        }
+
+
     }
     // 캡처 버튼
     private async void CaptureBtnClicked(object sender, EventArgs e)
@@ -144,9 +164,9 @@ public partial class CameraViewPage : ContentPage
                 await DisplayAlert("권한 거부", "갤러리 접근 권한이 필요합니다.", "확인");
                 return;
             }
-            MultipartFormDataContent? data=await MediaUtil.DataFromFilePickerAsync();
-            if (data == null) await DisplayAlert("오류", "파일을 선택하세요.", "확인");
-            // data 보내는코드 
+            _selectedFileFormData =await MediaUtil.DataFromFilePickerAsync();
+            if (_selectedFileFormData == null) await DisplayAlert("오류", "파일을 선택하세요.", "확인");
+           
         }
         catch (Exception ex)
         {

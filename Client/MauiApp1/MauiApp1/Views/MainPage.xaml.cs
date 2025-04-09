@@ -5,7 +5,7 @@ using CommunityToolkit.Maui.Core.Primitives;
 
 public partial class MainPage : ContentPage
 {
-    int count = 0;
+    
     
     public MainPage()
     {
