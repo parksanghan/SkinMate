@@ -33,7 +33,7 @@ def read_root():
 def login(req: LoginRequest):
     success = db_manager.login_user(req.UserId, req.Password)
     if success:
-        return "ok"
+        return {"status": "ok"}
     raise HTTPException(status_code=401, detail="invalid")
 
 
@@ -52,14 +52,16 @@ def register(req: RegisterRequest):
 
 # 파일 업로드 API
 @app.post("/upload")
-async def upload(file: UploadFile = File(...)):  # File(...) => Multipart
+async def upload(files: list[UploadFile] = File(...)):  # 👈 여기 'files'로 바뀐 것 주의
     try:
         os.makedirs("uploads", exist_ok=True)
-        path = os.path.join("uploads", file.filename)
-        with open(path, "wb") as f:
-            f.write(await file.read())
-        return "ok"
-    except Exception:
+        for file in files:
+            path = os.path.join("uploads", file.filename)
+            with open(path, "wb") as f:
+                f.write(await file.read())
+        return {"status": "ok"}
+    except Exception as e:
+        print(f"❌ 업로드 실패: {e}")
         raise HTTPException(status_code=500, detail="fail")
 
 

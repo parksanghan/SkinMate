@@ -96,7 +96,7 @@ public partial class CameraViewPage : ContentPage
             else if (_selectedFileFormData != null)
             {
                 string result = await HttpService.Instance.UploadFilesAsync(_selectedFileFormData);
-                await DisplayAlert("업로드 성공", result, "확인");
+                if (result == "ok") await DisplayAlert("업로드 성공", "업로드에 성공하였습니다.", "확인");
 
             }
         }
