@@ -14,11 +14,17 @@ public partial class ChatViewPage : ContentPage
     private async void OnSendClicked(object sender, EventArgs e)
     {
         string message = chatEntry.Text;
-        if (!string.IsNullOrWhiteSpace(message))
-        {
-            await viewModel.simulation(message);  // ✨ 여기서 호출!
-            chatEntry.Text = "";  // 입력창 비우기
-        }
+        var shakeAnim = new Animation();
+        shakeAnim.WithConcurrent(new Animation(v => chatBtn.TranslationX = v, 0, -15), 0, 0.1);
+        shakeAnim.WithConcurrent(new Animation(v => chatBtn.TranslationX = v, -15, 15), 0.1, 0.3);
+        shakeAnim.WithConcurrent(new Animation(v => chatBtn.TranslationX = v, 15, -15), 0.3, 0.5);
+        shakeAnim.WithConcurrent(new Animation(v => chatBtn.TranslationX = v, -15, 0), 0.5, 0.6);
+        chatBtn.Animate("shake", shakeAnim, 16, 250);
+        //if (!string.IsNullOrWhiteSpace(message))
+        //{
+        //    await viewModel.simulation(message);  // ✨ 여기서 호출!
+        //    chatEntry.Text = "";  // 입력창 비우기
+        //}
     }
         
 }
