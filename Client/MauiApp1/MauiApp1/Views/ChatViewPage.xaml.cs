@@ -20,6 +20,7 @@ public partial class ChatViewPage : ContentPage
         shakeAnim.WithConcurrent(new Animation(v => chatBtn.TranslationX = v, 15, -15), 0.3, 0.5);
         shakeAnim.WithConcurrent(new Animation(v => chatBtn.TranslationX = v, -15, 0), 0.5, 0.6);
         chatBtn.Animate("shake", shakeAnim, 16, 250);
+        Vibration.Default.Vibrate(TimeSpan.FromMilliseconds(100));
         //if (!string.IsNullOrWhiteSpace(message))
         //{
         //    await viewModel.simulation(message);  // ✨ 여기서 호출!
