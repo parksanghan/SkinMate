@@ -277,7 +277,11 @@ F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-maccatalyst\maccatalyst-x6
 F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\r\dotnet_bot.png
 F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\mauiimage.stamp
 F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\mauiimage.outputs
+F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\f\MauiInfo.plist
 F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\mauifont.stamp
+F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\f\FluentUI.cs
+F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\f\OpenSans-Regular.ttf
+F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\f\OpenSans-Semibold.ttf
 F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\actool\_PartialAppManifest.items
 F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\actool\_BundleResourceWithLogicalName.items
 F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\actool\_ProcessedImageAssetsPath.items

@@ -262,6 +262,11 @@ F:\SkinMate\Client\MauiApp1\MauiApp1\bin\Debug\net9.0-ios\ios-arm64\Microsoft.Vi
 F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-ios\ios-arm64\mauiimage.inputs
 F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-ios\ios-arm64\mauifont.inputs
 F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-ios\ios-arm64\mauisplash.inputs
+F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-ios\ios-arm64\resizetizer\sp\MauiInfo.plist
+F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-ios\ios-arm64\resizetizer\sp\MauiSplash.storyboard
+F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-ios\ios-arm64\resizetizer\sp\splash_58C11A0A2CDF3C43117FC29EECA319E6FBFEFE150B9123BB20E86A467F499449.png
+F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-ios\ios-arm64\resizetizer\sp\splash_58C11A0A2CDF3C43117FC29EECA319E6FBFEFE150B9123BB20E86A467F499449@2x.png
+F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-ios\ios-arm64\resizetizer\sp\splash_58C11A0A2CDF3C43117FC29EECA319E6FBFEFE150B9123BB20E86A467F499449@3x.png
 F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-ios\ios-arm64\mauisplash.stamp
 F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-ios\ios-arm64\resizetizer\r\Assets.xcassets\appicon.appiconset\appiconItunesArtwork.png
 F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-ios\ios-arm64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon83.5x83.5@2x.png
@@ -280,7 +285,11 @@ F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-ios\ios-arm64\resizetizer\
 F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-ios\ios-arm64\resizetizer\r\dotnet_bot.png
 F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-ios\ios-arm64\mauiimage.stamp
 F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-ios\ios-arm64\mauiimage.outputs
+F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-ios\ios-arm64\resizetizer\f\MauiInfo.plist
 F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-ios\ios-arm64\mauifont.stamp
+F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-ios\ios-arm64\resizetizer\f\FluentUI.cs
+F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-ios\ios-arm64\resizetizer\f\OpenSans-Regular.ttf
+F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-ios\ios-arm64\resizetizer\f\OpenSans-Semibold.ttf
 F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-ios\ios-arm64\actool\_PartialAppManifest.items
 F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-ios\ios-arm64\actool\_BundleResourceWithLogicalName.items
 F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-ios\ios-arm64\actool\_ProcessedImageAssetsPath.items

@@ -14,7 +14,7 @@ namespace MauiApp1.Services
         private static HttpService? _instance;
         private static readonly object _lock = new(); 
         private readonly HttpClient _httpClient;
-        private const string BaseUrl = "http://127.0.0.1:8080";
+        private const string BaseUrl = "http://172.30.1.98:8080";
         public static HttpService Instance
         {
             get
@@ -34,7 +34,9 @@ namespace MauiApp1.Services
             var url = $"{BaseUrl}/login"; // 실제 서버 IP로 변경
             var json = JsonSerializer.Serialize(request);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
+
             var res = await _httpClient.PostAsync(url, content);
+            var jsonRes=await res.Content.ReadAsStringAsync();
             if (res.IsSuccessStatusCode)
             {
                 //var result = JsonSerializer.Deserialize<LoginResponse>(responseJson);
@@ -47,19 +49,26 @@ namespace MauiApp1.Services
         }
         public async Task<String> RegisterAsync(RegisterRequest request)
         {
+          
             var url = $"{BaseUrl}/register"; // 실제 서버 IP로 변경
             var json = JsonSerializer.Serialize(request);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
             var res = await _httpClient.PostAsync(url, content);
+            var jsonRes = await res.Content.ReadAsStringAsync();
+            Console.WriteLine($"[DEBUG] 응답 본문: {jsonRes}");
+
             if (res.IsSuccessStatusCode)
             {
-                //var result = JsonSerializer.Deserialize<LoginResponse>(responseJson);
-                return await res.Content.ReadAsStringAsync();
+                var obj = JsonSerializer.Deserialize<Dictionary<string, string>>(jsonRes);
+                string result = obj["status"].ToLower();
+                Console.WriteLine($"[DEBUG] 로그인 성공: {result}");
+                return result;
             }
             else
             {
-                throw new Exception($"서버 오류: {await res.Content.ReadAsStringAsync()}");
+                throw new Exception($"서버 오류: {jsonRes}");
             }
+
         }
         public async Task<string> UploadFilesAsync(MultipartFormDataContent data)
         {
@@ -69,6 +78,7 @@ namespace MauiApp1.Services
                 var res = await _httpClient.PostAsync(url, data);
                 if (res.IsSuccessStatusCode)
                 {
+               
                     return await res.Content.ReadAsStringAsync();
                 }
                 else

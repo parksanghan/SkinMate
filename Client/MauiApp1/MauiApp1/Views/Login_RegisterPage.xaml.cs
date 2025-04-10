@@ -40,11 +40,12 @@ public partial class Login_RegisterPage : ContentPage
             RegisterRequest req = new RegisterRequest
             {
                 UserId = usernameEntry.Text,
-                Password = passwordEntry.Text
-                ,Name = usernameEntry.Text  
+                Password = passwordEntry.Text,
+                Name = usernameEntry.Text  
             };
-            string res = await authController.RegisterAsync(req);
-            if (res.Trim().ToLower() == "ok") await DisplayAlert("가입", res, "확인");
+            string res = await HttpService.Instance.RegisterAsync(req);
+            Console.WriteLine($"[DEBUG] 서버 응답 내용: '{res}'");
+            if (res == "ok") await DisplayAlert("가입","가입을 성공하였습니다.", "확인");
         }
         catch (Exception ex)
         {

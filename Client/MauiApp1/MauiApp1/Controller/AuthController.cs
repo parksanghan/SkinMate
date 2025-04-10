@@ -47,6 +47,8 @@ namespace MauiApp1.Controller
                 throw new Exception($"서버 오류: {await res.Content.ReadAsStringAsync()}");
             }
         }
+
+
   
     }
 }

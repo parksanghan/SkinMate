@@ -26,10 +26,13 @@ bitmap;F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\lp\225\jl\r
 bitmap;F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\lp\225\jl\res\drawable\common_google_signin_btn_text_dark_normal.xml
 bitmap;F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\lp\225\jl\res\drawable\common_google_signin_btn_text_disabled.xml
 bitmap;F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\lp\225\jl\res\drawable\common_google_signin_btn_text_light_normal.xml
+bitmap;obj\Debug\net9.0-android\resizetizer\sp\drawable\maui_splash_image.xml
+bitmap;obj\Debug\net9.0-android\resizetizer\sp\drawable-v31\maui_splash_image.xml
 cache-path;F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\lp\206\jl\res\xml\microsoft_maui_essentials_fileprovider_file_paths.xml
 color;F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\lp\205\jl\res\values\colors.xml
 color;F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\lp\225\jl\res\values\values.xml
 color;obj\Debug\net9.0-android\res\values\colors.xml
+color;obj\Debug\net9.0-android\resizetizer\sp\values\maui_colors.xml
 com.google.android.material.appbar.AppBarLayout;F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\lp\203\jl\res\layout\flyoutcontent.xml
 com.google.android.material.appbar.AppBarLayout;F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\lp\203\jl\res\layout\shellcontent.xml
 com.google.android.material.appbar.AppBarLayout;F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\lp\205\jl\res\layout\navigationlayout.xml
@@ -224,6 +227,8 @@ item;F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\lp\225\jl\res
 item;F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\lp\225\jl\res\drawable\common_google_signin_btn_text_light.xml
 item;F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\lp\225\jl\res\drawable\common_google_signin_btn_text_light_focused.xml
 item;F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\lp\225\jl\res\drawable\common_google_signin_btn_text_light_normal.xml
+item;obj\Debug\net9.0-android\resizetizer\sp\drawable\maui_splash_image.xml
+item;obj\Debug\net9.0-android\resizetizer\sp\drawable-v31\maui_splash_image.xml
 layer-list;F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\lp\205\jl\res\drawable\maui_splash.xml
 layer-list;F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\lp\205\jl\res\drawable\maui_splash_image.xml
 layer-list;F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\lp\225\jl\res\drawable\common_google_signin_btn_icon_dark_focused.xml
@@ -236,6 +241,8 @@ layer-list;F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\lp\225\
 layer-list;F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\lp\225\jl\res\drawable\common_google_signin_btn_text_disabled.xml
 layer-list;F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\lp\225\jl\res\drawable\common_google_signin_btn_text_light_focused.xml
 layer-list;F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\lp\225\jl\res\drawable\common_google_signin_btn_text_light_normal.xml
+layer-list;obj\Debug\net9.0-android\resizetizer\sp\drawable\maui_splash_image.xml
+layer-list;obj\Debug\net9.0-android\resizetizer\sp\drawable-v31\maui_splash_image.xml
 microsoft.maui.controls.platform.compatibility.ShellFlyoutLayout;F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\lp\203\jl\res\layout\flyoutcontent.xml
 monochrome;obj\Debug\net9.0-android\resizetizer\r\mipmap-anydpi-v26\appicon.xml
 monochrome;obj\Debug\net9.0-android\resizetizer\r\mipmap-anydpi-v26\appicon_round.xml
@@ -412,6 +419,7 @@ resources;F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\lp\226\j
 resources;F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\lp\226\jl\res\values-zh-rTW\values.xml
 resources;F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\lp\226\jl\res\values-zu\values.xml
 resources;obj\Debug\net9.0-android\res\values\colors.xml
+resources;obj\Debug\net9.0-android\resizetizer\sp\values\maui_colors.xml
 selector;F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\lp\225\jl\res\drawable\common_google_signin_btn_icon_dark.xml
 selector;F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\lp\225\jl\res\drawable\common_google_signin_btn_icon_light.xml
 selector;F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\lp\225\jl\res\drawable\common_google_signin_btn_text_dark.xml
