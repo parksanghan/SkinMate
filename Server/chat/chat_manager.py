@@ -1,7 +1,7 @@
 import openai
 import os
 from datetime import datetime
-from ..db.db_manager import DbManager
+from db.db_manager import DbManager
 from dotenv import load_dotenv
 
 load_dotenv()

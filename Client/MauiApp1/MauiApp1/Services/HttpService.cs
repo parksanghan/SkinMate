@@ -12,7 +12,7 @@ namespace MauiApp1.Services
     public class HttpService
     {
         private static HttpService? _instance;
-        private static readonly object _lock = new(); 
+        private static readonly object _lock = new();
         private readonly HttpClient _httpClient;
         private const string BaseUrl = "http://172.30.1.98:8080";
         public static HttpService Instance
@@ -25,8 +25,9 @@ namespace MauiApp1.Services
                 }
             }
         }
-        private HttpService() { 
-            _httpClient = new HttpClient(); 
+        private HttpService()
+        {
+            _httpClient = new HttpClient();
         }
 
         public async Task<string> LoginAsync(LoginRequest request)
@@ -35,12 +36,12 @@ namespace MauiApp1.Services
             var json = JsonSerializer.Serialize(request);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
             var res = await _httpClient.PostAsync(url, content);
-            var jsonRes=await res.Content.ReadAsStringAsync();
+            var jsonRes = await res.Content.ReadAsStringAsync();
             Console.WriteLine($"[DEBUG] 응답 본문: {jsonRes}");
             if (res.IsSuccessStatusCode)
             {
-               
-                var obj  = JsonSerializer.Deserialize<Dictionary< string,string>>(jsonRes);
+
+                var obj = JsonSerializer.Deserialize<Dictionary<string, string>>(jsonRes);
                 string result = obj["status"].ToLower();
                 Console.WriteLine($"[DEBUG] 로그인 성공: {result}");
                 return result;
@@ -52,7 +53,7 @@ namespace MauiApp1.Services
         }
         public async Task<String> RegisterAsync(RegisterRequest request)
         {
-          
+
             var url = $"{BaseUrl}/register"; // 실제 서버 IP로 변경
             var json = JsonSerializer.Serialize(request);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
@@ -99,6 +100,44 @@ namespace MauiApp1.Services
                 throw;// 그대로 던짐
             }
 
+        }
+        public async Task<string> SendChatMessageAsync(string message)
+        {
+            var url = $"{BaseUrl}/chat";
+            var content = new FormUrlEncodedContent(new[]
+            {
+            new KeyValuePair<string, string>("message", message)
+        });
+
+            var res = await _httpClient.PostAsync(url, content);
+            var jsonRes = await res.Content.ReadAsStringAsync();
+            Console.WriteLine($"[DEBUG] 응답 본문: {jsonRes}");
+
+            if (res.IsSuccessStatusCode)
+            {
+                try
+                {
+                    var options = new JsonSerializerOptions
+                    {
+                        PropertyNameCaseInsensitive = true
+                    };
+                    var obj = JsonSerializer.Deserialize<Dictionary<string, string>>(jsonRes, options);
+                    if (obj != null && obj.TryGetValue("status", out var status) && status == "ok")
+                    {
+                        return obj.TryGetValue("msg", out var msg) ? msg : "";
+                    }
+                    return "";
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"[DEBUG] JSON 파싱 오류: {ex.Message}");
+                    return "";
+                }
+            }
+            else
+            {
+                throw new Exception($"채팅 실패: {jsonRes}");
+            }
         }
     }
 }

@@ -6,7 +6,11 @@ import os
 from models import RegisterRequest, LoginRequest
 import uvicorn
 import traceback
+from datetime import datetime
+from chat.chat_manager import ChatManager
+from fastapi import Form
 
+chat_manager = ChatManager()
 app = FastAPI()
 # CORS 허용
 app.add_middleware(
@@ -65,9 +69,36 @@ async def upload(files: list[UploadFile] = File(...)):  # 👈 여기 'files'로
         raise HTTPException(status_code=500, detail="fail")
 
 
+logs = [
+    {
+        "chat_id": 1,
+        "user_id": 1,
+        "log_type": "질의응답",
+        "image_path": None,
+        "diagnosis_result": None,
+        "message": "주름 개선 방법이 뭐야?",
+        "response": "주름 개선에는 수분크림이 효과적입니다.",
+        "timestamp": datetime(2025, 3, 31, 21, 55, 11),
+    },
+    {
+        "chat_id": 2,
+        "user_id": 1,
+        "log_type": "진단분석",
+        "image_path": "/path/to/image.jpg",
+        "diagnosis_result": '{"jawline": 4, "wrinkle": 2}',
+        "message": None,
+        "response": "주름은 평균보다 많고 턱선은 준수합니다.",
+        "timestamp": datetime(2025, 3, 31, 21, 55, 11),
+    },
+]
+
+
 @app.post("/chat")
-async def request_chat(message: str):
-    return
+async def request_chat(message: str = Form(...)):
+    logs = db_manager.get_user_logs("user1")
+    user_message = message
+    response = chat_manager.request_chat_response(logs, user_message)
+    return {"status": "ok", "msg": response}
 
 
 if __name__ == "__main__":

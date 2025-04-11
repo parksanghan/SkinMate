@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+ 
 using MauiApp1.Data;
 namespace MauiApp1.ModelViews
 {
@@ -24,6 +25,16 @@ namespace MauiApp1.ModelViews
 
             // 봇 응답 메시지를 추가
             Messages.Add(new ChatMessage { Sender = "bot", Text = response });
+        }
+        public async Task AddUserMsg(string message)
+        {
+            // 유저 메시지를 추가
+            Messages.Add(new ChatMessage { Sender = "user", Text = message });
+        }
+        public async Task AddBotMsg(string message)
+        {
+            // 봇 응답 메시지를 추가
+            Messages.Add(new ChatMessage { Sender = "bot", Text = message });
         }
 
         private async Task<string> CallServerAsync(string message)
