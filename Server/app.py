@@ -55,8 +55,10 @@ def register(req: RegisterRequest):
 
 
 # 파일 업로드 API
-@app.post("/upload")
-async def upload(files: list[UploadFile] = File(...)):  # 👈 여기 'files'로 바뀐 것 주의
+@app.post("/{user_id}/upload")
+async def upload(
+    user_id, files: list[UploadFile] = File(...)
+):  # 👈 여기 'files'로 바뀐 것 주의
     try:
         os.makedirs("uploads", exist_ok=True)
         for file in files:
@@ -66,6 +68,16 @@ async def upload(files: list[UploadFile] = File(...)):  # 👈 여기 'files'로
         return {"status": "ok"}
     except Exception as e:
         print(f"❌ 업로드 실패: {e}")
+        raise HTTPException(status_code=500, detail="fail")
+
+
+@app.get("/{user_id}/logs")
+async def request_user_logs(user_id: str):
+    try:
+        logs = db_manager.get_user_logs(user_id)
+        return logs
+    except Exception as e:
+        print(f"❌ 요청 실패: {e}")
         raise HTTPException(status_code=500, detail="fail")
 
 
@@ -93,9 +105,9 @@ logs = [
 ]
 
 
-@app.post("/chat")
-async def request_chat(message: str = Form(...)):
-    logs = db_manager.get_user_logs("user1")
+@app.post("/{user_id}/chat")
+async def request_chat(user_id, message: str = Form(...)):
+    logs = db_manager.get_user_logs("user_id")
     user_message = message
     response = chat_manager.request_chat_response(logs, user_message)
     return {"status": "ok", "msg": response}

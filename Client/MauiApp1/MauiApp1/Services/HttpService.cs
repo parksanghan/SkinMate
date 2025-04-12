@@ -1,4 +1,6 @@
-﻿ 
+﻿
+ 
+using MauiApp1.Data;
 using MauiApp1.Model;
 using System;
 using System.Collections.Generic;
@@ -16,6 +18,8 @@ namespace MauiApp1.Services
         private readonly HttpClient _httpClient;
         private const string BaseUrl = "http://172.30.1.98:8080";
         private string? MyId { get; set; }
+        private LogEntry? _diaLogEntry; // 진단결과 로그
+        private LogEntry? _chatLgoEntry; // 채팅 로그 
         public static HttpService Instance
         {
             get
@@ -80,7 +84,7 @@ namespace MauiApp1.Services
         {
             try
             {
-                var url = $"{BaseUrl}/upload";
+                var url = $"{BaseUrl}/{this.MyId}/upload";
                 var res = await _httpClient.PostAsync(url, data);
                 var jsonRes = await res.Content.ReadAsStringAsync();
                 Console.WriteLine($"[DEBUG] 응답 본문: {jsonRes}");
@@ -105,7 +109,7 @@ namespace MauiApp1.Services
         }
         public async Task<string> SendChatMessageAsync(string message)
         {
-            var url = $"{BaseUrl}/chat";
+            var url = $"{BaseUrl}/{this.MyId}/chat";
             var content = new FormUrlEncodedContent(new[]
             {
             new KeyValuePair<string, string>("message", message)
@@ -140,6 +144,39 @@ namespace MauiApp1.Services
             {
                 throw new Exception($"채팅 실패: {jsonRes}");
             }
+        }
+        public async Task<List<LogEntry>> GetLogMessageAsync()
+        {
+            try
+            {
+                var url = $"{BaseUrl}/{this.MyId}/logs";
+                var res = await _httpClient.GetAsync(url);
+                var jsonRes = await res.Content.ReadAsStringAsync();
+                if (res.IsSuccessStatusCode)
+                {
+                    var opt = new JsonSerializerOptions
+                    {
+                        PropertyNameCaseInsensitive = true
+                    };
+                    var logs =  JsonSerializer.Deserialize<List<LogEntry>>
+                        (jsonRes, opt)?? new List<LogEntry> { new LogEntry() };
+                    return logs;
+                }
+                else
+                {
+                    throw new Exception($"로그 조회 실패: {jsonRes}");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[DEBUG] GetLogMessageAsync 예외: {ex.Message}");
+                throw;// 그대로 던짐
+            }
+        }
+
+        public async Task ContextInitizer()
+        {
+
         }
     }
 }
