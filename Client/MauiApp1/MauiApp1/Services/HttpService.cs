@@ -18,8 +18,8 @@ namespace MauiApp1.Services
         private readonly HttpClient _httpClient;
         private const string BaseUrl = "http://172.30.1.98:8080";
         private string? MyId { get; set; }
-        private LogEntry? _diaLogEntry; // 진단결과 로그
-        private LogEntry? _chatLgoEntry; // 채팅 로그 
+        private List< LogEntry?> _diaLogEntry; // 진단결과 로그
+        private List<LogEntry?> _chatLgoEntry; // 채팅 로그 
         public static HttpService Instance
         {
             get
@@ -174,9 +174,20 @@ namespace MauiApp1.Services
             }
         }
 
-        public async Task ContextInitizer()
+        public async Task ContextInit()
         {
-
+            try
+            {
+                var logs = await GetLogMessageAsync();
+                _diaLogEntry = logs.Where(log => log.log_type == "진단분석").ToList();
+                _chatLgoEntry = logs.Where(log => log.log_type == "질의응답").ToList();
+                Console.WriteLine($"[DEBUG] 진단 로그 수: {_diaLogEntry.Count}");
+                Console.WriteLine($"[DEBUG] 채팅 로그 수: {_chatLgoEntry.Count}");
+            }
+            catch
+            {
+                throw new Exception($"Context Init 실패");
+            }
         }
     }
 }
