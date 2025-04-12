@@ -23,7 +23,7 @@ namespace MauiApp1.Templates
             {
                datatemp = BotTemplate;  
             }
-            return datatemp;
+            return datatemp?;
 
              
         }

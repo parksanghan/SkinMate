@@ -15,6 +15,7 @@ namespace MauiApp1.Services
         private static readonly object _lock = new();
         private readonly HttpClient _httpClient;
         private const string BaseUrl = "http://172.30.1.98:8080";
+        private string? MyId { get; set; }
         public static HttpService Instance
         {
             get
