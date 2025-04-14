@@ -173,7 +173,9 @@ namespace MauiApp1.Services
                 throw;// 그대로 던짐
             }
         }
+        // 앱이 시작될 때 UserContext 초기화 
 
+        // app.cs에서 초기화 
         public async Task ContextInit()
         {
             try
