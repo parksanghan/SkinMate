@@ -30,6 +30,7 @@ namespace MauiApp1.ModelViews
         {
             // 유저 메시지를 추가
             Messages.Add(new ChatMessage { Sender = "user", Text = message });
+           
         }
         public async Task AddBotMsg(string message)
         {

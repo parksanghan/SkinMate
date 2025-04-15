@@ -6,13 +6,13 @@ public partial class App : Application
 {
     public App()
     {
-        InitializeComponent();
+        InitializeComponent(); 
         //  앱 시작시 context 초기화
-        HttpService.Instance.ContextInit();
+         
     }
 
     protected override Window CreateWindow(IActivationState? activationState)
     {
-        return new Window(new ChatViewPage());
+        return new Window(new Login_RegisterPage());    
     }
 }

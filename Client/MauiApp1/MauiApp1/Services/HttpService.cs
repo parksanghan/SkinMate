@@ -50,6 +50,7 @@ namespace MauiApp1.Services
                 string result = obj["status"].ToLower();
                 Console.WriteLine($"[DEBUG] 로그인 성공: {result}");
                 this.MyId = request.UserId; // 여기서 자체 id 할당
+            
                 return result;
             }
             else
