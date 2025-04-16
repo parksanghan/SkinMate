@@ -7,9 +7,37 @@
     Shell.FlyoutBehavior="Flyout"
     Title="MauiApp1">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <!--
+    app.cs에서 appshell 을 호출하는 형태가아닌 loginpage 먼저 호출하고 로그인 완료 뒤
+    appshell로 이동하는 형태 
+    shellcontent의 동작방식은 여러개의 toolbar같은 걸 호출할 수 있는데 
+    이때 첫페이지는 첫번째 컨텐츠가 먼저 로드됨 
+    -->
+    <TabBar>
+        <ShellContent
+            Title="Home"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage" />
+        <ShellContent
+            Title="진단"
+            ContentTemplate="{DataTemplate local:CameraViewPage}"
+            Route="CameraViewPage"
+            />
+        <ShellContent
+            Title="챗봇"
+            ContentTemplate="{DataTemplate local:ChatViewPage}"
+            Route="ChatViewPage"
+            />
+        <ShellContent
+            Title="기록"
+            ContentTemplate="{DataTemplate local:HistoryViewPage}"
+            Route="HistoryViewPage"
+            />
+        <ShellContent
+            
+            
+            />
+    </TabBar>
+
 
 </Shell>
