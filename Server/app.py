@@ -107,7 +107,7 @@ logs = [
 
 @app.post("/{user_id}/chat")
 async def request_chat(user_id, message: str = Form(...)):
-    logs = db_manager.get_user_logs("user_id")
+    logs = db_manager.get_user_logs(user_id)
     user_message = message
     response = chat_manager.request_chat_response(logs, user_message)
     return {"status": "ok", "msg": response}
