@@ -29,7 +29,9 @@ public partial class Login_RegisterPage : ContentPage
             {
 
                 await DisplayAlert("로그인", "로그인을 성공하였습니다.", "확인");
-                Application.Current!.MainPage = new AppShell();
+                //Application.Current!.MainPage = new AppShell();
+                // 권장 x 
+                Application.Current!.Windows[0].Page = new AppShell();
             }
         }
         catch (Exception ex)
@@ -50,7 +52,7 @@ public partial class Login_RegisterPage : ContentPage
             };
             string res = await HttpService.Instance.RegisterAsync(req);
             Console.WriteLine($"[DEBUG] 서버 응답 내용: '{res}'");
-            if (res == "ok") await DisplayAlert("가입","가입을 성공하였습니다.", "확인");
+            if (res == "ok") await DisplayAlert("가입", "가입을 성공하였습니다.", "확인");
         }
         catch (Exception ex)
         {
