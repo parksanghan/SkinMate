@@ -24,8 +24,13 @@ public partial class Login_RegisterPage : ContentPage
                 UserId = usernameEntry.Text,
                 Password = passwordEntry.Text
             };
-            string res = await HttpService.Instance.LoginAsync(req); 
-            if (res == "ok") await DisplayAlert("로그인", "로그인을 성공하였습니다.", "확인");
+            string res = await HttpService.Instance.LoginAsync(req);
+            if (res == "ok")
+            {
+
+                await DisplayAlert("로그인", "로그인을 성공하였습니다.", "확인");
+                Application.Current!.MainPage = new AppShell();
+            }
         }
         catch (Exception ex)
         {
