@@ -6,14 +6,15 @@
              x:Class="MauiApp1.Views.HistoryViewPage"
              Title="HistoryViewPage">
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+  
         <microcharts:ChartView
-    x:Name="chartView"
-    HeightRequest="300"
-    WidthRequest="300" />
+            x:Name="classChartView"
+             HeightRequest="300"
+             WidthRequest="300" />
+        <microcharts:ChartView
+            x:Name="regrssionChartview"
+            HeightRequest="300"
+             WidthRequest="300" />
         <!-- 
         <microcharts:ChartView x:Name="chartView" HeightRequest="300" />
 
