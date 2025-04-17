@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Maui;
 using MauiApp1.Controller;
+using Microcharts.Maui; // ← 반드시 필요
 #if ANDROID
 using MauiApp1.Platforms.Android.AdHandler;
 #endif
@@ -14,13 +15,15 @@ namespace MauiApp1
             var builder = MauiApp.CreateBuilder();
             builder.ConfigureMauiHandlers(handlers =>
             {
+             
 #if ANDROID
-                handlers.AddHandler<MyCameraPreview, MyCameraPreviewHandler>();
+               
 #endif
 
                 ;            })
                 .UseMauiApp<Views.App>()
                 .UseMauiCommunityToolkitCamera()
+                .UseMicrocharts()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

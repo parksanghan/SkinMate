@@ -31,6 +31,7 @@ public partial class Login_RegisterPage : ContentPage
                 await DisplayAlert("로그인", "로그인을 성공하였습니다.", "확인");
                 //Application.Current!.MainPage = new AppShell();
                 // 권장 x 
+                // 로그인 시 contextInit 작업과 메인페이지 작업 
                 Application.Current!.Windows[0].Page = new AppShell();
             }
         }

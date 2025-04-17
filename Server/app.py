@@ -105,6 +105,11 @@ logs = [
 ]
 
 
+@app.get("/getlog")
+async def request_log():
+    return logs
+
+
 @app.post("/{user_id}/chat")
 async def request_chat(user_id, message: str = Form(...)):
     logs = db_manager.get_user_logs(user_id)

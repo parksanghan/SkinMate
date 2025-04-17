@@ -150,7 +150,8 @@ namespace MauiApp1.Services
         {
             try
             {
-                var url = $"{BaseUrl}/{this.MyId}/logs";
+                /*var url = $"{BaseUrl}/{this.MyId}/logs";*/
+                var url = $"{BaseUrl}/getlog";
                 var res = await _httpClient.GetAsync(url);
                 var jsonRes = await res.Content.ReadAsStringAsync();
                 if (res.IsSuccessStatusCode)
@@ -186,6 +187,11 @@ namespace MauiApp1.Services
                 _chatLgoEntry = logs.Where(log => log.log_type == "질의응답").ToList();
                 Console.WriteLine($"[DEBUG] 진단 로그 수: {_diaLogEntry.Count}");
                 Console.WriteLine($"[DEBUG] 채팅 로그 수: {_chatLgoEntry.Count}");
+                // 아래부터 삭제예정
+                var json = JsonSerializer.Serialize(_diaLogEntry, new JsonSerializerOptions { WriteIndented = true });
+                Console.WriteLine(json);
+                var json2 = JsonSerializer.Serialize(_chatLgoEntry, new JsonSerializerOptions { WriteIndented = true });         
+                Console.WriteLine(json2);
             }
             catch
             {
