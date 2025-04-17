@@ -9,11 +9,14 @@
     <ScrollView>
         <VerticalStackLayout Padding="20" Spacing="15">
 
-            <Label 
-                Text="Welcome to .NET MAUI!"
-                HorizontalOptions="Center"
-                FontSize="20"
-                FontAttributes="Bold" />
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                <Button Text="카메라 후면" Clicked="RearBtnClicked"
+            BackgroundColor="#C5A9F8" TextColor="Black" CornerRadius="15"
+            WidthRequest="140" Padding="10,6"/>
+                <Button Text="카메라 전면" Clicked="FrontBtnClicked"
+            BackgroundColor="#C5A9F8" TextColor="Black" CornerRadius="15"
+            WidthRequest="140" Padding="10,6"/>
+            </HorizontalStackLayout>
 
             <!-- 📷 CameraView -->
             <Grid ColumnDefinitions="*,*,*" RowDefinitions="*,30,30" HeightRequest="400">
@@ -26,11 +29,17 @@
             </Grid>
 
             <!-- 🎯 버튼들 -->
-            <Button Text="진단" Clicked="SendBtnClicked" HorizontalOptions="Center" />
-            <Button Text="카메라 후면" Clicked="RearBtnClicked" HorizontalOptions="Center" />
-            <Button Text="카메라 전면" Clicked="FrontBtnClicked" HorizontalOptions="Center" />
-            <Button Text="캡처" Clicked="CaptureBtnClicked" HorizontalOptions="Center" />
-            <Button Text="갤러리" Clicked="FileBtnClicked" HorizontalOptions="Center" />
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                <Button Text="진단" Clicked="SendBtnClicked"
+            BackgroundColor="#C5A9F8" TextColor="Black"
+            CornerRadius="15" WidthRequest="100" Padding="10,6"/>
+                <Button Text="캡처" Clicked="CaptureBtnClicked"
+            BackgroundColor="#C5A9F8" TextColor="Black"
+            CornerRadius="15" WidthRequest="100" Padding="10,6"/>
+                <Button Text="갤러리" Clicked="FileBtnClicked"
+            BackgroundColor="#C5A9F8" TextColor="Black"
+            CornerRadius="15" WidthRequest="100" Padding="10,6"/>
+            </HorizontalStackLayout>
 
         </VerticalStackLayout>
     </ScrollView>
