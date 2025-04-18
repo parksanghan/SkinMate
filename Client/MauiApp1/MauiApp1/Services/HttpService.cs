@@ -16,7 +16,7 @@ namespace MauiApp1.Services
         private static HttpService? _instance;
         private static readonly object _lock = new();
         private readonly HttpClient _httpClient;
-        private const string BaseUrl = "http://172.30.1.98:8080";
+        private const string BaseUrl = "http://10.101.139.199:8080";
         private string? MyId { get; set; }
         private List< LogEntry?> _diaLogEntry; // 진단결과 로그
         private List<LogEntry?> _chatLgoEntry; // 채팅 로그 
