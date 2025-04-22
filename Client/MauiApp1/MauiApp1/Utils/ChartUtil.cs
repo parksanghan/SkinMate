@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.Maui.Controls;
 
 namespace MauiApp1.Utils
 {
@@ -32,9 +33,10 @@ namespace MauiApp1.Utils
         //    { "볼 모공", classification.CheekPore }
         //};
 
-        public static void SetRadarChartData<T>(ChartView chartView, Dictionary<string, T> data, string colorHex = "#F37F64")
+        public static async Task SetRadarChartData<T>(ChartView chartView, Dictionary<string, T> data, string colorHex = "#F37F64")
       where T : struct, IConvertible
         {
+            var typeface  = await FontUtil.getNaunumFontAsync();
             var entries = data.Select(kvp =>
                 new ChartEntry(Convert.ToSingle(kvp.Value)) // int든 float든 OK
                 {
@@ -52,4 +54,4 @@ namespace MauiApp1.Utils
         }
     }
 
-    }
+}
