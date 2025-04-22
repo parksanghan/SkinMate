@@ -16,6 +16,12 @@ mauiapp1.platforms.android.Camera2Preview_SessionStateCallback;crc64e2862aff4a97
 MauiApp1.Platforms.Android.Camera2Preview+ImageAvailableListener, MauiApp1;crc64e2862aff4a97f0b0.Camera2Preview_ImageAvailableListener
 MauiApp1.Platforms.Android.Camera2Preview.ImageAvailableListener;crc64e2862aff4a97f0b0.Camera2Preview_ImageAvailableListener
 mauiapp1.platforms.android.Camera2Preview_ImageAvailableListener;crc64e2862aff4a97f0b0.Camera2Preview_ImageAvailableListener
+CommunityToolkit.Maui.Behaviors.TouchBehavior+AccessibilityListener, CommunityToolkit.Maui;crc640fd0ddb16fe433d4.TouchBehavior_AccessibilityListener
+CommunityToolkit.Maui.Behaviors.TouchBehavior.AccessibilityListener;crc640fd0ddb16fe433d4.TouchBehavior_AccessibilityListener
+communitytoolkit.maui.behaviors.TouchBehavior_AccessibilityListener;crc640fd0ddb16fe433d4.TouchBehavior_AccessibilityListener
+CommunityToolkit.Maui.Alerts.Snackbar+SnackbarCallback, CommunityToolkit.Maui;crc648fc34c62be8fbbff.Snackbar_SnackbarCallback
+CommunityToolkit.Maui.Alerts.Snackbar.SnackbarCallback;crc648fc34c62be8fbbff.Snackbar_SnackbarCallback
+communitytoolkit.maui.alerts.Snackbar_SnackbarCallback;crc648fc34c62be8fbbff.Snackbar_SnackbarCallback
 CommunityToolkit.Maui.Core.CameraManager+FutureCallback, CommunityToolkit.Maui.Camera;crc64f1558ff7e185dbfc.CameraManager_FutureCallback
 CommunityToolkit.Maui.Core.CameraManager.FutureCallback;crc64f1558ff7e185dbfc.CameraManager_FutureCallback
 communitytoolkit.maui.core.CameraManager_FutureCallback;crc64f1558ff7e185dbfc.CameraManager_FutureCallback
@@ -28,6 +34,33 @@ communitytoolkit.maui.core.CameraManager_ResolutionFilter;crc64f1558ff7e185dbfc.
 CommunityToolkit.Maui.Core.CameraManager+Observer, CommunityToolkit.Maui.Camera;crc64f1558ff7e185dbfc.CameraManager_Observer
 CommunityToolkit.Maui.Core.CameraManager.Observer;crc64f1558ff7e185dbfc.CameraManager_Observer
 communitytoolkit.maui.core.CameraManager_Observer;crc64f1558ff7e185dbfc.CameraManager_Observer
+CommunityToolkit.Maui.Media.OfflineSpeechToTextImplementation+SpeechRecognitionListener, CommunityToolkit.Maui.Core;crc64d6358e7bf64fbac4.OfflineSpeechToTextImplementation_SpeechRecognitionListener
+CommunityToolkit.Maui.Media.OfflineSpeechToTextImplementation.SpeechRecognitionListener;crc64d6358e7bf64fbac4.OfflineSpeechToTextImplementation_SpeechRecognitionListener
+communitytoolkit.maui.media.OfflineSpeechToTextImplementation_SpeechRecognitionListener;crc64d6358e7bf64fbac4.OfflineSpeechToTextImplementation_SpeechRecognitionListener
+CommunityToolkit.Maui.Media.RecognitionSupportCallback, CommunityToolkit.Maui.Core;crc64d6358e7bf64fbac4.RecognitionSupportCallback
+CommunityToolkit.Maui.Media.RecognitionSupportCallback;crc64d6358e7bf64fbac4.RecognitionSupportCallback
+communitytoolkit.maui.media.RecognitionSupportCallback;crc64d6358e7bf64fbac4.RecognitionSupportCallback
+CommunityToolkit.Maui.Media.Executor, CommunityToolkit.Maui.Core;crc64d6358e7bf64fbac4.Executor
+CommunityToolkit.Maui.Media.Executor;crc64d6358e7bf64fbac4.Executor
+communitytoolkit.maui.media.Executor;crc64d6358e7bf64fbac4.Executor
+CommunityToolkit.Maui.Media.ModelDownloadListener, CommunityToolkit.Maui.Core;crc64d6358e7bf64fbac4.ModelDownloadListener
+CommunityToolkit.Maui.Media.ModelDownloadListener;crc64d6358e7bf64fbac4.ModelDownloadListener
+communitytoolkit.maui.media.ModelDownloadListener;crc64d6358e7bf64fbac4.ModelDownloadListener
+CommunityToolkit.Maui.Media.SpeechToTextImplementation+SpeechRecognitionListener, CommunityToolkit.Maui.Core;crc64d6358e7bf64fbac4.SpeechToTextImplementation_SpeechRecognitionListener
+CommunityToolkit.Maui.Media.SpeechToTextImplementation.SpeechRecognitionListener;crc64d6358e7bf64fbac4.SpeechToTextImplementation_SpeechRecognitionListener
+communitytoolkit.maui.media.SpeechToTextImplementation_SpeechRecognitionListener;crc64d6358e7bf64fbac4.SpeechToTextImplementation_SpeechRecognitionListener
+CommunityToolkit.Maui.Core.Views.MauiDrawingView, CommunityToolkit.Maui.Core;crc64159f3caeb1269279.MauiDrawingView
+CommunityToolkit.Maui.Core.Views.MauiDrawingView;crc64159f3caeb1269279.MauiDrawingView
+communitytoolkit.maui.core.views.MauiDrawingView;crc64159f3caeb1269279.MauiDrawingView
+CommunityToolkit.Maui.Core.Views.MauiPopup, CommunityToolkit.Maui.Core;crc64159f3caeb1269279.MauiPopup
+CommunityToolkit.Maui.Core.Views.MauiPopup;crc64159f3caeb1269279.MauiPopup
+communitytoolkit.maui.core.views.MauiPopup;crc64159f3caeb1269279.MauiPopup
+CommunityToolkit.Maui.Core.Views.MauiSemanticOrderView, CommunityToolkit.Maui.Core;crc64159f3caeb1269279.MauiSemanticOrderView
+CommunityToolkit.Maui.Core.Views.MauiSemanticOrderView;crc64159f3caeb1269279.MauiSemanticOrderView
+communitytoolkit.maui.core.views.MauiSemanticOrderView;crc64159f3caeb1269279.MauiSemanticOrderView
+CommunityToolkit.Maui.Core.Services.FragmentLifecycleManager, CommunityToolkit.Maui.Core;crc6436e425876cb621d9.FragmentLifecycleManager
+CommunityToolkit.Maui.Core.Services.FragmentLifecycleManager;crc6436e425876cb621d9.FragmentLifecycleManager
+communitytoolkit.maui.core.services.FragmentLifecycleManager;crc6436e425876cb621d9.FragmentLifecycleManager
 GoogleGson.IExclusionStrategy, GoogleGson;com.google.gson.ExclusionStrategy
 GoogleGson.IExclusionStrategy;com.google.gson.ExclusionStrategy
 com.google.gson.ExclusionStrategy;com.google.gson.ExclusionStrategy
@@ -415,6 +448,9 @@ microsoft.maui.MauiApplication_ActivityLifecycleCallbacks;crc6488302ad6e9e4df1a.
 Microsoft.Maui.IImageLoaderCallback, Microsoft.Maui;com.microsoft.maui.ImageLoaderCallback
 Microsoft.Maui.IImageLoaderCallback;com.microsoft.maui.ImageLoaderCallback
 com.microsoft.maui.ImageLoaderCallback;com.microsoft.maui.ImageLoaderCallback
+Microsoft.Maui.IPlatformShadowDrawable, Microsoft.Maui;com.microsoft.maui.PlatformShadowDrawable
+Microsoft.Maui.IPlatformShadowDrawable;com.microsoft.maui.PlatformShadowDrawable
+com.microsoft.maui.PlatformShadowDrawable;com.microsoft.maui.PlatformShadowDrawable
 Microsoft.Maui.Platform.AccessibilityDelegateCompatWrapper, Microsoft.Maui;crc6452ffdc5b34af3a0f.AccessibilityDelegateCompatWrapper
 Microsoft.Maui.Platform.AccessibilityDelegateCompatWrapper;crc6452ffdc5b34af3a0f.AccessibilityDelegateCompatWrapper
 microsoft.maui.platform.AccessibilityDelegateCompatWrapper;crc6452ffdc5b34af3a0f.AccessibilityDelegateCompatWrapper
@@ -2065,6 +2101,9 @@ mono.androidx.camera.view.impl.ZoomGestureDetector_OnZoomGestureListenerImplemen
 AndroidX.Concurrent.Futures.CallbackToFutureAdapter+IResolver, Xamarin.AndroidX.Concurrent.Futures;androidx.concurrent.futures.CallbackToFutureAdapter$Resolver
 AndroidX.Concurrent.Futures.CallbackToFutureAdapter.IResolver;androidx.concurrent.futures.CallbackToFutureAdapter$Resolver
 androidx.concurrent.futures.CallbackToFutureAdapter$Resolver;androidx.concurrent.futures.CallbackToFutureAdapter$Resolver
+AndroidX.ConstraintLayout.Widget.ConstraintLayout+IValueModifier, Xamarin.AndroidX.ConstraintLayout;androidx.constraintlayout.widget.ConstraintLayout$ValueModifier
+AndroidX.ConstraintLayout.Widget.ConstraintLayout.IValueModifier;androidx.constraintlayout.widget.ConstraintLayout$ValueModifier
+androidx.constraintlayout.widget.ConstraintLayout$ValueModifier;androidx.constraintlayout.widget.ConstraintLayout$ValueModifier
 AndroidX.ConstraintLayout.Widget.SharedValues+ISharedValuesListener, Xamarin.AndroidX.ConstraintLayout;androidx.constraintlayout.widget.SharedValues$SharedValuesListener
 AndroidX.ConstraintLayout.Widget.SharedValues.ISharedValuesListener;androidx.constraintlayout.widget.SharedValues$SharedValuesListener
 androidx.constraintlayout.widget.SharedValues$SharedValuesListener;androidx.constraintlayout.widget.SharedValues$SharedValuesListener
@@ -2110,6 +2149,12 @@ androidx.constraintlayout.core.widgets.analyzer.Dependency;androidx.constraintla
 AndroidX.ConstraintLayout.Core.State.ConstraintReference+IConstraintReferenceFactory, Xamarin.AndroidX.ConstraintLayout.Core;androidx.constraintlayout.core.state.ConstraintReference$ConstraintReferenceFactory
 AndroidX.ConstraintLayout.Core.State.ConstraintReference.IConstraintReferenceFactory;androidx.constraintlayout.core.state.ConstraintReference$ConstraintReferenceFactory
 androidx.constraintlayout.core.state.ConstraintReference$ConstraintReferenceFactory;androidx.constraintlayout.core.state.ConstraintReference$ConstraintReferenceFactory
+AndroidX.ConstraintLayout.Core.State.ICoreMotionScene, Xamarin.AndroidX.ConstraintLayout.Core;androidx.constraintlayout.core.state.CoreMotionScene
+AndroidX.ConstraintLayout.Core.State.ICoreMotionScene;androidx.constraintlayout.core.state.CoreMotionScene
+androidx.constraintlayout.core.state.CoreMotionScene;androidx.constraintlayout.core.state.CoreMotionScene
+AndroidX.ConstraintLayout.Core.State.ICorePixelDp, Xamarin.AndroidX.ConstraintLayout.Core;androidx.constraintlayout.core.state.CorePixelDp
+AndroidX.ConstraintLayout.Core.State.ICorePixelDp;androidx.constraintlayout.core.state.CorePixelDp
+androidx.constraintlayout.core.state.CorePixelDp;androidx.constraintlayout.core.state.CorePixelDp
 AndroidX.ConstraintLayout.Core.State.IInterpolator, Xamarin.AndroidX.ConstraintLayout.Core;androidx.constraintlayout.core.state.Interpolator
 AndroidX.ConstraintLayout.Core.State.IInterpolator;androidx.constraintlayout.core.state.Interpolator
 androidx.constraintlayout.core.state.Interpolator;androidx.constraintlayout.core.state.Interpolator
@@ -4225,9 +4270,9 @@ com.google.crypto.tink.hybrid.internal.HpkeKdf;com.google.crypto.tink.hybrid.int
 Xamarin.Google.Crypto.Tink.Hybrid.Internal.IHpkeKem, Xamarin.Google.Crypto.Tink.Android;com.google.crypto.tink.hybrid.internal.HpkeKem
 Xamarin.Google.Crypto.Tink.Hybrid.Internal.IHpkeKem;com.google.crypto.tink.hybrid.internal.HpkeKem
 com.google.crypto.tink.hybrid.internal.HpkeKem;com.google.crypto.tink.hybrid.internal.HpkeKem
-Xamarin.Google.Crypto.Tink.Hybrid.Internal.IHpkeKemPrivateKey, Xamarin.Google.Crypto.Tink.Android;com.google.crypto.tink.hybrid.internal.HpkeKemPrivateKey
-Xamarin.Google.Crypto.Tink.Hybrid.Internal.IHpkeKemPrivateKey;com.google.crypto.tink.hybrid.internal.HpkeKemPrivateKey
-com.google.crypto.tink.hybrid.internal.HpkeKemPrivateKey;com.google.crypto.tink.hybrid.internal.HpkeKemPrivateKey
+Xamarin.Google.Crypto.Tink.Hybrid.Internal.IX25519, Xamarin.Google.Crypto.Tink.Android;com.google.crypto.tink.hybrid.internal.X25519
+Xamarin.Google.Crypto.Tink.Hybrid.Internal.IX25519;com.google.crypto.tink.hybrid.internal.X25519
+com.google.crypto.tink.hybrid.internal.X25519;com.google.crypto.tink.hybrid.internal.X25519
 Xamarin.Google.Crypto.Tink.Annotations.IAlpha, Xamarin.Google.Crypto.Tink.Android;com.google.crypto.tink.annotations.Alpha
 Xamarin.Google.Crypto.Tink.Annotations.IAlpha;com.google.crypto.tink.annotations.Alpha
 com.google.crypto.tink.annotations.Alpha;com.google.crypto.tink.annotations.Alpha
@@ -4258,6 +4303,9 @@ com.google.crypto.tink.shaded.protobuf.Internal$FloatList;com.google.crypto.tink
 Xamarin.Google.Crypto.Tink.Shaded.Protobuf.Internal+IIntList, Xamarin.Google.Crypto.Tink.Android;com.google.crypto.tink.shaded.protobuf.Internal$IntList
 Xamarin.Google.Crypto.Tink.Shaded.Protobuf.Internal.IIntList;com.google.crypto.tink.shaded.protobuf.Internal$IntList
 com.google.crypto.tink.shaded.protobuf.Internal$IntList;com.google.crypto.tink.shaded.protobuf.Internal$IntList
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.Internal+IntListAdapter+IIntConverter, Xamarin.Google.Crypto.Tink.Android;com.google.crypto.tink.shaded.protobuf.Internal$IntListAdapter$IntConverter
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.Internal.IntListAdapter.IIntConverter;com.google.crypto.tink.shaded.protobuf.Internal$IntListAdapter$IntConverter
+com.google.crypto.tink.shaded.protobuf.Internal$IntListAdapter$IntConverter;com.google.crypto.tink.shaded.protobuf.Internal$IntListAdapter$IntConverter
 Xamarin.Google.Crypto.Tink.Shaded.Protobuf.Internal+ListAdapter+IConverter, Xamarin.Google.Crypto.Tink.Android;com.google.crypto.tink.shaded.protobuf.Internal$ListAdapter$Converter
 Xamarin.Google.Crypto.Tink.Shaded.Protobuf.Internal.ListAdapter.IConverter;com.google.crypto.tink.shaded.protobuf.Internal$ListAdapter$Converter
 com.google.crypto.tink.shaded.protobuf.Internal$ListAdapter$Converter;com.google.crypto.tink.shaded.protobuf.Internal$ListAdapter$Converter
@@ -4273,6 +4321,105 @@ com.google.crypto.tink.shaded.protobuf.AbstractMessageLite$InternalOneOfEnum;com
 Xamarin.Google.Crypto.Tink.Shaded.Protobuf.ByteString+IByteIterator, Xamarin.Google.Crypto.Tink.Android;com.google.crypto.tink.shaded.protobuf.ByteString$ByteIterator
 Xamarin.Google.Crypto.Tink.Shaded.Protobuf.ByteString.IByteIterator;com.google.crypto.tink.shaded.protobuf.ByteString$ByteIterator
 com.google.crypto.tink.shaded.protobuf.ByteString$ByteIterator;com.google.crypto.tink.shaded.protobuf.ByteString$ByteIterator
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos+DescriptorProto+IExtensionRangeOrBuilder, Xamarin.Google.Crypto.Tink.Android;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$DescriptorProto$ExtensionRangeOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos.DescriptorProto.IExtensionRangeOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$DescriptorProto$ExtensionRangeOrBuilder
+com.google.crypto.tink.shaded.protobuf.DescriptorProtos$DescriptorProto$ExtensionRangeOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$DescriptorProto$ExtensionRangeOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos+DescriptorProto+IReservedRangeOrBuilder, Xamarin.Google.Crypto.Tink.Android;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$DescriptorProto$ReservedRangeOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos.DescriptorProto.IReservedRangeOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$DescriptorProto$ReservedRangeOrBuilder
+com.google.crypto.tink.shaded.protobuf.DescriptorProtos$DescriptorProto$ReservedRangeOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$DescriptorProto$ReservedRangeOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos+IDescriptorProtoOrBuilder, Xamarin.Google.Crypto.Tink.Android;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$DescriptorProtoOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos.IDescriptorProtoOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$DescriptorProtoOrBuilder
+com.google.crypto.tink.shaded.protobuf.DescriptorProtos$DescriptorProtoOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$DescriptorProtoOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos+EnumDescriptorProto+IEnumReservedRangeOrBuilder, Xamarin.Google.Crypto.Tink.Android;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$EnumDescriptorProto$EnumReservedRangeOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos.EnumDescriptorProto.IEnumReservedRangeOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$EnumDescriptorProto$EnumReservedRangeOrBuilder
+com.google.crypto.tink.shaded.protobuf.DescriptorProtos$EnumDescriptorProto$EnumReservedRangeOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$EnumDescriptorProto$EnumReservedRangeOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos+IEnumDescriptorProtoOrBuilder, Xamarin.Google.Crypto.Tink.Android;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$EnumDescriptorProtoOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos.IEnumDescriptorProtoOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$EnumDescriptorProtoOrBuilder
+com.google.crypto.tink.shaded.protobuf.DescriptorProtos$EnumDescriptorProtoOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$EnumDescriptorProtoOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos+IEnumOptionsOrBuilder, Xamarin.Google.Crypto.Tink.Android;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$EnumOptionsOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos.IEnumOptionsOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$EnumOptionsOrBuilder
+com.google.crypto.tink.shaded.protobuf.DescriptorProtos$EnumOptionsOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$EnumOptionsOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos+IEnumValueDescriptorProtoOrBuilder, Xamarin.Google.Crypto.Tink.Android;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$EnumValueDescriptorProtoOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos.IEnumValueDescriptorProtoOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$EnumValueDescriptorProtoOrBuilder
+com.google.crypto.tink.shaded.protobuf.DescriptorProtos$EnumValueDescriptorProtoOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$EnumValueDescriptorProtoOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos+IEnumValueOptionsOrBuilder, Xamarin.Google.Crypto.Tink.Android;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$EnumValueOptionsOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos.IEnumValueOptionsOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$EnumValueOptionsOrBuilder
+com.google.crypto.tink.shaded.protobuf.DescriptorProtos$EnumValueOptionsOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$EnumValueOptionsOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos+ExtensionRangeOptions+IDeclarationOrBuilder, Xamarin.Google.Crypto.Tink.Android;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$ExtensionRangeOptions$DeclarationOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos.ExtensionRangeOptions.IDeclarationOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$ExtensionRangeOptions$DeclarationOrBuilder
+com.google.crypto.tink.shaded.protobuf.DescriptorProtos$ExtensionRangeOptions$DeclarationOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$ExtensionRangeOptions$DeclarationOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos+IExtensionRangeOptionsOrBuilder, Xamarin.Google.Crypto.Tink.Android;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$ExtensionRangeOptionsOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos.IExtensionRangeOptionsOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$ExtensionRangeOptionsOrBuilder
+com.google.crypto.tink.shaded.protobuf.DescriptorProtos$ExtensionRangeOptionsOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$ExtensionRangeOptionsOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos+FeatureSetDefaults+IFeatureSetEditionDefaultOrBuilder, Xamarin.Google.Crypto.Tink.Android;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$FeatureSetDefaults$FeatureSetEditionDefaultOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos.FeatureSetDefaults.IFeatureSetEditionDefaultOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$FeatureSetDefaults$FeatureSetEditionDefaultOrBuilder
+com.google.crypto.tink.shaded.protobuf.DescriptorProtos$FeatureSetDefaults$FeatureSetEditionDefaultOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$FeatureSetDefaults$FeatureSetEditionDefaultOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos+IFeatureSetDefaultsOrBuilder, Xamarin.Google.Crypto.Tink.Android;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$FeatureSetDefaultsOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos.IFeatureSetDefaultsOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$FeatureSetDefaultsOrBuilder
+com.google.crypto.tink.shaded.protobuf.DescriptorProtos$FeatureSetDefaultsOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$FeatureSetDefaultsOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos+IFeatureSetOrBuilder, Xamarin.Google.Crypto.Tink.Android;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$FeatureSetOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos.IFeatureSetOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$FeatureSetOrBuilder
+com.google.crypto.tink.shaded.protobuf.DescriptorProtos$FeatureSetOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$FeatureSetOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos+IFieldDescriptorProtoOrBuilder, Xamarin.Google.Crypto.Tink.Android;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$FieldDescriptorProtoOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos.IFieldDescriptorProtoOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$FieldDescriptorProtoOrBuilder
+com.google.crypto.tink.shaded.protobuf.DescriptorProtos$FieldDescriptorProtoOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$FieldDescriptorProtoOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos+FieldOptions+IEditionDefaultOrBuilder, Xamarin.Google.Crypto.Tink.Android;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$FieldOptions$EditionDefaultOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos.FieldOptions.IEditionDefaultOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$FieldOptions$EditionDefaultOrBuilder
+com.google.crypto.tink.shaded.protobuf.DescriptorProtos$FieldOptions$EditionDefaultOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$FieldOptions$EditionDefaultOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos+FieldOptions+IFeatureSupportOrBuilder, Xamarin.Google.Crypto.Tink.Android;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$FieldOptions$FeatureSupportOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos.FieldOptions.IFeatureSupportOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$FieldOptions$FeatureSupportOrBuilder
+com.google.crypto.tink.shaded.protobuf.DescriptorProtos$FieldOptions$FeatureSupportOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$FieldOptions$FeatureSupportOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos+IFieldOptionsOrBuilder, Xamarin.Google.Crypto.Tink.Android;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$FieldOptionsOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos.IFieldOptionsOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$FieldOptionsOrBuilder
+com.google.crypto.tink.shaded.protobuf.DescriptorProtos$FieldOptionsOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$FieldOptionsOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos+IFileDescriptorProtoOrBuilder, Xamarin.Google.Crypto.Tink.Android;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$FileDescriptorProtoOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos.IFileDescriptorProtoOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$FileDescriptorProtoOrBuilder
+com.google.crypto.tink.shaded.protobuf.DescriptorProtos$FileDescriptorProtoOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$FileDescriptorProtoOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos+IFileDescriptorSetOrBuilder, Xamarin.Google.Crypto.Tink.Android;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$FileDescriptorSetOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos.IFileDescriptorSetOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$FileDescriptorSetOrBuilder
+com.google.crypto.tink.shaded.protobuf.DescriptorProtos$FileDescriptorSetOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$FileDescriptorSetOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos+IFileOptionsOrBuilder, Xamarin.Google.Crypto.Tink.Android;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$FileOptionsOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos.IFileOptionsOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$FileOptionsOrBuilder
+com.google.crypto.tink.shaded.protobuf.DescriptorProtos$FileOptionsOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$FileOptionsOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos+GeneratedCodeInfo+IAnnotationOrBuilder, Xamarin.Google.Crypto.Tink.Android;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$GeneratedCodeInfo$AnnotationOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos.GeneratedCodeInfo.IAnnotationOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$GeneratedCodeInfo$AnnotationOrBuilder
+com.google.crypto.tink.shaded.protobuf.DescriptorProtos$GeneratedCodeInfo$AnnotationOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$GeneratedCodeInfo$AnnotationOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos+IGeneratedCodeInfoOrBuilder, Xamarin.Google.Crypto.Tink.Android;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$GeneratedCodeInfoOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos.IGeneratedCodeInfoOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$GeneratedCodeInfoOrBuilder
+com.google.crypto.tink.shaded.protobuf.DescriptorProtos$GeneratedCodeInfoOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$GeneratedCodeInfoOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos+IMessageOptionsOrBuilder, Xamarin.Google.Crypto.Tink.Android;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$MessageOptionsOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos.IMessageOptionsOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$MessageOptionsOrBuilder
+com.google.crypto.tink.shaded.protobuf.DescriptorProtos$MessageOptionsOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$MessageOptionsOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos+IMethodDescriptorProtoOrBuilder, Xamarin.Google.Crypto.Tink.Android;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$MethodDescriptorProtoOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos.IMethodDescriptorProtoOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$MethodDescriptorProtoOrBuilder
+com.google.crypto.tink.shaded.protobuf.DescriptorProtos$MethodDescriptorProtoOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$MethodDescriptorProtoOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos+IMethodOptionsOrBuilder, Xamarin.Google.Crypto.Tink.Android;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$MethodOptionsOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos.IMethodOptionsOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$MethodOptionsOrBuilder
+com.google.crypto.tink.shaded.protobuf.DescriptorProtos$MethodOptionsOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$MethodOptionsOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos+IOneofDescriptorProtoOrBuilder, Xamarin.Google.Crypto.Tink.Android;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$OneofDescriptorProtoOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos.IOneofDescriptorProtoOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$OneofDescriptorProtoOrBuilder
+com.google.crypto.tink.shaded.protobuf.DescriptorProtos$OneofDescriptorProtoOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$OneofDescriptorProtoOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos+IOneofOptionsOrBuilder, Xamarin.Google.Crypto.Tink.Android;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$OneofOptionsOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos.IOneofOptionsOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$OneofOptionsOrBuilder
+com.google.crypto.tink.shaded.protobuf.DescriptorProtos$OneofOptionsOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$OneofOptionsOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos+IServiceDescriptorProtoOrBuilder, Xamarin.Google.Crypto.Tink.Android;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$ServiceDescriptorProtoOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos.IServiceDescriptorProtoOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$ServiceDescriptorProtoOrBuilder
+com.google.crypto.tink.shaded.protobuf.DescriptorProtos$ServiceDescriptorProtoOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$ServiceDescriptorProtoOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos+IServiceOptionsOrBuilder, Xamarin.Google.Crypto.Tink.Android;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$ServiceOptionsOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos.IServiceOptionsOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$ServiceOptionsOrBuilder
+com.google.crypto.tink.shaded.protobuf.DescriptorProtos$ServiceOptionsOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$ServiceOptionsOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos+SourceCodeInfo+ILocationOrBuilder, Xamarin.Google.Crypto.Tink.Android;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$SourceCodeInfo$LocationOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos.SourceCodeInfo.ILocationOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$SourceCodeInfo$LocationOrBuilder
+com.google.crypto.tink.shaded.protobuf.DescriptorProtos$SourceCodeInfo$LocationOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$SourceCodeInfo$LocationOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos+ISourceCodeInfoOrBuilder, Xamarin.Google.Crypto.Tink.Android;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$SourceCodeInfoOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos.ISourceCodeInfoOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$SourceCodeInfoOrBuilder
+com.google.crypto.tink.shaded.protobuf.DescriptorProtos$SourceCodeInfoOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$SourceCodeInfoOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos+UninterpretedOption+INamePartOrBuilder, Xamarin.Google.Crypto.Tink.Android;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$UninterpretedOption$NamePartOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos.UninterpretedOption.INamePartOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$UninterpretedOption$NamePartOrBuilder
+com.google.crypto.tink.shaded.protobuf.DescriptorProtos$UninterpretedOption$NamePartOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$UninterpretedOption$NamePartOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos+IUninterpretedOptionOrBuilder, Xamarin.Google.Crypto.Tink.Android;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$UninterpretedOptionOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.DescriptorProtos.IUninterpretedOptionOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$UninterpretedOptionOrBuilder
+com.google.crypto.tink.shaded.protobuf.DescriptorProtos$UninterpretedOptionOrBuilder;com.google.crypto.tink.shaded.protobuf.DescriptorProtos$UninterpretedOptionOrBuilder
 Xamarin.Google.Crypto.Tink.Shaded.Protobuf.FieldSet+IFieldDescriptorLite, Xamarin.Google.Crypto.Tink.Android;com.google.crypto.tink.shaded.protobuf.FieldSet$FieldDescriptorLite
 Xamarin.Google.Crypto.Tink.Shaded.Protobuf.FieldSet.IFieldDescriptorLite;com.google.crypto.tink.shaded.protobuf.FieldSet$FieldDescriptorLite
 com.google.crypto.tink.shaded.protobuf.FieldSet$FieldDescriptorLite;com.google.crypto.tink.shaded.protobuf.FieldSet$FieldDescriptorLite
@@ -4372,6 +4519,9 @@ com.google.crypto.tink.shaded.protobuf.UInt64ValueOrBuilder;com.google.crypto.ti
 Xamarin.Google.Crypto.Tink.Shaded.Protobuf.IValueOrBuilder, Xamarin.Google.Crypto.Tink.Android;com.google.crypto.tink.shaded.protobuf.ValueOrBuilder
 Xamarin.Google.Crypto.Tink.Shaded.Protobuf.IValueOrBuilder;com.google.crypto.tink.shaded.protobuf.ValueOrBuilder
 com.google.crypto.tink.shaded.protobuf.ValueOrBuilder;com.google.crypto.tink.shaded.protobuf.ValueOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.JavaFeaturesProto+IJavaFeaturesOrBuilder, Xamarin.Google.Crypto.Tink.Android;com.google.crypto.tink.shaded.protobuf.JavaFeaturesProto$JavaFeaturesOrBuilder
+Xamarin.Google.Crypto.Tink.Shaded.Protobuf.JavaFeaturesProto.IJavaFeaturesOrBuilder;com.google.crypto.tink.shaded.protobuf.JavaFeaturesProto$JavaFeaturesOrBuilder
+com.google.crypto.tink.shaded.protobuf.JavaFeaturesProto$JavaFeaturesOrBuilder;com.google.crypto.tink.shaded.protobuf.JavaFeaturesProto$JavaFeaturesOrBuilder
 Xamarin.Google.ErrorProne.Annotations.ICanIgnoreReturnValue, Xamarin.Google.ErrorProne.Annotations;com.google.errorprone.annotations.CanIgnoreReturnValue
 Xamarin.Google.ErrorProne.Annotations.ICanIgnoreReturnValue;com.google.errorprone.annotations.CanIgnoreReturnValue
 com.google.errorprone.annotations.CanIgnoreReturnValue;com.google.errorprone.annotations.CanIgnoreReturnValue

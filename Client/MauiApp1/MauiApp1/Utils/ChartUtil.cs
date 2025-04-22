@@ -40,6 +40,7 @@ namespace MauiApp1.Utils
             var entries = data.Select(kvp =>
                 new ChartEntry(Convert.ToSingle(kvp.Value)) // int든 float든 OK
                 {
+                    
                     Label = kvp.Key,
                     ValueLabel = kvp.Value.ToString(),
                     Color = SKColor.Parse(colorHex)
@@ -47,6 +48,7 @@ namespace MauiApp1.Utils
 
             chartView.Chart = new RadarChart
             {
+                Typeface = typeface,    
                 LabelTextSize = 30,
                 Entries = entries,
                 BackgroundColor = SKColors.Black

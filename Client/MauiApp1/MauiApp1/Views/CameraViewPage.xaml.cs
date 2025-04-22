@@ -4,6 +4,8 @@ using CommunityToolkit.Maui.Views;
 using MauiApp1.Utils;
 using MauiApp1.Services;
 using System.Text.Json;
+using MauiApp1.Views.Content;
+ 
 
 namespace MauiApp1.Views;
 
@@ -96,10 +98,26 @@ public partial class CameraViewPage : ContentPage
             if (SelectedCamera == null) return;
             else if (_selectedFileFormData != null)
             {
-                var (classData , regressionData,result) = await HttpService.Instance.UploadFilesAsync(_selectedFileFormData);
+                var (classData, regressionData, result) = await HttpService.Instance.UploadFilesAsync(_selectedFileFormData);
                 if (result == "ok") await DisplayAlert("업로드 성공", "업로드에 성공하였습니다.", "확인");
                 await DisplayAlert("클래스", JsonSerializer.Serialize(classData, new JsonSerializerOptions { WriteIndented = true }), "확인");
                 await DisplayAlert("회귀", JsonSerializer.Serialize(regressionData, new JsonSerializerOptions { WriteIndented = true }), "확인");
+                string action = (string)await Application.Current.MainPage.ShowPopupAsync(new ResultPopup());
+
+                switch (action)
+                {
+                    case "챗봇 이동":
+                        await Shell.Current.GoToAsync("//ChatViewPage");
+                        break;
+
+                    case "결과 분석":
+                        await Shell.Current.GoToAsync("//HistoryViewPage");
+                        break;
+
+                    case "취소":
+                    case null:
+                        break;
+                }
             }
         }
         catch (Exception ex)

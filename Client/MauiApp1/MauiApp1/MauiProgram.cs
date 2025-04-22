@@ -24,6 +24,7 @@ namespace MauiApp1
                 .UseMauiApp<Views.App>()
                 .UseMauiCommunityToolkitCamera()
                 .UseMicrocharts()
+                .UseMauiCommunityToolkit()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

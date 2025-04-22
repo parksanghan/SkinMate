@@ -1,4 +1,6 @@
 CommunityToolkit.Maui.Camera.dll
+CommunityToolkit.Maui.Core.dll
+CommunityToolkit.Maui.dll
 GoogleGson.dll
 Jsr305Binding.dll
 Microcharts.Maui.dll
@@ -118,7 +120,6 @@ Xamarin.GooglePlayServices.MLKit.FaceDetection.dll
 Xamarin.GooglePlayServices.Tasks.dll
 Xamarin.JavaX.Inject.dll
 Xamarin.Jetbrains.Annotations.dll
-Xamarin.Kotlin.StdLib.Common.dll
 Xamarin.Kotlin.StdLib.dll
 Xamarin.Kotlin.StdLib.Jdk7.dll
 Xamarin.Kotlin.StdLib.Jdk8.dll
@@ -197,8 +198,6 @@ androidx.camera.camera-lifecycle.aar
 androidx.camera.camera-view.aar
 androidx.camera.camera-camera2.aar
 androidx.browser.browser.aar
-gifdecoder.aar
-glide.aar
 GoogleGson.aar
 Jsr305Binding.aar
 Microsoft.Maui.Controls.aar
@@ -206,6 +205,10 @@ maui.aar
 Microsoft.Maui.aar
 Microsoft.Maui.Essentials.aar
 SkiaSharp.Views.Android.aar
+Xamarin.Android.Glide.Annotations.aar
+Xamarin.Android.Glide.DiskLruCache.aar
+glide.aar
+gifdecoder.aar
 Xamarin.Firebase.Annotations.aar
 firebase-components.aar
 Xamarin.Firebase.Encoders.aar
@@ -237,6 +240,8 @@ Xamarin.KotlinX.AtomicFU.Jvm.aar
 Xamarin.KotlinX.Coroutines.Android.aar
 Xamarin.KotlinX.Coroutines.Core.aar
 Xamarin.KotlinX.Coroutines.Core.Jvm.aar
+Xamarin.KotlinX.Serialization.Core.aar
+Xamarin.KotlinX.Serialization.Core.Jvm.aar
 playservicesbasement-18.5.0.aar
 playservicestasks-18.2.0.aar
 playservicesbase-18.5.0.aar

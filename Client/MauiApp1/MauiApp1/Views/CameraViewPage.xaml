@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             
              xmlns:local="clr-namespace:MauiApp1.Views"
              x:Class="MauiApp1.Views.CameraViewPage"
              Title="CameraViewPage">

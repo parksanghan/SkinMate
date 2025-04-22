@@ -3,7 +3,9 @@ public class MonoPackageManager_Resources {
 	public static String[] Assemblies = new String[]{
 		/* We need to ensure that "MauiApp1.dll" comes first in this list. */
 		"MauiApp1.dll",
+		"CommunityToolkit.Maui.dll",
 		"CommunityToolkit.Maui.Camera.dll",
+		"CommunityToolkit.Maui.Core.dll",
 		"GoogleGson.dll",
 		"Microcharts.Maui.dll",
 		"Microsoft.Extensions.Configuration.dll",
@@ -133,7 +135,6 @@ public class MonoPackageManager_Resources {
 		"Xamarin.JavaX.Inject.dll",
 		"Xamarin.Jetbrains.Annotations.dll",
 		"Xamarin.Kotlin.StdLib.dll",
-		"Xamarin.Kotlin.StdLib.Common.dll",
 		"Xamarin.Kotlin.StdLib.Jdk7.dll",
 		"Xamarin.Kotlin.StdLib.Jdk8.dll",
 		"Xamarin.KotlinX.AtomicFU.dll",
