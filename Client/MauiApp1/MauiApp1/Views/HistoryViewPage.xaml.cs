@@ -3,7 +3,8 @@ using SkiaSharp;
 using SkiaSharp.Views.Maui;
 using SkiaSharp.Views.Maui.Controls;
 using Microcharts;
-using MauiApp1.Services; // ChartEntry, LineChart 등
+using MauiApp1.Services;
+using MauiApp1.Utils; // ChartEntry, LineChart 등
 
 namespace MauiApp1.Views;
 
@@ -62,8 +63,7 @@ public partial class HistoryViewPage : ContentPage
     //}
     public void Draw_graph()
     {
-        // 예시 JSON에서 파싱된 결과를 직접 삽입
-        var classData = new Dictionary<string, int>
+        var classDataDict = new Dictionary<string, int>
     {
         { "이마 주름", 2 },
         { "미간 주름", 3 },
@@ -85,35 +85,8 @@ public partial class HistoryViewPage : ContentPage
         { "턱 탄력", 69.7f }
     };
 
-        var classEntries = classData.Select(kvp =>
-            new ChartEntry(kvp.Value)
-            {
-                Label = kvp.Key,
-                ValueLabel = kvp.Value.ToString(),
-                Color = SKColor.Parse("#68B9C0")
-            }).ToList();
-
-        var regressionEntries = regressionData.Select(kvp =>
-            new ChartEntry(kvp.Value)
-            {
-                Label = kvp.Key,
-                ValueLabel = kvp.Value.ToString("F1"),
-                Color = SKColor.Parse("#F37F64")
-            }).ToList();
-
-        classChartView.Chart = new RadarChart
-        {
-            LabelTextSize = 30 ,
-            Entries = classEntries,
-            BackgroundColor = SKColors.Black
-        };
-
-        regrssionChartview.Chart = new RadarChart
-        {
-            LabelTextSize = 30,
-            Entries = regressionEntries,
-            BackgroundColor = SKColors.Black
-        };
+        ChartUtil.SetRadarChartData(classChartView, classDataDict, "#68B9C0");
+        ChartUtil.SetRadarChartData(regrssionChartview, regressionData, "#F37F64");
     }
     public void Draw_graph1()
     {

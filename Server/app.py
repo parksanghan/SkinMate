@@ -9,6 +9,7 @@ import traceback
 from datetime import datetime
 from chat.chat_manager import ChatManager
 from fastapi import Form
+import requests
 
 chat_manager = ChatManager()
 app = FastAPI()
@@ -54,21 +55,60 @@ def register(req: RegisterRequest):
         raise HTTPException(status_code=500, detail=error_message)
 
 
-# 파일 업로드 API
 @app.post("/{user_id}/upload")
-async def upload(
-    user_id, files: list[UploadFile] = File(...)
-):  # 👈 여기 'files'로 바뀐 것 주의
+async def upload(user_id: str, files: list[UploadFile] = File(...)):
     try:
-        os.makedirs("uploads", exist_ok=True)
         for file in files:
-            path = os.path.join("uploads", file.filename)
-            with open(path, "wb") as f:
-                f.write(await file.read())
-        return {"status": "ok"}
+            # 1. 이미지 내용 읽기
+            contents = await file.read()
+
+            # 2. 외부 진단 서버 주소
+            diagnosis_url = "http://182.210.98.131:5000/diagnose"
+
+            # 3. forwarding 요청
+            response = requests.post(
+                diagnosis_url,
+                files={"image": (file.filename, contents, file.content_type)},
+            )
+
+            # 4. 응답 확인 (예시: 첫 번째 응답만 반환)
+            if response.status_code != 200:
+                raise Exception(
+                    f"추론 서버 오류: {response.status_code} - {response.text}"
+                )
+            print("[✅ 추론 서버 응답]")
+            print(response.json())
+            return {
+                "status": "ok",
+                "msg": "진단 서버 응답 출력 완료",
+                "diagnosis_result": response.json(),
+            }
+            # return {
+            #     "status": "ok",
+            #     "diagnosis_result": response.json(),  # 진단 결과 그대로 반환
+            # }
+
+        return {"status": "fail", "msg": "No files processed"}
     except Exception as e:
         print(f"❌ 업로드 실패: {e}")
-        raise HTTPException(status_code=500, detail="fail")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+# # 파일 업로드 API
+# @app.post("/{user_id}/upload")
+# async def upload(
+#     user_id, files: list[UploadFile] = File(...)
+# ):  # 👈 여기 'files'로 바뀐 것 주의
+#     try:
+#         os.makedirs("uploads", exist_ok=True)
+#         for file in files:
+#             path = os.path.join("uploads", file.filename)
+#             with open(path, "wb") as f:
+#                 f.write(await file.read())
+#         return {"status": "ok"}
+#     except Exception as e:
+#         print(f"❌ 업로드 실패: {e}")
+#         raise HTTPException(status_code=500, detail="fail")
 
 
 @app.get("/{user_id}/logs")

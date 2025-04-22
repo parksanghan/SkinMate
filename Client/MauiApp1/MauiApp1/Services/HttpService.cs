@@ -16,7 +16,7 @@ namespace MauiApp1.Services
         private static HttpService? _instance;
         private static readonly object _lock = new();
         private readonly HttpClient _httpClient;
-        private const string BaseUrl = "http://10.101.139.199:8080";
+        private const string BaseUrl = "http://172.30.1.98:8080";
         private string? MyId { get; set; }
         private List< LogEntry?> _diaLogEntry; // 진단결과 로그
         private List<LogEntry?> _chatLgoEntry; // 채팅 로그 
@@ -81,7 +81,7 @@ namespace MauiApp1.Services
             }
 
         }
-        public async Task<string> UploadFilesAsync(MultipartFormDataContent data)
+        public async Task<(DiagnosisClassification?, DiagnosisRegression?, string? reuslt)> UploadFilesAsync(MultipartFormDataContent data)
         {
             try
             {
@@ -91,10 +91,21 @@ namespace MauiApp1.Services
                 Console.WriteLine($"[DEBUG] 응답 본문: {jsonRes}");
                 if (res.IsSuccessStatusCode)
                 {
-                    var obj = JsonSerializer.Deserialize<Dictionary<string, string>>(jsonRes);
-                    string result = obj["status"].ToLower();
+                    using var doc = JsonDocument.Parse(jsonRes);
+                    var root = doc.RootElement;
+                    string result = root.GetProperty("status").GetString().ToLower();
                     Console.WriteLine($"[DEBUG] 업로드 성공: {result}");
-                    return result;
+             
+                    // 분류모델 진단결과
+                    var diagnosisResult = root.GetProperty("diagnosis_result");
+                    // 회귀모델 진단결과
+                    var classJson = diagnosisResult.GetProperty("class").GetRawText();
+                    var regressionJson = diagnosisResult.GetProperty("regression").GetRawText();
+                    var classData = JsonSerializer.Deserialize<DiagnosisClassification>(classJson);
+                    var regressionData = JsonSerializer.Deserialize<DiagnosisRegression>(regressionJson);
+                    // 분류 모델결과 , 회귀모델결과 반환 후 이후에 확인누르면 history 채널로가는데 이때 이 
+                    // 2개인자를 넘김으로 또 그래프 그릴예정
+                    return (classData,regressionData, result);
                 }
                 else
                 {
