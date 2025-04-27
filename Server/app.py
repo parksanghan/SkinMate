@@ -232,9 +232,9 @@ async def save_user_setting1(user_id: str, request: Request):
 @app.post("/{user_id}/setting")
 async def request_setting(user_id, data: Request):
     settingdata = await data.json()  # ✅ JSON 파싱
-    interests = data.get("Interests", [])
-    gender = data.get("Gender", "")
-    age = data.get("Age", "")
+    interests = data.get("interests", [])
+    gender = data.get("gender", "")
+    age = data.get("age", "")
 
     print(f"👤 ID: {user_id}")
     print(f"📋 관심사: {interests}")
