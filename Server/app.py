@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from db.db_manager import DbManager
 import os
-from models import RegisterRequest, LoginRequest
+from models import RegisterRequest, LoginRequest, UserSetingPayload
 import uvicorn
 import traceback
 from datetime import datetime
@@ -216,17 +216,11 @@ async def request_diagnosis(user_id, req: Request):
 
 
 @app.post("/{user_id}/setting1")
-async def save_user_setting1(user_id: str, request: Request):
-    data = await request.json()
-
-    interests = data.get("interests", [])
-    gender = data.get("gender", "")
-    age = data.get("age", "")
-
-    print(f"👤 ID: {user_id}")
-    print(f"📋 관심사: {interests}")
-    print(f"🧬 성별: {gender}")
-    print(f"🎂 나이대: {age}")
+async def save_user_setting1(user_id: str, request: UserSetingPayload):
+    print(f"✅ 사용자 ID: {user_id}")
+    print(f"✅ 관심사: {request.interests}")
+    print(f"✅ 성별: {request.gender}")
+    print(f"✅ 나이대: {request.age}")
 
 
 @app.post("/{user_id}/setting")

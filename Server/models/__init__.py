@@ -1,1 +1,1 @@
-from .rquest_models import LoginRequest, RegisterRequest
+from .rquest_models import LoginRequest, RegisterRequest, UserSetingPayload
