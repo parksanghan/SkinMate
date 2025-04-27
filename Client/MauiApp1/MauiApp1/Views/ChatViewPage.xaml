@@ -12,7 +12,10 @@
                     StrokeShape="RoundRectangle 20,0,20,20"
                     HorizontalOptions="End"
                     MaximumWidthRequest="250">
-                <Label Text="{Binding Text}" TextColor="Black" />
+                <Label Text="{Binding Text}"
+                    TextColor="Black"
+                    LineBreakMode="WordWrap"
+                    MaximumWidthRequest="300"/>
             </Border>
         </DataTemplate>
 
@@ -21,10 +24,14 @@
                     StrokeShape="RoundRectangle 20,0,20,20"
                     HorizontalOptions="Start"
                     MaximumWidthRequest="250">
-                <Label Text="{Binding Text}" TextColor="Black" />
+
+                <Label Text="{Binding Text}"
+               TextColor="Black"
+               LineBreakMode="WordWrap"
+               MaximumWidthRequest="300"/>
             </Border>
         </DataTemplate>
-
+        <!--리소스 내부 메세지 타입별 표시 방식을 미리정의 ChatSelector 키는 두 템플릿 중 어떤 것을 사용할 지-->
         <local:ChatTemplateSelector x:Key="ChatSelector"
                                     UserTemplate="{StaticResource UserTemplate}"
                                     BotTemplate="{StaticResource BotTemplate}" />

@@ -54,6 +54,26 @@ namespace MauiApp1.Utils
                 BackgroundColor = SKColors.Black
             };
         }
+        public static async Task SetRadarChartDataFloat(ChartView chartView, Dictionary<string, float> dataDict, string hexColor = "#68B9C0")
+        {
+            var entries = dataDict.Select(kv =>
+            {
+                float value = Math.Min(kv.Value, 1.0f); // ✅ 최대 1.0로 제한
+                string valueLabel = value.ToString("0.00"); // ✅ 소수점 둘째 자리까지만
+                return new ChartEntry(value)
+                {
+                    Label = kv.Key,
+                    ValueLabel = valueLabel,
+                    Color = SKColor.Parse(hexColor)
+                };
+            }).ToList();
+
+            chartView.Chart = new RadarChart
+            {
+                Entries = entries,
+                MaxValue = 1.0f // ✅ 1.0 기준으로 설정
+            };
+        }
     }
 
 }

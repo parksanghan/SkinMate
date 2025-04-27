@@ -96,6 +96,23 @@ class DbManager:
         except Exception as e:
             print(f"진단분석 데이터 추가 실패: {e}")
 
+    def add_setting_log(self, username, data):
+        user_id = self.get_user_id(username)
+        if user_id is None:
+            print("유효하지 않은 사용자입니다.")
+            return
+        try:
+            self.supabase.table("chat_logs").insert(
+                {
+                    "user_id": user_id,
+                    "log_type": "사용자설정",
+                    "message": data,
+                }
+            ).execute()
+            print("유저 설정 추가 성공")
+        except Exception as e:
+            print(f"유저 설정 추가 실패: {e}")
+
     def get_user_logs(self, username):
         user_id = self.get_user_id(username)
         if user_id is None:

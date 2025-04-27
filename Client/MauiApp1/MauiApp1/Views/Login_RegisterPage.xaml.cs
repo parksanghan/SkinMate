@@ -62,5 +62,6 @@ public partial class Login_RegisterPage : ContentPage
         // 가입 기능 구현
 
     }
+     
 
 }

@@ -1,22 +1,46 @@
-import requests
+import openai
+import os
+import json
+from dotenv import load_dotenv
 
-# 서버 주소
-url = "http://192.168.123.108:5000/diagnose"
+load_dotenv()
+client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-# 테스트할 이미지 경로
-image_path = r"S:\[Education]\Capstone1\NIA_019-028\dataset\img\digitcamera\0002\0002_01_F.jpg"  # 반드시 이 경로에 테스트용 이미지가 있어야 함
+# 진단 결과
+diagnosis_result = {
+    "class": {
+        "forehead_wrinkle": 7,
+        "frown_wrinkle": 1,
+        "eyes_wrinkle": 1,
+        "lips_dryness": 2,
+        "jaw_sagging": 2,
+        "cheek_pore": 0,
+    },
+    "regression": {
+        "face": 0.1509,
+        "forehead_moisture": 0.1054,
+        "forehead_elasticity": 0.1551,
+        "eyes_wrinkle": 0.0931,
+        "cheek_moisture": 1.2114,
+        "cheek_elasticity": 0.9109,
+        "cheek_pore": 0.2971,
+        "jaw_moisture": 0.0326,
+        "jaw_elasticity": 0.0504,
+    },
+}
 
-# 파일 전송
-with open(image_path, "rb") as img_file:
-    files = {
-        "image": ("filename.jpg", img_file, "image/jpeg")
-    }  # 명시적으로 MIME 타입 지정 가능
-    response = requests.post(url, files=files)
+# 프롬프트 구성
+prompt = f"다음 피부 진단 결과를 사람에게 설명해줘:\n```json\n{json.dumps(diagnosis_result, ensure_ascii=False, indent=2)}\n```"
 
-# 결과 출력
-if response.status_code == 200:
-    print("추론 결과:")
-    print(response.json())
-else:
-    print(f"요청 실패! 상태 코드: {response.status_code}")
-    print("에러 메시지:", response.text)
+# 최신 API 방식
+response = client.chat.completions.create(
+    model="gpt-4o",
+    messages=[
+        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "user", "content": prompt},
+    ],
+)
+
+# 응답 출력
+print("💬 챗봇 응답:")
+print(response.choices[0].message.content)

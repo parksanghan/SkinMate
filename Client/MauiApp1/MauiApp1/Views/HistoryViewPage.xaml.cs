@@ -5,7 +5,7 @@ using SkiaSharp.Views.Maui.Controls;
 using Microcharts;
 using MauiApp1.Services;
 using MauiApp1.Utils; // ChartEntry, LineChart 등
-
+using MauiApp1.Data;
 namespace MauiApp1.Views;
 
 public partial class HistoryViewPage : ContentPage
@@ -15,17 +15,38 @@ public partial class HistoryViewPage : ContentPage
         InitializeComponent();
         HttpService.Instance.ContextInit();
         Draw_graph();
-        //chartView.Chart = new LineChart
-        //{
-        //    Entries = new[]
-        //    {
-        //        new ChartEntry(100) { Label = "월", ValueLabel = "100", Color = SKColor.Parse("#FF1943") },
-        //        new ChartEntry(200) { Label = "화", ValueLabel = "200", Color = SKColor.Parse("#00BFFF") },
-        //        new ChartEntry(150) { Label = "수", ValueLabel = "150", Color = SKColor.Parse("#FF8C00") },
-        //    }
-        //};
+        
     }
-
+    protected override async void OnAppearing()
+    {
+        base.OnAppearing();
+        if (DiagnosisDataStore.Instance.IsUpdated)
+        {
+            DiagnosisResult? result = DiagnosisDataStore.Instance.LatestResult;
+            if (result != null) {
+                var classificationDict = new Dictionary<string, int>
+                {{ "이마 주름", result.Classification?.ForeheadWrinkle ?? 0  },
+                { "미간 주름", result.Classification?.FrownWrinkle ?? 0  },
+                { "눈가 주름", result.Classification?.EyesWrinkle ?? 0  },
+                { "볼 모공", result.Classification?.CheekPore ?? 0},
+                { "입술 건조", result.Classification?.LipsDryness ?? 0  },
+                { "턱 처짐", result.Classification?.JawSagging  ??  0}};
+                var regressionDict = new Dictionary<string, float>
+                {{ "얼굴 전체", result.Regression?.Face  ?? 0 },
+                { "이마 수분", result.Regression?.ForeheadMoisture  ?? 0},
+                { "이마 탄력", result.Regression?.ForeheadElasticity ?? 0 },
+                { "눈가 주름", result.Regression?.EyesWrinkle ?? 0  },
+                { "볼 수분", result.Regression?.CheekMoisture ?? 0 },
+                { "볼 탄력", result.Regression?.CheekElasticity ??0},
+                { "볼 모공", result.Regression?.CheekPore ?? 0  },
+                { "턱 수분", result.Regression?.JawMoisture ??  0},
+                { "턱 탄력", result.Regression?.JawElasticity ?? 0}
+    };
+                await ChartUtil.SetRadarChartData(classChartView, classificationDict);
+                await ChartUtil.SetRadarChartData(regrssionChartview, regressionDict);
+            }
+        }
+    }
     //private void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs e)
     //{
     //    var canvas = e.Surface.Canvas;
@@ -86,7 +107,7 @@ public partial class HistoryViewPage : ContentPage
     };
 
         ChartUtil.SetRadarChartData(classChartView, classDataDict, "#68B9C0");
-        ChartUtil.SetRadarChartData(regrssionChartview, regressionData, "#F37F64");
+        ChartUtil.SetRadarChartDataFloat(regrssionChartview, regressionData, "#F37F64");
     }
     public void Draw_graph1()
     {

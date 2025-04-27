@@ -11,7 +11,9 @@ namespace MauiApp1.ModelViews
 {
     public class ChatViewModel : INotifyPropertyChanged
     {
-
+        // 챗뷰 변경사항 
+        public static ChatViewModel Instance { get; } = new ChatViewModel();  
+        private ChatViewModel() { }
         public ObservableCollection<ChatMessage> Messages { get; set; } = new();
 
         // 메시지 전송 함수 (버튼 클릭 등에서 호출)
@@ -34,8 +36,9 @@ namespace MauiApp1.ModelViews
         }
         public async Task AddBotMsg(string message)
         {
+            string formattedMessage = message.Replace("\\n", "\n");
             // 봇 응답 메시지를 추가
-            Messages.Add(new ChatMessage { Sender = "bot", Text = message });
+            Messages.Add(new ChatMessage { Sender = "bot", Text = formattedMessage });
         }
 
         private async Task<string> CallServerAsync(string message)

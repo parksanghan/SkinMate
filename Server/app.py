@@ -9,7 +9,9 @@ import traceback
 from datetime import datetime
 from chat.chat_manager import ChatManager
 from fastapi import Form
+import json
 import requests
+from fastapi import Request
 
 chat_manager = ChatManager()
 app = FastAPI()
@@ -55,89 +57,89 @@ def register(req: RegisterRequest):
         raise HTTPException(status_code=500, detail=error_message)
 
 
-@app.post("/{user_id}/upload")
-async def upload(user_id: str, files: list[UploadFile] = File(...)):
-    try:
-        # 실제 파일 읽기는 유지 (파일 업로드 구조 유지 목적)
-        for file in files:
-            _ = await file.read()  # 파일 읽기만 하고 사용은 안함
-
-            # Mock 응답 데이터
-            fake_response = {
-                "status": "ok",
-                "msg": "진단 서버 응답 출력 완료",
-                "diagnosis_result": {
-                    "class": {
-                        "forehead_wrinkle": 7,
-                        "frown_wrinkle": 1,
-                        "eyes_wrinkle": 1,
-                        "lips_dryness": 2,
-                        "jaw_sagging": 2,
-                        "cheek_pore": 0,
-                    },
-                    "regression": {
-                        "face": 0.1509101390838623,
-                        "forehead_moisture": 0.1054084300994873,
-                        "forehead_elasticity": 0.1551273763179779,
-                        "eyes_wrinkle": 0.09314807504415512,
-                        "cheek_moisture": 1.2114288806915283,
-                        "cheek_elasticity": 0.9109305143356323,
-                        "cheek_pore": 0.29711878299713135,
-                        "jaw_moisture": 0.03263622894883156,
-                        "jaw_elasticity": 0.050414279103279114,
-                    },
-                },
-            }
-
-            print("[✅ MOCK 추론 서버 응답]")
-            print(fake_response["diagnosis_result"])
-            return fake_response
-
-        return {"status": "fail", "msg": "No files processed"}
-
-    except Exception as e:
-        print(f"❌ 업로드 실패: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
-
-
-## 아래가 이전사용
 # @app.post("/{user_id}/upload")
 # async def upload(user_id: str, files: list[UploadFile] = File(...)):
 #     try:
+#         # 실제 파일 읽기는 유지 (파일 업로드 구조 유지 목적)
 #         for file in files:
-#             # 1. 이미지 내용 읽기
-#             contents = await file.read()
+#             _ = await file.read()  # 파일 읽기만 하고 사용은 안함
 
-#             # 2. 외부 진단 서버 주소
-#             diagnosis_url = "http://182.210.98.131:5000/diagnose"
-
-#             # 3. forwarding 요청
-#             response = requests.post(
-#                 diagnosis_url,
-#                 files={"image": (file.filename, contents, file.content_type)},
-#             )
-
-#             # 4. 응답 확인 (예시: 첫 번째 응답만 반환)
-#             if response.status_code != 200:
-#                 raise Exception(
-#                     f"추론 서버 오류: {response.status_code} - {response.text}"
-#                 )
-#             print("[✅ 추론 서버 응답]")
-#             print(response.json())
-#             return {
+#             # Mock 응답 데이터
+#             fake_response = {
 #                 "status": "ok",
 #                 "msg": "진단 서버 응답 출력 완료",
-#                 "diagnosis_result": response.json(),
+#                 "diagnosis_result": {
+#                     "class": {
+#                         "forehead_wrinkle": 7,
+#                         "frown_wrinkle": 1,
+#                         "eyes_wrinkle": 1,
+#                         "lips_dryness": 2,
+#                         "jaw_sagging": 2,
+#                         "cheek_pore": 0,
+#                     },
+#                     "regression": {
+#                         "face": 0.1509101390838623,
+#                         "forehead_moisture": 0.1054084300994873,
+#                         "forehead_elasticity": 0.1551273763179779,
+#                         "eyes_wrinkle": 0.09314807504415512,
+#                         "cheek_moisture": 1.2114288806915283,
+#                         "cheek_elasticity": 0.9109305143356323,
+#                         "cheek_pore": 0.29711878299713135,
+#                         "jaw_moisture": 0.03263622894883156,
+#                         "jaw_elasticity": 0.050414279103279114,
+#                     },
+#                 },
 #             }
-#             # return {
-#             #     "status": "ok",
-#             #     "diagnosis_result": response.json(),  # 진단 결과 그대로 반환
-#             # }
+
+#             print("[✅ MOCK 추론 서버 응답]")
+#             print(fake_response["diagnosis_result"])
+#             return fake_response
 
 #         return {"status": "fail", "msg": "No files processed"}
+
 #     except Exception as e:
 #         print(f"❌ 업로드 실패: {e}")
 #         raise HTTPException(status_code=500, detail=str(e))
+
+
+# 아래가 이전사용
+@app.post("/{user_id}/upload")
+async def upload(user_id: str, files: list[UploadFile] = File(...)):
+    try:
+        for file in files:
+            # 1. 이미지 내용 읽기
+            contents = await file.read()
+
+            # 2. 외부 진단 서버 주소
+            diagnosis_url = "http://182.210.98.131:5000/diagnose"
+
+            # 3. forwarding 요청
+            response = requests.post(
+                diagnosis_url,
+                files={"image": (file.filename, contents, file.content_type)},
+            )
+
+            # 4. 응답 확인 (예시: 첫 번째 응답만 반환)
+            if response.status_code != 200:
+                raise Exception(
+                    f"추론 서버 오류: {response.status_code} - {response.text}"
+                )
+            print("[✅ 추론 서버 응답]")
+            print(response.json())
+            return {
+                "status": "ok",
+                "msg": "진단 서버 응답 출력 완료",
+                "diagnosis_result": response.json(),
+            }
+            # return {
+            #     "status": "ok",
+            #     "diagnosis_result": response.json(),  # 진단 결과 그대로 반환
+            # }
+
+        return {"status": "fail", "msg": "No files processed"}
+    except Exception as e:
+        print(f"❌ 업로드 실패: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
 
 
 # # 파일 업로드 API
@@ -202,6 +204,45 @@ async def request_chat(user_id, message: str = Form(...)):
     user_message = message
     response = chat_manager.request_chat_response(logs, user_message)
     return {"status": "ok", "msg": response}
+
+
+@app.post("/{user_id}/diagnosis")
+async def request_diagnosis(user_id, req: Request):
+    diagnosis = await req.json()  # ✅ JSON 파싱
+    logs = db_manager.get_user_logs(user_id)
+
+    response = chat_manager.request_chat_dignosis(logs, diagnosis)
+    return response
+
+
+@app.post("/{user_id}/setting1")
+async def save_user_setting1(user_id: str, request: Request):
+    data = await request.json()
+
+    interests = data.get("interests", [])
+    gender = data.get("gender", "")
+    age = data.get("age", "")
+
+    print(f"👤 ID: {user_id}")
+    print(f"📋 관심사: {interests}")
+    print(f"🧬 성별: {gender}")
+    print(f"🎂 나이대: {age}")
+
+
+@app.post("/{user_id}/setting")
+async def request_setting(user_id, data: Request):
+    settingdata = await data.json()  # ✅ JSON 파싱
+    interests = data.get("Interests", [])
+    gender = data.get("Gender", "")
+    age = data.get("Age", "")
+
+    print(f"👤 ID: {user_id}")
+    print(f"📋 관심사: {interests}")
+    print(f"🧬 성별: {gender}")
+    print(f"🎂 나이대: {age}")
+    logs = db_manager.get_user_logs(user_id)
+    print(logs)
+    db_manager.add_setting_log(user_id, settingdata)
 
 
 if __name__ == "__main__":

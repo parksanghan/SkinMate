@@ -16,7 +16,8 @@ namespace MauiApp1.Services
         private static HttpService? _instance;
         private static readonly object _lock = new();
         private readonly HttpClient _httpClient;
-        private const string BaseUrl = "http://172.30.1.98:8080";
+        private const string Ip = "10.101.41.233";//172.30.1.98
+        private const string BaseUrl = $"http://{Ip}:8080";
         private string? MyId { get; set; }
         private List< LogEntry?> _diaLogEntry; // 진단결과 로그
         private List<LogEntry?> _chatLgoEntry; // 채팅 로그 
@@ -184,6 +185,59 @@ namespace MauiApp1.Services
             {
                 Console.WriteLine($"[DEBUG] GetLogMessageAsync 예외: {ex.Message}");
                 throw;// 그대로 던짐
+            }
+        }
+        public async Task<string> DiagnosisAsync(DiagnosisClassification cls , DiagnosisRegression reg)
+        {
+            try
+            {
+                var diagnosisPayload = new
+                {
+                    @class = cls,
+                    regression = reg
+                };
+                string json = JsonSerializer.Serialize(diagnosisPayload, new JsonSerializerOptions
+                {
+                    PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
+                    WriteIndented = true
+                });
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
+                /*var url = $"{BaseUrl}/{this.MyId}/logs";*/
+                var url = $"{BaseUrl}/{this.MyId}/diagnosis";
+                var res = await _httpClient.PostAsync(url,content);
+                var jsonRes = await res.Content.ReadAsStringAsync();
+                if (res.IsSuccessStatusCode)
+                {
+                    return jsonRes; 
+                }
+                else
+                {
+                    throw new Exception($"로그 조회 실패: {jsonRes}");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[DEBUG] GetLogMessageAsync 예외: {ex.Message}");
+                throw;// 그대로 던짐
+            }
+        }
+
+        public async Task SendUserSettingAsync(UserSettingPayload payload)
+        {
+            var json = JsonSerializer.Serialize(payload);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            var url = $"{BaseUrl}/{MyId}/setting";
+
+            var response = await _httpClient.PostAsync(url, content);
+            var resContent = await response.Content.ReadAsStringAsync();
+
+            if (response.IsSuccessStatusCode)
+            {
+                Console.WriteLine($"[DEBUG] 사용자 설정 전송 성공: {resContent}");
+            }
+            else
+            {
+                Console.WriteLine($"[DEBUG] 전송 실패: {resContent}");
             }
         }
         // 앱이 시작될 때 UserContext 초기화 

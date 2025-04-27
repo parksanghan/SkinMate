@@ -3,6 +3,7 @@ import os
 from datetime import datetime
 from db.db_manager import DbManager
 from dotenv import load_dotenv
+import json
 
 load_dotenv()
 
@@ -45,6 +46,25 @@ class ChatManager:
             )
             print(chat_list)
 
+            return response.output_text
+
+        except Exception as e:
+            print(f"오류 발생: {e}")
+            return "현재 질의응답 서비스를 이용할 수 없습니다."
+
+    def request_chat_dignosis(self, logs, diagnosis_result):
+        try:
+            prompt = f"다음 피부 진단 결과를 사람에게 설명해줘:\n```json\n{json.dumps(diagnosis_result, ensure_ascii=False, indent=2)}\n```"
+
+            chat_list = self.logs_to_chatlist(logs)
+            chat_list.insert(
+                0, {"role": "system", "content": "You are a helpful assistant."}
+            )
+            chat_list.append({"role": "user", "content": prompt})
+            print(prompt)
+            response = self.client.responses.create(
+                model="gpt-4o-mini", input=chat_list
+            )
             return response.output_text
 
         except Exception as e:

@@ -5,7 +5,9 @@ using MauiApp1.Utils;
 using MauiApp1.Services;
 using System.Text.Json;
 using MauiApp1.Views.Content;
- 
+using MauiApp1.Data;
+using MauiApp1.ModelViews;
+
 
 namespace MauiApp1.Views;
 
@@ -102,6 +104,9 @@ public partial class CameraViewPage : ContentPage
                 if (result == "ok") await DisplayAlert("업로드 성공", "업로드에 성공하였습니다.", "확인");
                 await DisplayAlert("클래스", JsonSerializer.Serialize(classData, new JsonSerializerOptions { WriteIndented = true }), "확인");
                 await DisplayAlert("회귀", JsonSerializer.Serialize(regressionData, new JsonSerializerOptions { WriteIndented = true }), "확인");
+                DiagnosisDataStore.Instance.Update(classData,regressionData);
+                string diagnosisResult = await HttpService.Instance.DiagnosisAsync(classData, regressionData);
+                await ChatViewModel.Instance.AddBotMsg(diagnosisResult);
                 string action = (string)await Application.Current.MainPage.ShowPopupAsync(new ResultPopup());
 
                 switch (action)
