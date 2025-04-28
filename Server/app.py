@@ -57,54 +57,56 @@ def register(req: RegisterRequest):
         raise HTTPException(status_code=500, detail=error_message)
 
 
-# @app.post("/{user_id}/upload")
-# async def upload(user_id: str, files: list[UploadFile] = File(...)):
-#     try:
-#         # 실제 파일 읽기는 유지 (파일 업로드 구조 유지 목적)
-#         for file in files:
-#             _ = await file.read()  # 파일 읽기만 하고 사용은 안함
+@app.post("/{user_id}/upload")
+async def upload(user_id: str, files: list[UploadFile] = File(...)):
+    try:
+        # 실제 파일 읽기는 유지 (파일 업로드 구조 유지 목적)
+        for file in files:
+            _ = await file.read()  # 파일 읽기만 하고 사용은 안함
 
-#             # Mock 응답 데이터
-#             fake_response = {
-#                 "status": "ok",
-#                 "msg": "진단 서버 응답 출력 완료",
-#                 "diagnosis_result": {
-#                     "class": {
-#                         "forehead_wrinkle": 7,
-#                         "frown_wrinkle": 1,
-#                         "eyes_wrinkle": 1,
-#                         "lips_dryness": 2,
-#                         "jaw_sagging": 2,
-#                         "cheek_pore": 0,
-#                     },
-#                     "regression": {
-#                         "face": 0.1509101390838623,
-#                         "forehead_moisture": 0.1054084300994873,
-#                         "forehead_elasticity": 0.1551273763179779,
-#                         "eyes_wrinkle": 0.09314807504415512,
-#                         "cheek_moisture": 1.2114288806915283,
-#                         "cheek_elasticity": 0.9109305143356323,
-#                         "cheek_pore": 0.29711878299713135,
-#                         "jaw_moisture": 0.03263622894883156,
-#                         "jaw_elasticity": 0.050414279103279114,
-#                     },
-#                 },
-#             }
+            # Mock 응답 데이터
+            fake_response = {
+                "status": "ok",
+                "msg": "진단 서버 응답 출력 완료",
+                "diagnosis_result": {
+                    "class": {
+                        "forehead_wrinkle": 7,
+                        "frown_wrinkle": 1,
+                        "eyes_wrinkle": 1,
+                        "lips_dryness": 2,
+                        "jaw_sagging": 2,
+                        "cheek_pore": 0,
+                    },
+                    "regression": {
+                        "face": 0.1509101390838623,
+                        "forehead_moisture": 0.1054084300994873,
+                        "forehead_elasticity": 0.1551273763179779,
+                        "eyes_wrinkle": 0.09314807504415512,
+                        "cheek_moisture": 1.2114288806915283,
+                        "cheek_elasticity": 0.9109305143356323,
+                        "cheek_pore": 0.29711878299713135,
+                        "jaw_moisture": 0.03263622894883156,
+                        "jaw_elasticity": 0.050414279103279114,
+                    },
+                },
+            }
 
-#             print("[✅ MOCK 추론 서버 응답]")
-#             print(fake_response["diagnosis_result"])
-#             return fake_response
+            print("[✅ MOCK 추론 서버 응답]")
+            print(fake_response["diagnosis_result"])
+            return fake_response
 
-#         return {"status": "fail", "msg": "No files processed"}
+        return {"status": "fail", "msg": "No files processed"}
 
-#     except Exception as e:
-#         print(f"❌ 업로드 실패: {e}")
-#         raise HTTPException(status_code=500, detail=str(e))
+    except Exception as e:
+        print(f"❌ 업로드 실패: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
 
 
 # 아래가 이전사용
-@app.post("/{user_id}/upload")
-async def upload(user_id: str, files: list[UploadFile] = File(...)):
+# 업로드 후 분석 후 분석결과 알리고
+# 알린 결과를 통해 채팅요청임임
+@app.post("/{user_id}/upload1")
+async def upload1(user_id: str, files: list[UploadFile] = File(...)):
     try:
         for file in files:
             # 1. 이미지 내용 읽기
@@ -191,6 +193,10 @@ logs = [
         "timestamp": datetime(2025, 3, 31, 21, 55, 11),
     },
 ]
+# 진단 분석 , 채팅 모두 로그로 받고
+# 사용자 채팅에 추가할 예정
+# message는 사용자 측 , response는 봇측으로
+# dianosis_reuslt는 따로저장해서 리스트 형태로
 
 
 @app.get("/getlog")
@@ -203,6 +209,7 @@ async def request_chat(user_id, message: str = Form(...)):
     logs = db_manager.get_user_logs(user_id)
     user_message = message
     response = chat_manager.request_chat_response(logs, user_message)
+    db_manager.add_chat_log(user_id, message, response)
     return {"status": "ok", "msg": response}
 
 
@@ -212,18 +219,22 @@ async def request_diagnosis(user_id, req: Request):
     logs = db_manager.get_user_logs(user_id)
 
     response = chat_manager.request_chat_dignosis(logs, diagnosis)
+    db_manager.add_diagnosis_log(user_id, None, diagnosis, response)
     return response
 
 
-@app.post("/{user_id}/setting1")
+@app.post("/{user_id}/setting")
 async def save_user_setting1(user_id: str, request: UserSetingPayload):
     print(f"✅ 사용자 ID: {user_id}")
     print(f"✅ 관심사: {request.interests}")
     print(f"✅ 성별: {request.gender}")
     print(f"✅ 나이대: {request.age}")
+    logs = db_manager.get_user_logs(user_id)
+    print(logs)
+    db_manager.add_setting_log(user_id, request)
 
 
-@app.post("/{user_id}/setting")
+@app.post("/{user_id}/setting1")
 async def request_setting(user_id, data: Request):
     settingdata = await data.json()  # ✅ JSON 파싱
     interests = data.get("interests", [])

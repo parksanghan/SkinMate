@@ -13,7 +13,7 @@ public partial class HistoryViewPage : ContentPage
     public HistoryViewPage()
     {
         InitializeComponent();
-        HttpService.Instance.ContextInit();
+        //HttpService.Instance.ContextInit();
         Draw_graph();
         
     }

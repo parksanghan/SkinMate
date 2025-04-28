@@ -88,7 +88,7 @@ class DbManager:
                     "user_id": user_id,
                     "log_type": "진단분석",
                     "image_path": image_path,
-                    "diagnosis_result": diagnosis_result,
+                    "diagnosis_result": diagnosis_result,  # json dump 해야할수도
                     "response": response,
                 }
             ).execute()
@@ -102,16 +102,45 @@ class DbManager:
             print("유효하지 않은 사용자입니다.")
             return
         try:
-            self.supabase.table("chat_logs").insert(
-                {
-                    "user_id": user_id,
-                    "log_type": "사용자설정",
-                    "message": data,
-                }
-            ).execute()
-            print("유저 설정 추가 성공")
+            payload_dict = data.dict()
+
+            # 1. 기존 사용자 설정 조회
+            response = (
+                self.supabase.table("chat_logs")
+                .select("*")
+                .eq("user_id", user_id)
+                .eq("log_type", "사용자설정")
+                .execute()
+            )
+
+            if response.data:  # ✅ 기존에 존재하면
+                existing_id = response.data[0]["chat_id"]  # chat_id 기준
+                print(
+                    f"기존 사용자 설정이 있어 업데이트합니다. (chat_id={existing_id})"
+                )
+
+                self.supabase.table("chat_logs").update(
+                    {
+                        "message": json.dumps(payload_dict, ensure_ascii=False),
+                        "response": "사용자 설정 업데이트 완료",
+                    }
+                ).eq("chat_id", existing_id).execute()
+                print("유저 설정 업데이트 성공")
+
+            else:  # ✅ 없으면 새로 추가
+                print("사용자 설정이 없어 새로 추가합니다.")
+                self.supabase.table("chat_logs").insert(
+                    {
+                        "user_id": user_id,
+                        "log_type": "사용자설정",
+                        "message": json.dumps(payload_dict, ensure_ascii=False),
+                        "response": "사용자 설정 저장 완료",
+                    }
+                ).execute()
+                print("유저 설정 추가 성공")
+
         except Exception as e:
-            print(f"유저 설정 추가 실패: {e}")
+            print(f"유저 설정 추가/업데이트 실패: {e}")
 
     def get_user_logs(self, username):
         user_id = self.get_user_id(username)

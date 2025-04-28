@@ -32,6 +32,7 @@ public partial class Login_RegisterPage : ContentPage
                 //Application.Current!.MainPage = new AppShell();
                 // 권장 x 
                 // 로그인 시 contextInit 작업과 메인페이지 작업 
+                await HttpService.Instance.ContextInit();
                 Application.Current!.Windows[0].Page = new AppShell();
             }
         }
@@ -53,6 +54,7 @@ public partial class Login_RegisterPage : ContentPage
             };
             string res = await HttpService.Instance.RegisterAsync(req);
             Console.WriteLine($"[DEBUG] 서버 응답 내용: '{res}'");
+        
             if (res == "ok") await DisplayAlert("가입", "가입을 성공하였습니다.", "확인");
         }
         catch (Exception ex)

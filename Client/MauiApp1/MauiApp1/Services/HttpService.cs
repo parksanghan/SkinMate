@@ -16,11 +16,14 @@ namespace MauiApp1.Services
         private static HttpService? _instance;
         private static readonly object _lock = new();
         private readonly HttpClient _httpClient;
-        private const string Ip = "10.101.41.233";//172.30.1.98
+        private const string Ip = "10.101.61.143";//172.30.1.98 10.101.41.233"
         private const string BaseUrl = $"http://{Ip}:8080";
         private string? MyId { get; set; }
         private List< LogEntry?> _diaLogEntry; // 진단결과 로그
         private List<LogEntry?> _chatLgoEntry; // 채팅 로그 
+        private LogEntry _userLogSetting;
+        private UserSettingPayload _userSettingPayload; //유저 설정 로그
+             
         public static HttpService Instance
         {
             get
@@ -163,7 +166,7 @@ namespace MauiApp1.Services
             try
             {
                 /*var url = $"{BaseUrl}/{this.MyId}/logs";*/
-                var url = $"{BaseUrl}/getlog";
+                var url = $"{BaseUrl}/{this.MyId}/logs";
                 var res = await _httpClient.GetAsync(url);
                 var jsonRes = await res.Content.ReadAsStringAsync();
                 if (res.IsSuccessStatusCode)
@@ -203,6 +206,8 @@ namespace MauiApp1.Services
                 });
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
                 /*var url = $"{BaseUrl}/{this.MyId}/logs";*/
+                // 진단 완료 후 진단결과로 채팅을 요청함
+
                 var url = $"{BaseUrl}/{this.MyId}/diagnosis";
                 var res = await _httpClient.PostAsync(url,content);
                 var jsonRes = await res.Content.ReadAsStringAsync();
@@ -250,13 +255,49 @@ namespace MauiApp1.Services
                 var logs = await GetLogMessageAsync();
                 _diaLogEntry = logs.Where(log => log.log_type == "진단분석").ToList();
                 _chatLgoEntry = logs.Where(log => log.log_type == "질의응답").ToList();
-                Console.WriteLine($"[DEBUG] 진단 로그 수: {_diaLogEntry.Count}");
-                Console.WriteLine($"[DEBUG] 채팅 로그 수: {_chatLgoEntry.Count}");
-                // 아래부터 삭제예정
-                var json = JsonSerializer.Serialize(_diaLogEntry, new JsonSerializerOptions { WriteIndented = true });
-                Console.WriteLine(json);
-                var json2 = JsonSerializer.Serialize(_chatLgoEntry, new JsonSerializerOptions { WriteIndented = true });         
-                Console.WriteLine(json2);
+                _userLogSetting = logs.Where(log => log.log_type == "사용자설정").FirstOrDefault();
+                foreach (LogEntry log in logs)
+                {
+                    if (log.log_type == "진단분석")
+                    {
+
+                    }
+                    else if (log.log_type == "질의응답")
+                    {
+                        
+                    }
+                    else if(log.log_type == "사용자설정")
+                    {
+
+                    }
+                }
+                foreach (var entry in _diaLogEntry)
+                {
+                    if (!string.IsNullOrEmpty(entry.response))
+                    {
+                        Console.WriteLine(entry.response);
+                    }
+                    if (!string.IsNullOrEmpty(entry.message))
+                    Console.WriteLine(JsonSerializer.Serialize(entry, new JsonSerializerOptions { WriteIndented = true }));
+                }
+                Console.WriteLine("[DEBUG] 채팅 로그 수: " + _chatLgoEntry.Count);
+                foreach (var entry in _chatLgoEntry)
+                {
+                    if (!string.IsNullOrEmpty(entry.response))
+                    {
+                        Console.WriteLine(entry.response);
+                    }
+                    Console.WriteLine(JsonSerializer.Serialize(entry, new JsonSerializerOptions { WriteIndented = true }));
+                }
+                if (_userLogSetting != null)
+                {
+                    Console.WriteLine("[DEBUG] 유저 설정 로그: " + JsonSerializer.Serialize(_userLogSetting, new JsonSerializerOptions { WriteIndented = true }));
+                }
+                else
+                {
+                    Console.WriteLine("[DEBUG] 유저 설정 로그: 없음");
+                }
+
             }
             catch
             {
