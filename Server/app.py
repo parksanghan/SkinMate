@@ -225,13 +225,17 @@ async def request_diagnosis(user_id, req: Request):
 
 @app.post("/{user_id}/setting")
 async def save_user_setting1(user_id: str, request: UserSetingPayload):
-    print(f"✅ 사용자 ID: {user_id}")
-    print(f"✅ 관심사: {request.interests}")
-    print(f"✅ 성별: {request.gender}")
-    print(f"✅ 나이대: {request.age}")
-    logs = db_manager.get_user_logs(user_id)
-    print(logs)
-    db_manager.add_setting_log(user_id, request)
+    try:
+        print(f"✅ 사용자 ID: {user_id}")
+        print(f"✅ 관심사: {request.interests}")
+        print(f"✅ 성별: {request.gender}")
+        print(f"✅ 나이대: {request.age}")
+        logs = db_manager.get_user_logs(user_id)
+        print(logs)
+        db_manager.add_setting_log(user_id, request)
+        return "사용자설정이 완료되었습니다."
+    except:
+        return "사용자설정에 실패하였습니다."
 
 
 @app.post("/{user_id}/setting1")

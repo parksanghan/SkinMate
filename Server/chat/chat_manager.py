@@ -15,7 +15,11 @@ class ChatManager:
         self.client = openai.OpenAI()
 
     def diagnosis_to_question(self, diagnosis_result):
-        return f"다음과 같은 결과를 설명해주면 좋겠어. ```{diagnosis_result}```"
+        # return f"다음과 같은 결과를 설명해주면 좋겠어. ```{diagnosis_result}```"
+        return f"다음 피부 진단 결과를 사람에게 설명해줘:\n```json\n{json.dumps(diagnosis_result, ensure_ascii=False, indent=2)}\n```"
+
+    def setting_to_question(self, setting):
+        return f"이게 내 관심사와 나이 성별인데 앞으로 이를 참고해서 :\n```json\n{json.dumps(setting, ensure_ascii=False, indent=2)}\n```"
 
     def logs_to_chatlist(self, logs):
         chat_list = []
@@ -23,6 +27,8 @@ class ChatManager:
         for log in logs:
             if log["log_type"] == "진단분석":
                 message = self.diagnosis_to_question(log["diagnosis_result"])
+            if log["log_type"] == "사용자설정":
+                message = self
             else:
                 message = log["message"]
             if message:

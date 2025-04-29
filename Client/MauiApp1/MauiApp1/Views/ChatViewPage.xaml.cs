@@ -44,9 +44,9 @@ public partial class ChatViewPage : ContentPage
     protected override async void OnAppearing()
     {
         base.OnAppearing();
-        if (_isFirstTime)
+        if (HttpService.Instance._userSettingPayload != null)
         {
-            _isFirstTime = false;
+    
 
             var result = await this.ShowPopupAsync(new CategoryPopup());
             var rr = await this.ShowPopupAsync(new UserInfoPopup());

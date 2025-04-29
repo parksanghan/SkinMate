@@ -2,6 +2,7 @@
  
 using MauiApp1.Data;
 using MauiApp1.Model;
+using MauiApp1.ModelViews;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,13 +17,13 @@ namespace MauiApp1.Services
         private static HttpService? _instance;
         private static readonly object _lock = new();
         private readonly HttpClient _httpClient;
-        private const string Ip = "10.101.61.143";//172.30.1.98 10.101.41.233"
+        private const string Ip = "10.101.88.85";//172.301.1.98 10.101.41.233"
         private const string BaseUrl = $"http://{Ip}:8080";
         private string? MyId { get; set; }
         private List< LogEntry?> _diaLogEntry; // 진단결과 로그
         private List<LogEntry?> _chatLgoEntry; // 채팅 로그 
         private LogEntry _userLogSetting;
-        private UserSettingPayload _userSettingPayload; //유저 설정 로그
+        private UserSettingPayload? _userSettingPayload  =null; //유저 설정 로그
              
         public static HttpService Instance
         {
@@ -260,15 +261,36 @@ namespace MauiApp1.Services
                 {
                     if (log.log_type == "진단분석")
                     {
-
+                        // 진단 분석시에는 봇쪽에만 추가 
+                        if (!string.IsNullOrEmpty(log.response))
+                        {
+                            string timePrefix = log.timestamp.ToString("yy-MM-dd HH:mm:ss")+"\n";
+                            string concatMsg = string.Concat(timePrefix, log.response);
+                            await ChatViewModel.Instance.AddBotMsg(concatMsg);  
+                        }
                     }
                     else if (log.log_type == "질의응답")
                     {
-                        
+                        if (!string.IsNullOrEmpty(log.response) && !string.IsNullOrEmpty(log.message))
+                        {
+                            string timePrefix = log.timestamp.ToString("yy-MM-dd HH:mm:ss") + "\n";
+                            string concatMsg = string.Concat(timePrefix, log.message);
+                            await ChatViewModel.Instance.AddUserMsg(concatMsg);  
+                            concatMsg = string.Concat(timePrefix, log.response);
+                            await ChatViewModel.Instance.AddBotMsg(concatMsg);
+                        }
+
                     }
                     else if(log.log_type == "사용자설정")
                     {
-
+                        if (!string.IsNullOrEmpty(log.response) && !string.IsNullOrEmpty(log.message))
+                        {
+                            string timePrefix = log.timestamp.ToString("yy-MM-dd HH:mm:ss") + "\n";
+                          
+                            _userSettingPayload = JsonSerializer.Deserialize<UserSettingPayload>(log.message);   
+                            string concatMsg = string.Concat(timePrefix, log.response);
+                            await ChatViewModel.Instance.AddBotMsg(concatMsg);
+                        }
                     }
                 }
                 foreach (var entry in _diaLogEntry)
