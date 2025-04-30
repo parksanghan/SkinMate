@@ -88,6 +88,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = MauiApp1.Views.Content.Use
 build_metadata.AdditionalFiles.TargetPath = Views\Content\UserInfoPopup.xaml
 build_metadata.AdditionalFiles.RelativePath = Views\Content\UserInfoPopup.xaml
 
+[F:/SkinMate/Client/MauiApp1/MauiApp1/Views/Content/WebMapPopup.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MauiApp1.Views.Content.WebMapPopup.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Content\WebMapPopup.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Content\WebMapPopup.xaml
+
 [F:/SkinMate/Client/MauiApp1/MauiApp1/Views/Footer.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MauiApp1.Views.Footer.xaml

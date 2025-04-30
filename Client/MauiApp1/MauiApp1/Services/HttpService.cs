@@ -17,13 +17,13 @@ namespace MauiApp1.Services
         private static HttpService? _instance;
         private static readonly object _lock = new();
         private readonly HttpClient _httpClient;
-        private const string Ip = "10.101.88.85";//172.301.1.98 10.101.41.233"
+        private const string Ip = "10.101.123.25";//172.301.1.98 10.101.41.233"
         private const string BaseUrl = $"http://{Ip}:8080";
         private string? MyId { get; set; }
         private List< LogEntry?> _diaLogEntry; // 진단결과 로그
         private List<LogEntry?> _chatLgoEntry; // 채팅 로그 
         private LogEntry _userLogSetting;
-        private UserSettingPayload? _userSettingPayload  =null; //유저 설정 로그
+        public UserSettingPayload? _userSettingPayload  =null; //유저 설정 로그
              
         public static HttpService Instance
         {
@@ -228,7 +228,7 @@ namespace MauiApp1.Services
             }
         }
 
-        public async Task SendUserSettingAsync(UserSettingPayload payload)
+        public async Task<string> SendUserSettingAsync(UserSettingPayload payload)
         {
             var json = JsonSerializer.Serialize(payload);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
@@ -245,6 +245,7 @@ namespace MauiApp1.Services
             {
                 Console.WriteLine($"[DEBUG] 전송 실패: {resContent}");
             }
+            return resContent;
         }
         // 앱이 시작될 때 UserContext 초기화 
 

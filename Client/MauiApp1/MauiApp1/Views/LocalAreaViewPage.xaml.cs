@@ -5,13 +5,7 @@ public partial class LocalAreaViewPage : ContentPage
 	public LocalAreaViewPage()
 	{
 		InitializeComponent();
-#if ANDROID
-
-        myWebView.Source = new HtmlWebViewSource
-        {
-            Html = @""  
-        };
-#endif
+		myWebView.Source = "http://10.101.123.25:8080/web/main.html";
 
 
     }

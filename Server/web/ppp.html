@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>TMAP 피부과 검색</title>
+    <script src="https://apis.openapi.sk.com/tmap/jsv2?version=1&appKey=KnFx41yOtZRY1W20nnmw6SN1ERZqY396ZkH3TOQ4"></script>
+    <style>
+        .custom-marker {
+            width: 24px;
+            height: 24px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ff3b30"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>') no-repeat center;
+            background-size: contain;
+        }
+
+        .marker-label {
+            font-size: 13px;
+            margin-top: 2px;
+            text-align: center;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="text-align:center;">내 주변 피부과 찾기</h2>
+    <div id="map_div" style="width: 100%; height: 500px;"></div>
+
+    <script>
+        function getQueryParam(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return parseFloat(urlParams.get(name));
+        }
+
+        const lat = getQueryParam("lat") || 37.5665;
+        const lon = getQueryParam("lon") || 126.9780;
+
+        const map = new Tmapv2.Map("map_div", {
+            center: new Tmapv2.LatLng(lat, lon),
+            width: "100%",
+            height: "500px",
+            zoom: 15
+        });
+
+        // 내 위치 마커
+        new Tmapv2.Marker({
+            position: new Tmapv2.LatLng(lat, lon),
+            iconHTML: `<div class="custom-marker"></div>`,
+            map: map
+        });
+
+        async function searchClinics() {
+            const keyword = encodeURIComponent("피부과");
+            const url = `https://apis.openapi.sk.com/tmap/pois?version=1&searchKeyword=${keyword}&searchType=all&searchtypCd=R&page=1&count=20&reqCoordType=WGS84GEO&resCoordType=WGS84GEO&centerLon=${lon}&centerLat=${lat}&radius=5`;
+
+            try {
+                const response = await fetch(url, {
+                    method: "GET",
+                    headers: {
+                        "Accept": "application/json",
+                        "appKey": "KnFx41yOtZRY1W20nnmw6SN1ERZqY396ZkH3TOQ4"
+                    }
+                });
+
+                if (!response.ok) throw new Error(`API 호출 실패: ${response.status}`);
+
+                const data = await response.json();
+                const pois = data.searchPoiInfo?.pois?.poi || [];
+
+                pois.forEach(poi => {
+                    const position = new Tmapv2.LatLng(poi.frontLat, poi.frontLon);
+                    const label = poi.name;
+
+                    new Tmapv2.Marker({
+                        position: position,
+                        iconHTML: `
+                            <div style="text-align:center;">
+                                <div class="custom-marker"></div>
+                                <div class="marker-label">${label}</div>
+                            </div>`,
+                        map: map
+                    });
+                });
+            } catch (err) {
+                console.error("❌ 오류 발생:", err);
+            }
+        }
+
+        searchClinics();
+    </script>
+</body>
+</html>

@@ -11,7 +11,7 @@ namespace MauiApp1.Views;
 public partial class ChatViewPage : ContentPage
 {
     private readonly ChatViewModel viewModel;
-    private bool _isFirstTime = true;
+  
     public ChatViewPage()
 	{
 		InitializeComponent();
@@ -44,7 +44,7 @@ public partial class ChatViewPage : ContentPage
     protected override async void OnAppearing()
     {
         base.OnAppearing();
-        if (HttpService.Instance._userSettingPayload != null)
+        if (HttpService.Instance._userSettingPayload == null)
         {
     
 
@@ -70,7 +70,8 @@ public partial class ChatViewPage : ContentPage
                     Gender = gender ?? "",
                     Age = age ?? ""
                 };
-                await HttpService.Instance.SendUserSettingAsync(payload); 
+                string message =  await HttpService.Instance.SendUserSettingAsync(payload); 
+                await viewModel.AddBotMsg(message);
             }
              
           

@@ -12,9 +12,12 @@ from fastapi import Form
 import json
 import requests
 from fastapi import Request
+from fastapi.staticfiles import StaticFiles
 
 chat_manager = ChatManager()
 app = FastAPI()
+
+
 # CORS 허용
 app.add_middleware(
     CORSMiddleware,
@@ -22,6 +25,10 @@ app.add_middleware(
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
+)
+
+app.mount(
+    "/web", StaticFiles(directory="F:/SkinMate/Server/web", html=True), name="web"
 )
 # Supabase 환경 변수
 SUPABASE_URL = os.getenv("SUPABASE_URL")
@@ -165,6 +172,8 @@ async def upload1(user_id: str, files: list[UploadFile] = File(...)):
 async def request_user_logs(user_id: str):
     try:
         logs = db_manager.get_user_logs(user_id)
+        for log in logs:
+            print(log)
         return logs
     except Exception as e:
         print(f"❌ 요청 실패: {e}")

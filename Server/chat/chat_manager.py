@@ -19,23 +19,50 @@ class ChatManager:
         return f"다음 피부 진단 결과를 사람에게 설명해줘:\n```json\n{json.dumps(diagnosis_result, ensure_ascii=False, indent=2)}\n```"
 
     def setting_to_question(self, setting):
-        return f"이게 내 관심사와 나이 성별인데 앞으로 이를 참고해서 :\n```json\n{json.dumps(setting, ensure_ascii=False, indent=2)}\n```"
+        return f"이게 내 관심사와 나이 성별인데 앞으로 이를 참고해서 대답해줘 :\n```json\n{json.dumps(setting, ensure_ascii=False, indent=2)}\n```"
 
+    # def logs_to_chatlist(self, logs):
+    #     chat_list = []
+
+    #     for log in logs:
+    #         if log["log_type"] == "진단분석":
+    #             message = self.diagnosis_to_question(log["diagnosis_result"])
+    #         if log["log_type"] == "사용자설정":
+    #             message = self
+    #             # 나머지는 채팅이므로
+    #         else:
+    #             message = log["message"]
+    #         if message:
+    #             chat_list.append({"role": "user", "content": message})
+    #         if log["response"]:
+    #             chat_list.append({"role": "assistant", "content": log["response"]})
+
+    #     return chat_list
     def logs_to_chatlist(self, logs):
         chat_list = []
 
         for log in logs:
             if log["log_type"] == "진단분석":
-                message = self.diagnosis_to_question(log["diagnosis_result"])
-            if log["log_type"] == "사용자설정":
-                message = self
+                diagnosis = log["diagnosis_result"]
+                if isinstance(diagnosis, str):
+                    diagnosis = json.loads(diagnosis)
+                message = self.diagnosis_to_question(diagnosis)
+
+            elif log["log_type"] == "사용자설정":
+                setting = log["message"]
+                if isinstance(setting, str):
+                    setting = json.loads(setting)
+                message = self.setting_to_question(setting)
+
             else:
                 message = log["message"]
+
             if message:
                 chat_list.append({"role": "user", "content": message})
             if log["response"]:
                 chat_list.append({"role": "assistant", "content": log["response"]})
-
+        for chat in chat_list:
+            print(chat)
         return chat_list
 
     def request_chat_response(self, logs, user_message):
