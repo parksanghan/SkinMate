@@ -6,17 +6,39 @@
     <script src="https://apis.openapi.sk.com/tmap/jsv2?version=1&appKey=KnFx41yOtZRY1W20nnmw6SN1ERZqY396ZkH3TOQ4"></script>
     <style>
         .custom-marker {
-            width: 24px;
-            height: 24px;
-            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ff3b30"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>') no-repeat center;
-            background-size: contain;
+            position: relative;
+            display: inline-block;
+            background-color: #ffffff;
+            border: 2px solid #4285f4;
+            border-radius: 16px;
+            padding: 5px 10px;
+            font-size: 13px;
+            color: black;
+            white-space: nowrap;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
         }
 
-        .marker-label {
-            font-size: 13px;
-            margin-top: 2px;
-            text-align: center;
-            white-space: nowrap;
+        .custom-marker::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            margin-left: -6px;
+            border-width: 6px;
+            border-style: solid;
+            border-color: #4285f4 transparent transparent transparent;
+        }
+
+        .custom-marker::before {
+            content: "";
+            position: absolute;
+            bottom: -9px;
+            left: 50%;
+            margin-left: -6px;
+            border-width: 6px;
+            border-style: solid;
+            border-color: #ffffff transparent transparent transparent;
+            z-index: 1;
         }
     </style>
 </head>
@@ -43,13 +65,13 @@
         // 내 위치 마커
         new Tmapv2.Marker({
             position: new Tmapv2.LatLng(lat, lon),
-            iconHTML: `<div class="custom-marker"></div>`,
+            iconHTML: `<div class="custom-marker" style="border-color:#ff3b30;color:#ff3b30;">내 위치</div>`,
             map: map
         });
 
         async function searchClinics() {
             const keyword = encodeURIComponent("피부과");
-            const url = `https://apis.openapi.sk.com/tmap/pois?version=1&searchKeyword=${keyword}&searchType=all&searchtypCd=R&page=1&count=20&reqCoordType=WGS84GEO&resCoordType=WGS84GEO&centerLon=${lon}&centerLat=${lat}&radius=5`;
+            const url = `https://apis.openapi.sk.com/tmap/pois?version=1&searchKeyword=${keyword}&searchType=all&searchtypCd=R&page=1&count=30&reqCoordType=WGS84GEO&resCoordType=WGS84GEO&centerLon=${lon}&centerLat=${lat}&radius=5`;
 
             try {
                 const response = await fetch(url, {
@@ -66,16 +88,17 @@
                 const pois = data.searchPoiInfo?.pois?.poi || [];
 
                 pois.forEach(poi => {
-                    const position = new Tmapv2.LatLng(poi.frontLat, poi.frontLon);
-                    const label = poi.name;
+                    const name = poi.name;
+                    if (name.includes("주차장")) return; // 🔥 "주차장" 포함 시 무시
+
+                    const baseLat = parseFloat(poi.frontLat);
+                    const baseLon = parseFloat(poi.frontLon);
+                    const offsetLat = baseLat + (Math.random() - 0.5) * 0.0003;
+                    const position = new Tmapv2.LatLng(offsetLat, baseLon);
 
                     new Tmapv2.Marker({
                         position: position,
-                        iconHTML: `
-                            <div style="text-align:center;">
-                                <div class="custom-marker"></div>
-                                <div class="marker-label">${label}</div>
-                            </div>`,
+                        iconHTML: `<div class="custom-marker">${name}</div>`,
                         map: map
                     });
                 });
