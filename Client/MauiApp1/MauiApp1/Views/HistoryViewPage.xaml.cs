@@ -14,7 +14,7 @@ public partial class HistoryViewPage : ContentPage
     {
         InitializeComponent();
         //HttpService.Instance.ContextInit();
-        Draw_graph();
+     
         
     }
     protected override async void OnAppearing()
@@ -42,8 +42,8 @@ public partial class HistoryViewPage : ContentPage
                 { "ÅÎ ¼öºÐ", result.Regression?.JawMoisture ??  0},
                 { "ÅÎ Åº·Â", result.Regression?.JawElasticity ?? 0}
     };
-                await ChartUtil.SetRadarChartData(classChartView, classificationDict);
-                await ChartUtil.SetRadarChartData(regrssionChartview, regressionDict);
+                await ChartUtil.SetRadarChartData(classChartView, classificationDict, "#68B9C0");
+                await ChartUtil.SetRadarChartDataFloat(regrssionChartview, regressionDict, "#F37F64");
             }
         }
     }

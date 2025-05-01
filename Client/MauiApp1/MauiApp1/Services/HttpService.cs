@@ -17,14 +17,15 @@ namespace MauiApp1.Services
         private static HttpService? _instance;
         private static readonly object _lock = new();
         private readonly HttpClient _httpClient;
-        private const string Ip = "10.101.123.25";//172.301.1.98 10.101.41.233"
+        private const string Ip = "172.30.1.99";//172.301.1.98 10.101.41.233"
         private const string BaseUrl = $"http://{Ip}:8080";
         private string? MyId { get; set; }
         private List< LogEntry?> _diaLogEntry; // 진단결과 로그
-        private List<LogEntry?> _chatLgoEntry; // 채팅 로그 
+        private List<LogEntry?> _chatLgoEntry;// 채팅 로그 
         private LogEntry _userLogSetting;
         public UserSettingPayload? _userSettingPayload  =null; //유저 설정 로그
-             
+
+        public IReadOnlyList<LogEntry?> GetDiaLogEntries() => _diaLogEntry;
         public static HttpService Instance
         {
             get
@@ -258,6 +259,22 @@ namespace MauiApp1.Services
                 _diaLogEntry = logs.Where(log => log.log_type == "진단분석").ToList();
                 _chatLgoEntry = logs.Where(log => log.log_type == "질의응답").ToList();
                 _userLogSetting = logs.Where(log => log.log_type == "사용자설정").FirstOrDefault();
+                if (_diaLogEntry?.Any() == true)
+                {
+                    var latest = _diaLogEntry.Last(); // 가장 최신 진단
+                    if (latest.diagnosis_result.HasValue)
+                    {
+                        var diagJson = latest.diagnosis_result.Value;
+                        var classJson = diagJson.GetProperty("class").GetRawText();
+                        var regressionJson = diagJson.GetProperty("regression").GetRawText();
+
+                        var classData = JsonSerializer.Deserialize<DiagnosisClassification>(classJson);
+                        var regressionData = JsonSerializer.Deserialize<DiagnosisRegression>(regressionJson);
+
+                        DiagnosisDataStore.Instance.Update(classData, regressionData);
+                        Console.WriteLine("[DEBUG] DiagnosisDataStore에 최신 진단 결과 업데이트 완료");
+                    }
+                }
                 foreach (LogEntry log in logs)
                 {
                     if (log.log_type == "진단분석")
@@ -321,7 +338,7 @@ namespace MauiApp1.Services
                     Console.WriteLine("[DEBUG] 유저 설정 로그: 없음");
                 }
 
-            }
+            } 
             catch
             {
                 throw new Exception($"Context Init 실패");
