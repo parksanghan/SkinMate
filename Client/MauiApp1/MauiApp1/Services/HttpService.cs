@@ -17,7 +17,7 @@ namespace MauiApp1.Services
         private static HttpService? _instance;
         private static readonly object _lock = new();
         private readonly HttpClient _httpClient;
-        private const string Ip = "172.30.1.99";//172.301.1.98 10.101.41.233"
+        private const string Ip = "10.101.154.107";//172.301.1.98 10.101.41.233"
         private const string BaseUrl = $"http://{Ip}:8080";
         private string? MyId { get; set; }
         private List< LogEntry?> _diaLogEntry; // 진단결과 로그
@@ -249,7 +249,20 @@ namespace MauiApp1.Services
             return resContent;
         }
         // 앱이 시작될 때 UserContext 초기화 
-
+        public string RequestTMapLatLon(double lat , double lon)
+        {
+            try
+            {
+  
+                Console.WriteLine($"[DEBUG] 위치 좌표: lat = {lat}, lon = {lon}");
+                return $"http://{Ip}:8080/web/main.html?lat={lat}&lon={lon}";
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[DEBUG] 위치 조회 실패: {ex.Message}");
+                return $"http://{Ip}:8080/web/main.html?lat={lat}&lon={lon}";
+            }
+        }
         // app.cs에서 초기화 
         public async Task ContextInit()
         {

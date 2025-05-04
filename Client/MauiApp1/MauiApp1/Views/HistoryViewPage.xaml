@@ -6,20 +6,23 @@
              x:Class="MauiApp1.Views.HistoryViewPage"
              Title="HistoryViewPage">
     <VerticalStackLayout>
-  
+        <Picker x:Name="DatePicker"
+                Title="진단 날짜 선택"
+                ItemsSource="{Binding DiagnosisDates}"
+                SelectedIndexChanged="OnPickerDateSelected"
+                Margin="10"
+                HeightRequest="60"
+                HorizontalOptions="Center" />
+
         <microcharts:ChartView
             x:Name="classChartView"
-             HeightRequest="300"
-             WidthRequest="300" />
+            HeightRequest="300"
+            WidthRequest="300" />
+
         <microcharts:ChartView
             x:Name="regrssionChartview"
             HeightRequest="300"
-             WidthRequest="300" />
-        <!-- 
-        <microcharts:ChartView x:Name="chartView" HeightRequest="300" />
-[[[[[[[[[[[[[[[
-    
-        <skia:SKCanvasView PaintSurface="OnCanvasViewPaintSurface" HeightRequest="300"/>
-        -->
+            WidthRequest="300" />
+
     </VerticalStackLayout>
 </ContentPage>

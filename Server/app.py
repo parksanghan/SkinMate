@@ -263,5 +263,10 @@ async def request_setting(user_id, data: Request):
     db_manager.add_setting_log(user_id, settingdata)
 
 
+@app.get("/")
+def read_root():
+    return {"message": "Hello FastAPI!"}
+
+
 if __name__ == "__main__":
     uvicorn.run("app:app", host="0.0.0.0", port=8080, reload=True)

@@ -17,7 +17,39 @@
             <Button
                 Clicked="Button_Clicked"
                 />
-            
+            <Grid>
+                <!-- 위치조회 -->
+                <Label Text="📍"
+           FontSize="20"
+           VerticalOptions="Start"
+           HorizontalOptions="Start"
+           Margin="10,10,0,0">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnLocationClick"/>
+                    </Label.GestureRecognizers>
+                </Label>
+
+                <!-- 본 내용은 ScrollView 안에서 -->
+                <ScrollView>
+                    <VerticalStackLayout Padding="30" Spacing="20">
+                        <!-- 진단 바로가기 -->
+                        <Button Text="진단 바로가기"
+                    FontSize="20"
+                    HeightRequest="60"
+                    Clicked="OnDiagnosisClick"/>
+
+                        <!-- 챗봇 + 기록 나란히 -->
+                        <HorizontalStackLayout Spacing="10">
+                            <Button Text="챗봇 바로가기"
+                        WidthRequest="150"
+                        Clicked="OnChatClick"/>
+                            <Button Text="기록 바로가기"
+                        WidthRequest="150"
+                        Clicked="OnLogClick"/>
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+                </ScrollView>
+            </Grid>
         </VerticalStackLayout>
     </ScrollView>
 

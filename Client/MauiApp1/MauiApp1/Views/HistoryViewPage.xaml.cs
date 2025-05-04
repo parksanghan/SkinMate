@@ -6,20 +6,81 @@ using Microcharts;
 using MauiApp1.Services;
 using MauiApp1.Utils; // ChartEntry, LineChart 등
 using MauiApp1.Data;
+using MauiApp1.ModelViews;
+using System.Text.Json;
 namespace MauiApp1.Views;
 
 public partial class HistoryViewPage : ContentPage
 {
+    public DiagnosisLogsViewModel _viewModel = new();  
     public HistoryViewPage()
     {
         InitializeComponent();
+        
+        BindingContext  =  _viewModel;
         //HttpService.Instance.ContextInit();
      
         
     }
+  private void OnPickerDateSelected(object sender, EventArgs e)
+{
+    int selectedIndex = DatePicker.SelectedIndex;
+    if (selectedIndex >= 0)
+    {
+        DrawGraphByIndex(selectedIndex);
+    }
+}
+
+    private async void DrawGraphByIndex(int index)
+    {
+        var log = _viewModel.GetDiagnosisLogIdx(index);
+        Console.WriteLine("DEbug : 진단 기록 결과들 ",log);
+        if (log.diagnosis_result.HasValue)
+        {
+            var diagJson = log.diagnosis_result.Value;
+            var classJson = diagJson.GetProperty("class").GetRawText();
+            var regressionJson = diagJson.GetProperty("regression").GetRawText();
+
+            var classData = JsonSerializer.Deserialize<DiagnosisClassification>(classJson);
+            var regressionData = JsonSerializer.Deserialize<DiagnosisRegression>(regressionJson);
+
+            // 데이터 → Dictionary 변환
+            var classificationDict = new Dictionary<string, int>
+            {
+                { "이마 주름", classData.ForeheadWrinkle },
+                { "미간 주름", classData.FrownWrinkle },
+                { "눈가 주름", classData.EyesWrinkle },
+                { "볼 모공", classData.CheekPore },
+                { "입술 건조", classData.LipsDryness },
+                { "턱 처짐", classData.JawSagging }
+            };
+
+            var regressionDict = new Dictionary<string, float>
+            {
+                { "얼굴 전체", regressionData.Face },
+                { "이마 수분", regressionData.ForeheadMoisture },
+                { "이마 탄력", regressionData.ForeheadElasticity },
+                { "눈가 주름", regressionData.EyesWrinkle },
+                { "볼 수분", regressionData.CheekMoisture },
+                { "볼 탄력", regressionData.CheekElasticity },
+                { "볼 모공", regressionData.CheekPore },
+                { "턱 수분", regressionData.JawMoisture },
+                { "턱 탄력", regressionData.JawElasticity }
+            };
+
+            await ChartUtil.SetRadarChartData(classChartView, classificationDict, "#68B9C0");
+            await ChartUtil.SetRadarChartDataFloat(regrssionChartview, regressionDict, "#F37F64");
+        }
+    }
     protected override async void OnAppearing()
     {
         base.OnAppearing();
+        await _viewModel.LoadDiagnosisLogAsync(); // 날짜 리스트 채우기
+                                                  // 최신 진단 자동 출력
+        if (HttpService.Instance.GetDiaLogEntries().Count > 0)
+        {
+            DrawGraphByIndex(HttpService.Instance.GetDiaLogEntries().Count - 1);
+        }
         if (DiagnosisDataStore.Instance.IsUpdated)
         {
             DiagnosisResult? result = DiagnosisDataStore.Instance.LatestResult;

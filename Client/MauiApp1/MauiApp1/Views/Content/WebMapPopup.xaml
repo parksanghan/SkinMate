@@ -12,12 +12,11 @@
         WidthRequest="360"
         HeightRequest="640"
         HorizontalOptions="Center"
-        VerticalOptions="Center"
-        >
+        VerticalOptions="Center">
 
         <VerticalStackLayout Spacing="10">
             <Label
-                Text="내 주변 피부과 찾기"
+                Text="내 주변 피부과"
                 FontSize="20"
                 FontAttributes="Bold"
                 HorizontalOptions="Center"
