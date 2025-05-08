@@ -3,56 +3,65 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:MauiApp1.Templates"
              x:Class="MauiApp1.Views.ChatViewPage"
-             Title="ChatViewPage">
+             Title="ChatViewPage"
+             BackgroundColor="#E1EAF2">
+    <!-- 전체 배경색 지정 -->
 
     <ContentPage.Resources>
-        <!-- ✅ 템플릿 정의는 그대로 유지 -->
+        <!-- 사용자 메시지 템플릿 -->
         <DataTemplate x:Key="UserTemplate">
-            <Border BackgroundColor="LightBlue" Padding="10" Margin="5"
+            <Border BackgroundColor="#BFD3E6"
+                    Padding="10"
+                    Margin="5"
                     StrokeShape="RoundRectangle 20,0,20,20"
                     HorizontalOptions="End"
                     MaximumWidthRequest="250">
                 <Label Text="{Binding Text}"
-                    TextColor="Black"
-                    LineBreakMode="WordWrap"
-                    MaximumWidthRequest="300"/>
+                       TextColor="#2E3B4E"
+                       LineBreakMode="WordWrap"
+                       MaximumWidthRequest="300"/>
             </Border>
         </DataTemplate>
 
+        <!-- 챗봇 메시지 템플릿 -->
         <DataTemplate x:Key="BotTemplate">
-            <Border BackgroundColor="LightGray" Padding="10" Margin="5"
+            <Border BackgroundColor="#D6DDE3"
+                    Padding="10"
+                    Margin="5"
                     StrokeShape="RoundRectangle 20,0,20,20"
                     HorizontalOptions="Start"
                     MaximumWidthRequest="250">
-
                 <Label Text="{Binding Text}"
-               TextColor="Black"
-               LineBreakMode="WordWrap"
-               MaximumWidthRequest="300"/>
+                       TextColor="#2E3B4E"
+                       LineBreakMode="WordWrap"
+                       MaximumWidthRequest="300"/>
             </Border>
         </DataTemplate>
-        <!--리소스 내부 메세지 타입별 표시 방식을 미리정의 ChatSelector 키는 두 템플릿 중 어떤 것을 사용할 지-->
+
+        <!-- 템플릿 선택자 -->
         <local:ChatTemplateSelector x:Key="ChatSelector"
                                     UserTemplate="{StaticResource UserTemplate}"
                                     BotTemplate="{StaticResource BotTemplate}" />
     </ContentPage.Resources>
 
-    <!-- ✅ 전체 레이아웃은 Grid로 분리 -->
+    <!-- 전체 구조 -->
     <Grid RowDefinitions="*,Auto" Padding="10">
 
-        <!-- ✅ 채팅 목록 -->
+        <!-- 채팅 목록 -->
         <CollectionView Grid.Row="0"
                         ItemsSource="{Binding Messages}"
                         ItemTemplate="{StaticResource ChatSelector}"
-                        x:Name="chatCollectionView"
-                        />
+                        x:Name="chatCollectionView" />
 
-        <!-- ✅ 입력창 + 버튼 하단 고정 -->
+        <!-- 입력창 + 버튼 -->
         <Grid Grid.Row="1" ColumnDefinitions="*,Auto" Padding="5">
             <Entry x:Name="chatEntry"
                    Placeholder="메시지를 입력하세요"
                    Grid.Column="0"
                    HeightRequest="40"
+                   BackgroundColor="White"
+                   TextColor="#2E3B4E"
+                   PlaceholderColor="#859AB3"
                    VerticalOptions="Center" />
 
             <Button Text="전송"
@@ -60,6 +69,9 @@
                     Clicked="OnSendClicked"
                     Grid.Column="1"
                     HeightRequest="40"
+                    BackgroundColor="#BFD3E6"
+                    TextColor="#2E3B4E"
+                    CornerRadius="10"
                     VerticalOptions="Center" />
         </Grid>
 

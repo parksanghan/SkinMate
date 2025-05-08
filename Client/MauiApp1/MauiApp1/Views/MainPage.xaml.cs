@@ -16,9 +16,27 @@ public partial class MainPage : ContentPage
     
     }
 
-    private async void Button_Clicked(object sender, EventArgs e)
+ 
+    private async void OnLocationClick(object sender, EventArgs e)
     {
         var popup = new WebMapPopup();
-        await this.ShowPopupAsync(popup);    
+        await this.ShowPopupAsync(popup);
+
+    }
+
+ 
+    private async void OnDiagnosisClick(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("//CameraViewPage");
+    }
+
+    private async void OnChatClick(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("//ChatViewPage");
+    }
+
+    private async void OnLogClick(object sender, EventArgs e)
+    {
+        await Shell.Current.GoToAsync("//HistoryViewPage");
     }
 }

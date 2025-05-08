@@ -5,7 +5,16 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MauiApp1.Views"
     Shell.FlyoutBehavior="Disabled"
-    Title="MauiApp1">
+    Title="MauiApp1"
+    
+    Shell.BackgroundColor="#E1EAF2"
+    Shell.TitleColor="#3A4757"
+    Shell.ForegroundColor="#3A4757"
+    Shell.TabBarBackgroundColor="#E1EAF2"
+    Shell.TabBarTitleColor="#3A4757"
+    Shell.TabBarUnselectedColor="#859AB3" 
+ 
+    >
     
     <!-- 햄버거 메뉴바 부분
      <FlyoutItem >

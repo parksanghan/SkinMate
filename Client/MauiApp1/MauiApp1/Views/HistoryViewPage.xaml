@@ -4,25 +4,33 @@
              xmlns:microcharts="clr-namespace:Microcharts.Maui;assembly=Microcharts.Maui"
              xmlns:skia="clr-namespace:SkiaSharp.Views.Maui.Controls;assembly=SkiaSharp.Views.Maui.Controls"
              x:Class="MauiApp1.Views.HistoryViewPage"
-             Title="HistoryViewPage">
-    <VerticalStackLayout>
-        <Picker x:Name="DatePicker"
+             Title="HistoryViewPage"
+              BackgroundColor="#E1EAF2">
+    <ScrollView>
+        <VerticalStackLayout >
+            <Picker x:Name="DatePicker"
+               TitleColor="#2E3B4E"
+                TextColor="Black"
                 Title="진단 날짜 선택"
                 ItemsSource="{Binding DiagnosisDates}"
                 SelectedIndexChanged="OnPickerDateSelected"
                 Margin="10"
                 HeightRequest="60"
-                HorizontalOptions="Center" />
+                HorizontalOptions="Center"/>
 
-        <microcharts:ChartView
+            <microcharts:ChartView
+            BackgroundColor="#E1EAF2"
             x:Name="classChartView"
             HeightRequest="300"
-            WidthRequest="300" />
+            WidthRequest="500" />
 
-        <microcharts:ChartView
+            <microcharts:ChartView
             x:Name="regrssionChartview"
+            BackgroundColor="#E1EAF2"
+           
             HeightRequest="300"
-            WidthRequest="300" />
+            WidthRequest="500" />
 
-    </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

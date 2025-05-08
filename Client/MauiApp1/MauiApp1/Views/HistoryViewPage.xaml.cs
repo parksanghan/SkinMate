@@ -34,7 +34,7 @@ public partial class HistoryViewPage : ContentPage
     private async void DrawGraphByIndex(int index)
     {
         var log = _viewModel.GetDiagnosisLogIdx(index);
-        Console.WriteLine("DEbug : 진단 기록 결과들 ",log);
+        Console.WriteLine("DEBUG: 진단 기록 결과들 ",log);
         if (log.diagnosis_result.HasValue)
         {
             var diagJson = log.diagnosis_result.Value;

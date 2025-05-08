@@ -1,56 +1,64 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-            xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-            xmlns:controls="clr-namespace:MauiApp1.Controller"
-            x:Class="MauiApp1.Views.MainPage">
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="MauiApp1.Views.MainPage"
+             BackgroundColor="#E1EAF2">
+    <!-- 배너 배경색과 유사한 연한 하늘빛 -->
 
     <ScrollView>
-        <VerticalStackLayout
-            Padding="30,0"
-            Spacing="25">
-            <Image
-                Source="dotnet_bot.png"
-                HeightRequest="185"
-                Aspect="AspectFit"
-                SemanticProperties.Description="SKIN MATE"/>
-            <Button
-                Clicked="Button_Clicked"
-                />
-            <Grid>
-                <!-- 위치조회 -->
-                <Label Text="📍"
-           FontSize="20"
-           VerticalOptions="Start"
-           HorizontalOptions="Start"
-           Margin="10,10,0,0">
-                    <Label.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="OnLocationClick"/>
-                    </Label.GestureRecognizers>
-                </Label>
+        <VerticalStackLayout Padding="30,0" Spacing="25" HorizontalOptions="Center">
 
-                <!-- 본 내용은 ScrollView 안에서 -->
-                <ScrollView>
-                    <VerticalStackLayout Padding="30" Spacing="20">
-                        <!-- 진단 바로가기 -->
-                        <Button Text="진단 바로가기"
+            <!-- 위치 아이콘 -->
+            <Label Text="📍"
+                   FontSize="20"
+                   Margin="10,10,0,0"
+                   TextColor="#3A4757">
+                <!-- 진회색 -->
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnLocationClick"/>
+                </Label.GestureRecognizers>
+            </Label>
+
+            <!-- 배너 이미지 -->
+            <Image Source="banner.png"
+                   WidthRequest="300"
+                   HeightRequest="400"
+                   HorizontalOptions="Center"/>
+
+            <!-- 진단 버튼 -->
+            <Button Text="진단"
+                    ImageSource="exam_15360375.png"
                     FontSize="20"
+                    TextColor="#2E3B4E"
+                    BackgroundColor="#BFD3E6"
+                    WidthRequest="290"
                     HeightRequest="60"
+                    CornerRadius="12"
                     Clicked="OnDiagnosisClick"/>
 
-                        <!-- 챗봇 + 기록 나란히 -->
-                        <HorizontalStackLayout Spacing="10">
-                            <Button Text="챗봇 바로가기"
-                        WidthRequest="150"
+            <!-- 챗봇 / 기록 버튼 -->
+            <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+
+                <Button Text="챗봇"
+                        ImageSource="free_icon_chatbot.png"
+                        TextColor="#2E3B4E"
+                        BackgroundColor="#BFD3E6"
+                        WidthRequest="145"
+                        HeightRequest="60"
+                        CornerRadius="12"
                         Clicked="OnChatClick"/>
-                            <Button Text="기록 바로가기"
-                        WidthRequest="150"
+
+                <Button Text="기록"
+                        ImageSource="free_icon_diagnosis.png"
+                        TextColor="#2E3B4E"
+                        BackgroundColor="#BFD3E6"
+                        WidthRequest="145"
+                        HeightRequest="60"
+                        CornerRadius="12"
                         Clicked="OnLogClick"/>
-                        </HorizontalStackLayout>
-                    </VerticalStackLayout>
-                </ScrollView>
-            </Grid>
+            </HorizontalStackLayout>
+
         </VerticalStackLayout>
     </ScrollView>
-
 </ContentPage>

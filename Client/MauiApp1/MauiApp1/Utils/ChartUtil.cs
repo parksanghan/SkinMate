@@ -42,16 +42,19 @@ namespace MauiApp1.Utils
                 {
                     
                     Label = kvp.Key,
+                    
                     ValueLabel = kvp.Value.ToString(),
-                    Color = SKColor.Parse(colorHex)
+                    Color = SKColor.Parse(colorHex),
+                    TextColor = SKColor.Parse("#000000")
                 }).ToList();
 
             chartView.Chart = new RadarChart
             {
+                 
                 Typeface = typeface,    
                 LabelTextSize = 30,
                 Entries = entries,
-                BackgroundColor = SKColors.Black
+                BackgroundColor = SKColor.Parse("#E1EAF2")
             };
         }
         public static async Task SetRadarChartDataFloat(ChartView chartView, Dictionary<string, float> dataDict, string hexColor = "#68B9C0")
@@ -66,7 +69,8 @@ namespace MauiApp1.Utils
                 {
                     Label = kv.Key,
                     ValueLabel = valueLabel,
-                    Color = SKColor.Parse(hexColor)
+                    Color = SKColor.Parse(hexColor),
+                    TextColor = SKColor.Parse("#000000")
                 };
             }).ToList();
 
@@ -75,7 +79,7 @@ namespace MauiApp1.Utils
                 Typeface = typeface,
                 LabelTextSize = 30,
                 Entries = entries,
-                BackgroundColor = SKColors.Black
+                BackgroundColor = SKColor.Parse("#E1EAF2")
             };
         }
     }
