@@ -1,12 +1,12 @@
-aotassemblies=true
+aotassemblies=false
 androidaddkeepalives=true
-androidaotmode=normal
+androidaotmode=none
 androidembedprofilers=
-androidenableprofiledaot=true
+androidenableprofiledaot=
 androiddextool=d8
 androidlinktool=
 androidlinkresources=false
-androidpackageformat=aab
+androidpackageformat=apk
 embedassembliesintoapk=true
 androidlinkmode=sdkonly
 androidlinkskip=

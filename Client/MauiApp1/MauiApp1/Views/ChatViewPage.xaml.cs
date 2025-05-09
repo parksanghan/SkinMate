@@ -72,6 +72,7 @@ public partial class ChatViewPage : ContentPage
                 };
                 string message =  await HttpService.Instance.SendUserSettingAsync(payload); 
                 await viewModel.AddBotMsg(message);
+                HttpService.Instance._userSettingPayload = payload;
             }
              
           
