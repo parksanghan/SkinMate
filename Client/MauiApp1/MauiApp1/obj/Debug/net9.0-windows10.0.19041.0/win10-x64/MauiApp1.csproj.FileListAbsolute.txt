@@ -487,3 +487,4 @@ F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-windows10.0.19041.0\win10-
 F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\qualifiers.txt
 F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\qualifiers.txt.intermediate
 F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\MultipleQualifiersPerDimensionFound.txt
+F:\SkinMate\Client\MauiApp1\MauiApp1\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\Resources\Fonts\NanumGothicCoding.ttf

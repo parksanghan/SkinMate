@@ -17,8 +17,20 @@ namespace MauiApp1.Utils
         public static  async Task<SKTypeface> getNaunumFontAsync()
         {
 
+            var font = SKTypeface.Default;
+
+#if Android
+
             using var stream = await FileSystem.OpenAppPackageFileAsync("NanumGothicCoding.ttf");
-            return SKTypeface.FromStream(stream);
+            font=  SKTypeface.FromStream(stream);
+ 
+#elif WINDOWS
+         var fontPath = Path.Combine(AppContext.BaseDirectory, "Resources", "Fonts", "NanumGothicCoding.ttf");
+            using var stream = File.OpenRead(fontPath);
+            font=  SKTypeface.FromStream(stream);
+
+#endif
+            return font;
         }
     }
 }
