@@ -161,6 +161,24 @@ class DbManager:
             print(f"로그 조회 실패: {e}")
             return []
 
+    async def upload_image_to_storage(self, username, filename, data: bytes, filetype):
+
+        userId = self.get_user_id(username)
+        filepath = f"{userId}/{filename}"
+        self.supabase.storage.from_("chat-images").upload(
+            filepath, data, {"content-type": filetype}
+        )
+        res = self.supabase.storage.from_("chat-images").get_public_url(filepath)
+        public_url = res if isinstance(res, str) else res["data"]["publicUrl"]
+        return public_url
+
+    async def get_image_from_stroage(self, username, filename):
+        userId = self.get_user_id(username)
+        filepath = f"{userId}/{filename}"
+        res = self.supabase.storage.from_("chat-images").get_public_url(filepath)
+        public_url = res if isinstance(res, str) else res["data"]["publicUrl"]
+        return public_url
+
 
 # 예시 사용
 if __name__ == "__main__":

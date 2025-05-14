@@ -19,6 +19,16 @@ public partial class ChatViewPage : ContentPage
         viewModel = ChatViewModel.Instance;
         BindingContext = viewModel;
     }
+    private void ScrollToBottom()
+    {
+        if (chatCollectionView.ItemsSource is IList<ChatMessage> items && items.Count > 0)
+        {
+            Dispatcher.Dispatch(() =>
+            {
+                chatCollectionView.ScrollTo(items.Count - 1, position: ScrollToPosition.End, animate: false);
+            });
+        }
+    }
     private async void OnSendClicked(object sender, EventArgs e)
     {
         string message = chatEntry.Text;
@@ -30,11 +40,15 @@ public partial class ChatViewPage : ContentPage
         shakeAnim.WithConcurrent(new Animation(v => chatBtn.TranslationX = v, 15, -15), 0.3, 0.5);
         shakeAnim.WithConcurrent(new Animation(v => chatBtn.TranslationX = v, -15, 0), 0.5, 0.6);
         chatBtn.Animate("shake", shakeAnim, 16, 250);
+#if ANDROID
         Vibration.Default.Vibrate(TimeSpan.FromMilliseconds(100));
+#endif
         await viewModel.AddUserMsg(message);
+        ScrollToBottom();
         chatEntry.Text = "";  // 입력창 비우기
         string res = await HttpService.Instance.SendChatMessageAsync(message);
         await viewModel.AddBotMsg(res);
+        ScrollToBottom();
         //if (!string.IsNullOrWhiteSpace(message))
         //{
         //    await viewModel.simulation(message);  // ✨ 여기서 호출!

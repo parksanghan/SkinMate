@@ -19,7 +19,7 @@ namespace MauiApp1.Utils
 
             var font = SKTypeface.Default;
 
-#if Android
+#if ANDROID
 
             using var stream = await FileSystem.OpenAppPackageFileAsync("NanumGothicCoding.ttf");
             font=  SKTypeface.FromStream(stream);

@@ -1116,3 +1116,4 @@ F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\stamp\_ConvertReso
 F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\stamp\_GenerateJavaStubs.stamp
 F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\stamp\_GeneratePackageManagerJava.stamp
 F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\stamp\_ResolveLibraryProjectImports.stamp
+F:\SkinMate\Client\MauiApp1\MauiApp1\bin\Debug\net9.0-android\Resources\Fonts\NanumGothicCoding.ttf

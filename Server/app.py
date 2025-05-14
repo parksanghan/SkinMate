@@ -55,6 +55,7 @@ def login(req: LoginRequest):
 @app.post("/register")
 def register(req: RegisterRequest):
     try:
+
         db_manager.register_user(req.UserId, req.Password)
         return {"status": "ok"}
     except Exception as e:

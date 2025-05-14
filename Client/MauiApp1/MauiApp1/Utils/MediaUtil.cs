@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Formats.Asn1;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,26 +34,30 @@ namespace MauiApp1.Utils
             {
                 var path = string.Empty;
                 try {
-    #if ANDROID
-                    var dcimDir = Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryDcim);
-                    var cameraDir = new Java.IO.File(dcimDir, "Camera");
-                    if (!cameraDir.Exists()) cameraDir.Mkdir();
-                    var filePath = System.IO.Path.Combine(cameraDir.AbsolutePath, $"captured_{DateTime.Now:yyyyMMdd_HHmmss}.jpg");
-                    await File.WriteAllBytesAsync(filePath, imageBytes);
-                    Console.WriteLine($"✅ 이미지 저장됨: {filePath}");
-                     // ✅ 저장 후 MediaScanner 호출
-                    Android.Content.Context context = Android.App.Application.Context;
-                    Android.Content.Intent mediaScanIntent = new(Android.Content.Intent.ActionMediaScannerScanFile);
-                    var contentUri = Android.Net.Uri.FromFile(new Java.IO.File(filePath));
-                    mediaScanIntent.SetData(contentUri);
-                    context.SendBroadcast(mediaScanIntent);
-                    return path = filePath;
-    #else
+#if ANDROID
+                //var dcimDir = Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryDcim);
+                //var cameraDir = new Java.IO.File(dcimDir, "Camera");
+                //if (!cameraDir.Exists()) cameraDir.Mkdir();
+                //var filePath = System.IO.Path.Combine(cameraDir.AbsolutePath, $"captured_{DateTime.Now:yyyyMMdd_HHmmss}.jpg");
+                //await File.WriteAllBytesAsync(filePath, imageBytes);
+                //Console.WriteLine($"✅ 이미지 저장됨: {filePath}");
+                // // ✅ 저장 후 MediaScanner 호출
+                //Android.Content.Context context = Android.App.Application.Context;
+                //Android.Content.Intent mediaScanIntent = new(Android.Content.Intent.ActionMediaScannerScanFile);
+                //var contentUri = Android.Net.Uri.FromFile(new Java.IO.File(filePath));
+                //mediaScanIntent.SetData(contentUri);
+                //context.SendBroadcast(mediaScanIntent);
+                //return path = filePath;
+
+                return await SaveImageAndroidAsync(imageBytes);
+#elif WINDOWS
+                return await SaveImageWindowAsync(imageBytes);
+#else
                     await Task.CompletedTask; // ⚠️ CS1998 제거용 dummy await
                     return path;
-    #endif
+#endif
 
-                }
+            }
                 catch (Exception ex)
             {
                     Console.WriteLine($"❌ 예외 발생: {ex}"); return path;
@@ -103,5 +108,52 @@ namespace MauiApp1.Utils
                 return null;    
             }
         }
+#if ANDROID
+        private static async Task<string> SaveImageAndroidAsync(byte[] imageBytes)
+        {
+            var dcimDir = Android.OS.Environment.GetExternalStoragePublicDirectory(Android.OS.Environment.DirectoryDcim);
+            var cameraDir = new Java.IO.File(dcimDir, "Camera");
+            if (!cameraDir.Exists()) cameraDir.Mkdir();
+            var filePath = System.IO.Path.Combine(cameraDir.AbsolutePath, $"captured_{DateTime.Now:yyyyMMdd_HHmmss}.jpg");
+            await File.WriteAllBytesAsync(filePath, imageBytes);
+            Console.WriteLine($"✅ 이미지 저장됨: {filePath}");
+            // ✅ 저장 후 MediaScanner 호출
+            Android.Content.Context context = Android.App.Application.Context;
+            Android.Content.Intent mediaScanIntent = new(Android.Content.Intent.ActionMediaScannerScanFile);
+            var contentUri = Android.Net.Uri.FromFile(new Java.IO.File(filePath));
+            mediaScanIntent.SetData(contentUri);
+            // 갱신알리는 용도 
+            context.SendBroadcast(mediaScanIntent);
+            return filePath;
+        }
+#endif
+
+
+#if WINDOWS
+
+        private async static Task<string> SaveImageWindowAsync(byte[] imageBytes )
+        {
+            try
+            {
+                // 바탕화면
+                var desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
+                var filePath = Path.Combine(desktopPath, $"captured_{DateTime.Now:yyyyMMdd_HHmmss}.jpg");
+
+                // 이미지 쓰기
+                await File.WriteAllBytesAsync(filePath, imageBytes);
+
+                Console.WriteLine($"✅ 이미지가 바탕화면에 저장되었습니다: {filePath}");
+
+                return filePath;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"❌ 이미지 저장 중 예외 발생: {ex.Message}");
+                return string.Empty;
+            }
+
+        }
+#endif
+ 
     }
 }

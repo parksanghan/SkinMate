@@ -5,37 +5,43 @@
              x:Class="MauiApp1.Views.ChatViewPage"
              Title="ChatViewPage"
              BackgroundColor="#E1EAF2">
-    <!-- 전체 배경색 지정 -->
 
     <ContentPage.Resources>
+
         <!-- 사용자 메시지 템플릿 -->
         <DataTemplate x:Key="UserTemplate">
-            <Border BackgroundColor="#BFD3E6"
-                    Padding="10"
-                    Margin="5"
-                    StrokeShape="RoundRectangle 20,0,20,20"
-                    HorizontalOptions="End"
-                    MaximumWidthRequest="250">
-                <Label Text="{Binding Text}"
-                       TextColor="#2E3B4E"
-                       LineBreakMode="WordWrap"
-                       MaximumWidthRequest="300"/>
-            </Border>
+            <Grid>
+                <Border BackgroundColor="#BFD3E6"
+                        Padding="10"
+                        Margin="50,5,10,5"
+                        StrokeShape="RoundRectangle 20,0,20,20"
+                        HorizontalOptions="End"
+                        MaximumWidthRequest="{OnPlatform WinUI=500, Android=300}">
+                    <Label Text="{Binding Text}"
+                           TextColor="#2E3B4E"
+                           LineBreakMode="WordWrap"
+                           HorizontalOptions="Start"
+                           VerticalOptions="Center" />
+                </Border>
+            </Grid>
         </DataTemplate>
 
         <!-- 챗봇 메시지 템플릿 -->
         <DataTemplate x:Key="BotTemplate">
-            <Border BackgroundColor="#D6DDE3"
-                    Padding="10"
-                    Margin="5"
-                    StrokeShape="RoundRectangle 20,0,20,20"
-                    HorizontalOptions="Start"
-                    MaximumWidthRequest="250">
-                <Label Text="{Binding Text}"
-                       TextColor="#2E3B4E"
-                       LineBreakMode="WordWrap"
-                       MaximumWidthRequest="300"/>
-            </Border>
+            <Grid>
+                <Border BackgroundColor="#D6DDE3"
+                        Padding="10"
+                        Margin="10,5,50,5"
+                        StrokeShape="RoundRectangle 20,0,20,20"
+                        HorizontalOptions="Start"
+                        MaximumWidthRequest="{OnPlatform WinUI=500, Android=300}">
+                    <Label Text="{Binding Text}"
+                           TextColor="#2E3B4E"
+                           LineBreakMode="WordWrap"
+                           HorizontalOptions="Start"
+                           VerticalOptions="Center" />
+                </Border>
+            </Grid>
         </DataTemplate>
 
         <!-- 템플릿 선택자 -->
@@ -51,9 +57,10 @@
         <CollectionView Grid.Row="0"
                         ItemsSource="{Binding Messages}"
                         ItemTemplate="{StaticResource ChatSelector}"
-                        x:Name="chatCollectionView" />
+                        x:Name="chatCollectionView"
+                         />
 
-        <!-- 입력창 + 버튼 -->
+        <!-- 입력창 + 전송 버튼 -->
         <Grid Grid.Row="1" ColumnDefinitions="*,Auto" Padding="5">
             <Entry x:Name="chatEntry"
                    Placeholder="메시지를 입력하세요"
@@ -74,6 +81,5 @@
                     CornerRadius="10"
                     VerticalOptions="Center" />
         </Grid>
-
     </Grid>
 </ContentPage>
