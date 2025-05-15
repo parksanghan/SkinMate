@@ -65,6 +65,7 @@ def register(req: RegisterRequest):
         raise HTTPException(status_code=500, detail=error_message)
 
 
+# 업로드 API
 @app.post("/{user_id}/upload")
 async def upload(user_id: str, files: list[UploadFile] = File(...)):
     try:
@@ -169,6 +170,7 @@ async def upload1(user_id: str, files: list[UploadFile] = File(...)):
 #         raise HTTPException(status_code=500, detail="fail")
 
 
+# 로그 API
 @app.get("/{user_id}/logs")
 async def request_user_logs(user_id: str):
     try:
@@ -214,6 +216,7 @@ async def request_log():
     return logs
 
 
+# chatbot API
 @app.post("/{user_id}/chat")
 async def request_chat(user_id, message: str = Form(...)):
     logs = db_manager.get_user_logs(user_id)
@@ -223,6 +226,7 @@ async def request_chat(user_id, message: str = Form(...)):
     return {"status": "ok", "msg": response}
 
 
+# 분석 API
 @app.post("/{user_id}/diagnosis")
 async def request_diagnosis(user_id, req: Request):
     diagnosis = await req.json()  # ✅ JSON 파싱
@@ -233,6 +237,7 @@ async def request_diagnosis(user_id, req: Request):
     return response
 
 
+# 유저 설정 API
 @app.post("/{user_id}/setting")
 async def save_user_setting1(user_id: str, request: UserSetingPayload):
     try:
