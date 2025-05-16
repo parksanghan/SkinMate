@@ -9,9 +9,9 @@ namespace MauiApp1.Data
     //유저간 채팅 메시지 
     public class UserChatMessage
     {
-        public string? SenderId { get; set; } 
-        public string? TargetId { get; set; }
-        public string? Message { get; set; }
-        public string? ImageUrl {  get; set; }  
+        public string? SenderId { get; set; }  // 보낸 유저
+        public string? TargetId { get; set; } // 받는 유저 
+        public string? Message { get; set; } // 메시지 
+        public string? ImageUrl {  get; set; }   // 
     }
 }

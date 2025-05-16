@@ -13,5 +13,7 @@ namespace MauiApp1.ModelViews
         public static  UserChatViewModel Instance { get; } = new UserChatViewModel();
         private UserChatViewModel() { } 
         public event PropertyChangedEventHandler? PropertyChanged;
+
+
     }
 }

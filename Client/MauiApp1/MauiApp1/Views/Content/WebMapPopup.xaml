@@ -25,7 +25,7 @@
             <WebView x:Name="MapWebView"
                      HeightRequest="500"
                      WidthRequest="320"
- />
+                     InputTransparent="False"/>
 
             <Button
                 Text="닫기"
