@@ -274,5 +274,15 @@ def read_root():
     return {"message": "Hello FastAPI!"}
 
 
+@app.get("/lol")
+def loll():
+    return {"message": "Hello dddw!"}
+
+
+@app.get("/llll")
+async def llll():
+    return {"msg": "dddd"}
+
+
 if __name__ == "__main__":
-    uvicorn.run("app:app", host="0.0.0.0", port=8080, reload=True)
+    uvicorn.run("app:app", host="0.0.0.0", port=5000, reload=True)

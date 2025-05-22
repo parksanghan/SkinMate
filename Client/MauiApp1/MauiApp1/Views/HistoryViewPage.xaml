@@ -16,7 +16,11 @@
                 SelectedIndexChanged="OnPickerDateSelected"
                 Margin="10"
                 HeightRequest="60"
-                HorizontalOptions="Center"/>
+                HorizontalOptions="Center">
+                <Picker.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="DatePicker_Tapped"/>
+                </Picker.GestureRecognizers>
+            </Picker>
 
             <microcharts:ChartView
             BackgroundColor="#E1EAF2"
@@ -32,5 +36,7 @@
             WidthRequest="500" />
 
         </VerticalStackLayout>
+        
     </ScrollView>
+    
 </ContentPage>

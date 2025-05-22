@@ -18,7 +18,8 @@ namespace MauiApp1.Services
         private static readonly object _lock = new();
         private readonly HttpClient _httpClient;
         private const string Ip = "172.30.1.100";//172.301.1.98 10.101.41.233"
-        private const string BaseUrl = $"http://{Ip}:8080";
+        private const string BaseUrl = $"http://skinmate.shop";
+        private const string BaseUrl1 = $"http://{Ip}:8080";
         private string? MyId { get; set; }
         private List< LogEntry?> _diaLogEntry; // 진단결과 로그
         private List<LogEntry?> _chatLgoEntry;// 채팅 로그 

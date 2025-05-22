@@ -2,6 +2,7 @@ from supabase import create_client, Client
 from typing import Optional
 import json
 import os
+import bcrypt
 
 
 class DbManager:
@@ -14,6 +15,22 @@ class DbManager:
 
     def register_user(self, username, password):
         try:
+
+            response = (
+                self.supabase.table("users")
+                .insert({"username": username, "password": password})
+                .execute()
+            )
+            print(f"회원가입 성공: {username}")
+        except Exception as e:
+            print(f"회원가입 실패: {e}")
+
+    def registeer_prototype(self, username, password):
+        try:
+            password = bcrypt.hashpw(password.encode("utf-8"), bcrypt.gensalt()).decode(
+                "utf-8"
+            )
+
             response = (
                 self.supabase.table("users")
                 .insert({"username": username, "password": password})
@@ -35,6 +52,29 @@ class DbManager:
             if response.data:
                 print(f"로그인 성공: {username}")
                 return True
+            else:
+                print("로그인 실패: 잘못된 사용자명 또는 비밀번호")
+                return False
+        except Exception as e:
+            print(f"로그인 오류: {e}")
+            return False
+
+    def login_prototype(self, username, password):
+        try:
+            response = (
+                self.supabase.table("users")
+                .select("password")
+                .eq("username", username)
+                .execute()
+            )
+            if response.data:
+                hashed_pw = response.data[0]["password"]
+                if bcrypt.checkpw(password.encode("utf-8"), hashed_pw.encode("utf-8")):
+                    print(f"로그인 성공: {username}")
+                    return True
+                else:
+                    print("로그인 실패: 잘못된 비밀번호")
+                    return False
             else:
                 print("로그인 실패: 잘못된 사용자명 또는 비밀번호")
                 return False
