@@ -5,7 +5,7 @@
     파일 내용을 변경하면 잘못된 동작이 발생할 수 있으며,
     콘텐츠를 다시 생성하면 변경 내용이 손실됩니다.
 -->
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" package="com.companyname.mauiapp1" android:versionCode="1" android:versionName="1.0">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" package="com.snaghan.skinmate" android:versionCode="1" android:versionName="1.0">
   <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="35" />
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
   <uses-permission android:name="android.permission.INTERNET" />
@@ -15,12 +15,12 @@
   <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
   <uses-permission android:name="android.permission.VIBRATE" />
   <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-  <permission android:name="com.companyname.mauiapp1.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" android:protectionLevel="signature" />
-  <uses-permission android:name="com.companyname.mauiapp1.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-  <application android:name="crc64e632a077a20c694c.MainApplication" android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:extractNativeLibs="true" android:icon="@mipmap/appicon" android:label="MauiApp1" android:roundIcon="@mipmap/appicon_round" android:supportsRtl="true" android:usesCleartextTraffic="true">
+  <permission android:name="com.snaghan.skinmate.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" android:protectionLevel="signature" />
+  <uses-permission android:name="com.snaghan.skinmate.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+  <application android:name="crc64e632a077a20c694c.MainApplication" android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:extractNativeLibs="true" android:icon="@mipmap/appicon" android:label="SkinMate" android:roundIcon="@mipmap/appicon_round" android:supportsRtl="true" android:usesCleartextTraffic="true">
     <uses-library android:name="org.apache.http.legacy" android:required="false" />
     <activity android:name="crc6468b6408a11370c2f.WebAuthenticatorIntermediateActivity" android:configChanges="orientation|screenSize" android:exported="false" />
-    <provider android:name="microsoft.maui.essentials.fileProvider" android:authorities="com.companyname.mauiapp1.fileProvider" android:exported="false" android:grantUriPermissions="true">
+    <provider android:name="microsoft.maui.essentials.fileProvider" android:authorities="com.snaghan.skinmate.fileProvider" android:exported="false" android:grantUriPermissions="true">
       <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/microsoft_maui_essentials_fileprovider_file_paths" />
     </provider>
     <receiver android:name="crc64e53d2f592022988e.ConnectivityBroadcastReceiver" android:enabled="true" android:exported="false" android:label="Essentials Connectivity Broadcast Receiver" />
@@ -33,8 +33,8 @@
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
-    <provider android:name="mono.MonoRuntimeProvider" android:authorities="com.companyname.mauiapp1.mono.MonoRuntimeProvider.__mono_init__" android:exported="false" android:initOrder="1999999999" />
-    <provider android:name="androidx.startup.InitializationProvider" android:authorities="com.companyname.mauiapp1.androidx-startup" android:exported="false" tools:node="merge">
+    <provider android:name="mono.MonoRuntimeProvider" android:authorities="com.snaghan.skinmate.mono.MonoRuntimeProvider.__mono_init__" android:exported="false" android:initOrder="1999999999" />
+    <provider android:name="androidx.startup.InitializationProvider" android:authorities="com.snaghan.skinmate.androidx-startup" android:exported="false" tools:node="merge">
       <meta-data android:name="androidx.profileinstaller.ProfileInstallerInitializer" android:value="androidx.startup" />
       <meta-data android:name="androidx.lifecycle.ProcessLifecycleInitializer" android:value="androidx.startup" />
       <meta-data android:name="androidx.emoji2.text.EmojiCompatInitializer" android:value="androidx.startup" />
@@ -67,7 +67,7 @@
     </service>
     <service android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService" android:exported="false" android:permission="android.permission.BIND_JOB_SERVICE"></service>
     <receiver android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver" android:exported="false" />
-    <provider android:name="com.google.mlkit.common.internal.MlKitInitProvider" android:authorities="com.companyname.mauiapp1.mlkitinitprovider" android:exported="false" android:initOrder="99" />
+    <provider android:name="com.google.mlkit.common.internal.MlKitInitProvider" android:authorities="com.snaghan.skinmate.mlkitinitprovider" android:exported="false" android:initOrder="99" />
     <service android:name="com.google.mlkit.common.internal.MlKitComponentDiscoveryService" android:directBootAware="true" android:exported="false" tools:targetApi="n">
       <meta-data android:name="com.google.firebase.components:com.google.mlkit.common.internal.CommonComponentRegistrar" android:value="com.google.firebase.components.ComponentRegistrar" />
       <meta-data android:name="com.google.firebase.components:com.google.mlkit.vision.common.internal.VisionCommonRegistrar" android:value="com.google.firebase.components.ComponentRegistrar" />

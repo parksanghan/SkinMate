@@ -17,9 +17,7 @@
                 Margin="10"
                 HeightRequest="60"
                 HorizontalOptions="Center">
-                <Picker.GestureRecognizers>
-                    <TapGestureRecognizer Tapped="DatePicker_Tapped"/>
-                </Picker.GestureRecognizers>
+               
             </Picker>
 
             <microcharts:ChartView

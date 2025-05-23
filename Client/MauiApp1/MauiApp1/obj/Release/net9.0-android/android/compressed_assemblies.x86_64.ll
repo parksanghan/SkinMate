@@ -511,7 +511,7 @@ target triple = "x86_64-unknown-linux-android21"
 		ptr @__compressedAssemblyData_97; uint8_t* data
 	}, ; 97: Xamarin.KotlinX.Serialization.Core.Jvm
 	%struct.CompressedAssemblyDescriptor {
-		i32 542720, ; uint32_t uncompressed_file_size
+		i32 545280, ; uint32_t uncompressed_file_size
 		i1 false, ; bool loaded
 		ptr @__compressedAssemblyData_98; uint8_t* data
 	}, ; 98: MauiApp1
@@ -825,7 +825,7 @@ target triple = "x86_64-unknown-linux-android21"
 @__compressedAssemblyData_95 = internal dso_local global [86016 x i8] zeroinitializer, align 16
 @__compressedAssemblyData_96 = internal dso_local global [18432 x i8] zeroinitializer, align 16
 @__compressedAssemblyData_97 = internal dso_local global [89600 x i8] zeroinitializer, align 16
-@__compressedAssemblyData_98 = internal dso_local global [542720 x i8] zeroinitializer, align 16
+@__compressedAssemblyData_98 = internal dso_local global [545280 x i8] zeroinitializer, align 16
 @__compressedAssemblyData_99 = internal dso_local global [24064 x i8] zeroinitializer, align 16
 @__compressedAssemblyData_100 = internal dso_local global [23552 x i8] zeroinitializer, align 16
 @__compressedAssemblyData_101 = internal dso_local global [14848 x i8] zeroinitializer, align 16

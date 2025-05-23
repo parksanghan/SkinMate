@@ -463,7 +463,7 @@ target triple = "x86_64-unknown-linux-android21"
 @.env.3 = private unnamed_addr constant [42 x i8] c"Xamarin.Android.Net.AndroidMessageHandler\00", align 16
 
 ;ApplicationConfig
-@.ApplicationConfig.0_android_package_name = private unnamed_addr constant [25 x i8] c"com.companyname.mauiapp1\00", align 16
+@.ApplicationConfig.0_android_package_name = private unnamed_addr constant [21 x i8] c"com.snaghan.skinmate\00", align 16
 
 ;DSOCacheEntry
 @.DSOCacheEntry.0_name = private unnamed_addr constant [32 x i8] c"libimage_processing_util_jni.so\00", align 16
