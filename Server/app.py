@@ -284,5 +284,18 @@ async def llll():
     return {"msg": "dddd"}
 
 
+from fastapi.responses import FileResponse
+
+
+@app.get("/delete")
+async def serve_delete_page():
+    return FileResponse("F:/SkinMate/Server/web/delete.html")
+
+
+@app.get("/skinmate")
+async def serve_main_page():
+    return FileResponse("F:/SkinMate/Server/web/mainpage.html")
+
+
 if __name__ == "__main__":
     uvicorn.run("app:app", host="0.0.0.0", port=5000, reload=True)

@@ -19,10 +19,17 @@ public partial class HistoryViewPage : ContentPage
         
         BindingContext  =  _viewModel;
         //HttpService.Instance.ContextInit();
-     
-        
+#if WINDOWS
+        DatePicker.Focused += (s, e) =>
+        {
+            Console.WriteLine("Windows에서 Picker Focus 시도됨");
+            // DropDown 열기 불가: Handler를 통해 강제 제어 불가능
+            // 대신 사용자에게 안내 메시지 출력 등 대응
+        };
+#endif
+
     }
-  private void OnPickerDateSelected(object sender, EventArgs e)
+    private void OnPickerDateSelected(object sender, EventArgs e)
 {
     int selectedIndex = DatePicker.SelectedIndex;
     if (selectedIndex >= 0)

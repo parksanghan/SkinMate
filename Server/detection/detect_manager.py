@@ -8,12 +8,18 @@ RIGHT_LIP_CORNER = 291
 LOWER_LIP_CENTER_IDX = 17
 CHIN_CENTER_IDX = 152
 
+MARGIN_TOP_RATIO = 0.15
+MARGIN_BOTTOM_RATIO = 0.1
+MARGIN_LEFT_RATIO = 0.05
+MARGIN_RIGHT_RATIO = 0.05
+
 
 # cv2.imread()후 Detetmanager 사용용
 class DetectManager:
     def __init__(self, image_bgr):
         self.mp_face_mesh = mp.solutions.face_mesh
         self.image_bgr = image_bgr
+        self.mp_face_detection = mp.solutions.face_detection  # ✅ 이 줄 추가
         self.h, self.w, _ = image_bgr.shape
         self.image_rgb = cv2.cvtColor(image_bgr, cv2.COLOR_BGR2RGB)
         with self.mp_face_mesh.FaceMesh(
@@ -23,6 +29,10 @@ class DetectManager:
             min_detection_confidence=0.5,
         ) as face_mesh:
             self.results = face_mesh.process(self.image_rgb)
+        with self.mp_face_detection.FaceDetection(
+            model_selection=0, min_detection_confidence=0.5
+        ) as face_detection:
+            self.face_box_results = face_detection.process(self.image_rgb)
 
     def __call__(self, *args, **kwds):
         if self.results.multi_face_landmarks:
@@ -33,24 +43,38 @@ class DetectManager:
             self.draw_lips()
             self.draw_middle_eyebrows()
             self.draw_eye_wrinkles()
+            self.draw_loose_face_box()
+
+    def draw_loose_face_box(self):
+        for det in self.face_box_results.detections:
+            bbox = det.location_data.relative_bounding_box
+
+            x = int((bbox.xmin - MARGIN_LEFT_RATIO) * self.w)
+            y = int((bbox.ymin - MARGIN_TOP_RATIO) * self.h)
+            box_w = int((bbox.width + MARGIN_LEFT_RATIO + MARGIN_RIGHT_RATIO) * self.w)
+            box_h = int((bbox.height + MARGIN_TOP_RATIO + MARGIN_BOTTOM_RATIO) * self.h)
+
+            x = max(x, 0)
+            y = max(y, 0)
+            x2 = min(x + box_w, self.w)
+            y2 = min(y + box_h, self.h)
+
+            cv2.rectangle(self.image_bgr, (x, y), (x2, y2), (0, 255, 255), 2)
 
     def draw_eye_wrinkles(self):
         if not self.face_landmarks:
             return
-        LEFT_EYE_TAIL_IDX = 130  # 왼쪽 눈꼬리
-        RIGHT_EYE_TAIL_IDX = 263  # 오른쪽 눈꼬리
-        BOX_WIDTH = 10
-        BOX_HEIGHT = 20
 
-        # 왼쪽 눈꼬리 좌표
+        LEFT_EYE_TAIL_IDX = 130
+        RIGHT_EYE_TAIL_IDX = 263
+        BOX_WIDTH = int(self.w * 0.02)
+        BOX_HEIGHT = int(self.h * 0.035)
+
         lx = int(self.face_landmarks.landmark[LEFT_EYE_TAIL_IDX].x * self.w)
         ly = int(self.face_landmarks.landmark[LEFT_EYE_TAIL_IDX].y * self.h)
-
-        # 오른쪽 눈꼬리 좌표
         rx = int(self.face_landmarks.landmark[RIGHT_EYE_TAIL_IDX].x * self.w)
         ry = int(self.face_landmarks.landmark[RIGHT_EYE_TAIL_IDX].y * self.h)
 
-        # 왼쪽 눈가 바운딩 박스 (왼쪽 방향으로)
         cv2.rectangle(
             self.image_bgr,
             (lx - BOX_WIDTH, ly - BOX_HEIGHT // 2),
@@ -58,8 +82,6 @@ class DetectManager:
             (0, 255, 0),
             2,
         )
-
-        # 오른쪽 눈가 바운딩 박스 (오른쪽 방향으로)
         cv2.rectangle(
             self.image_bgr,
             (rx, ry - BOX_HEIGHT // 2),
@@ -67,8 +89,6 @@ class DetectManager:
             (255, 0, 0),
             2,
         )
-
-        # 디버깅용 점 표시
         cv2.circle(self.image_bgr, (lx, ly), 2, (0, 0, 255), -1)
         cv2.circle(self.image_bgr, (rx, ry), 2, (0, 0, 255), -1)
 
@@ -217,48 +237,24 @@ class DetectManager:
         if not self.face_landmarks:
             return
 
-        LEFT_EYE_BOTTOM = 145
-        RIGHT_EYE_BOTTOM = 374
-        LEFT_LIP_CORNER = 61
-        RIGHT_LIP_CORNER = 291
-        BOX_WIDTH = 50
-        BOX_HEIGHT = 50
+        LEFT_CHEEK_IDX = [120, 234, 203, 132]
+        RIGHT_CHEEK_IDX = [348, 454, 423, 376]
 
-        # 왼쪽 볼 중간점
-        lx1 = int(self.face_landmarks.landmark[LEFT_EYE_BOTTOM].x * self.w)
-        ly1 = int(self.face_landmarks.landmark[LEFT_EYE_BOTTOM].y * self.h)
-        lx2 = int(self.face_landmarks.landmark[LEFT_LIP_CORNER].x * self.w)
-        ly2 = int(self.face_landmarks.landmark[LEFT_LIP_CORNER].y * self.h)
-        lcx = (lx1 + lx2) // 2
-        lcy = (ly1 + ly2) // 2
+        def draw_cheek(points_idx, color):
+            points = []
+            for idx in points_idx:
+                x = int(self.face_landmarks.landmark[idx].x * self.w)
+                y = int(self.face_landmarks.landmark[idx].y * self.h)
+                points.append((x, y))
+                cv2.circle(self.image_bgr, (x, y), 2, (0, 0, 255), -1)
+            x_coords = [p[0] for p in points]
+            y_coords = [p[1] for p in points]
+            x_min, x_max = min(x_coords), max(x_coords)
+            y_min, y_max = min(y_coords), max(y_coords)
+            cv2.rectangle(self.image_bgr, (x_min, y_min), (x_max, y_max), color, 2)
 
-        # 오른쪽 볼 중간점
-        rx1 = int(self.face_landmarks.landmark[RIGHT_EYE_BOTTOM].x * self.w)
-        ry1 = int(self.face_landmarks.landmark[RIGHT_EYE_BOTTOM].y * self.h)
-        rx2 = int(self.face_landmarks.landmark[RIGHT_LIP_CORNER].x * self.w)
-        ry2 = int(self.face_landmarks.landmark[RIGHT_LIP_CORNER].y * self.h)
-        rcx = (rx1 + rx2) // 2
-        rcy = (ry1 + ry2) // 2
-
-        # 바운딩 박스 그리기
-        cv2.rectangle(
-            self.image_bgr,
-            (lcx - BOX_WIDTH // 2, lcy - BOX_HEIGHT // 2),
-            (lcx + BOX_WIDTH // 2, lcy + BOX_HEIGHT // 2),
-            (0, 255, 0),
-            2,
-        )
-        cv2.rectangle(
-            self.image_bgr,
-            (rcx - BOX_WIDTH // 2, rcy - BOX_HEIGHT // 2),
-            (rcx + BOX_WIDTH // 2, rcy + BOX_HEIGHT // 2),
-            (255, 0, 0),
-            2,
-        )
-
-        # 디버깅용 점
-        cv2.circle(self.image_bgr, (lcx, lcy), 2, (0, 0, 255), -1)
-        cv2.circle(self.image_bgr, (rcx, rcy), 2, (0, 0, 255), -1)
+        draw_cheek(LEFT_CHEEK_IDX, (0, 255, 0))  # 왼쪽 볼 - 초록색
+        draw_cheek(RIGHT_CHEEK_IDX, (255, 0, 0))  # 오른쪽 볼 - 파란색
 
 
 import cv2
@@ -271,7 +267,7 @@ if __name__ == "__main__":
     if not image_path.exists():
         print(f"[경고] 파일이 존재하지 않습니다:\n{image_path}")
     else:
-        # 한글 경로 문제 방지용
+        # 한글 경로 문제 방지용 이미지 로드
         image = cv2.imdecode(
             np.fromfile(str(image_path), dtype=np.uint8), cv2.IMREAD_COLOR
         )
@@ -281,6 +277,13 @@ if __name__ == "__main__":
         else:
             dm = DetectManager(image.copy())
             dm()
+
+            # 윈도우 창 크기 조절 가능하게 설정
+            cv2.namedWindow("Face Analysis", cv2.WINDOW_NORMAL)
+            # 필요 시 특정 크기로 설정
+            # cv2.resizeWindow("Face Analysis", 1280, 720)
+
+            # 이미지 출력
             cv2.imshow("Face Analysis", dm.image_bgr)
             cv2.waitKey(0)
             cv2.destroyAllWindows()

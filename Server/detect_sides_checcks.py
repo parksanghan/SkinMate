@@ -1,15 +1,10 @@
 import cv2
 import mediapipe as mp
 
+LEFT_CHEEK_IDX = [120, 234, 203, 132]
+RIGHT_CHEEK_IDX = [348, 454, 423, 376]
+
 mp_face_mesh = mp.solutions.face_mesh
-
-LEFT_EYE_BOTTOM = 145
-RIGHT_EYE_BOTTOM = 374
-LEFT_LIP_CORNER = 61
-RIGHT_LIP_CORNER = 291
-
-BOX_WIDTH = 50
-BOX_HEIGHT = 50
 
 cap = cv2.VideoCapture(0)
 
@@ -31,43 +26,24 @@ with mp_face_mesh.FaceMesh(
 
         if results.multi_face_landmarks:
             for face_landmarks in results.multi_face_landmarks:
-                # 왼쪽 볼 중간점 (눈 아래 ↔ 입꼬리 중간)
-                lx1 = int(face_landmarks.landmark[LEFT_EYE_BOTTOM].x * w)
-                ly1 = int(face_landmarks.landmark[LEFT_EYE_BOTTOM].y * h)
-                lx2 = int(face_landmarks.landmark[LEFT_LIP_CORNER].x * w)
-                ly2 = int(face_landmarks.landmark[LEFT_LIP_CORNER].y * h)
-                lcx = (lx1 + lx2) // 2
-                lcy = (ly1 + ly2) // 2
 
-                # 오른쪽 볼 중간점
-                rx1 = int(face_landmarks.landmark[RIGHT_EYE_BOTTOM].x * w)
-                ry1 = int(face_landmarks.landmark[RIGHT_EYE_BOTTOM].y * h)
-                rx2 = int(face_landmarks.landmark[RIGHT_LIP_CORNER].x * w)
-                ry2 = int(face_landmarks.landmark[RIGHT_LIP_CORNER].y * h)
-                rcx = (rx1 + rx2) // 2
-                rcy = (ry1 + ry2) // 2
+                def draw_cheek(points_idx, color):
+                    points = []
+                    for idx in points_idx:
+                        x = int(face_landmarks.landmark[idx].x * w)
+                        y = int(face_landmarks.landmark[idx].y * h)
+                        points.append((x, y))
+                        cv2.circle(image, (x, y), 2, (0, 0, 255), -1)
+                    x_coords = [p[0] for p in points]
+                    y_coords = [p[1] for p in points]
+                    x_min, x_max = min(x_coords), max(x_coords)
+                    y_min, y_max = min(y_coords), max(y_coords)
+                    cv2.rectangle(image, (x_min, y_min), (x_max, y_max), color, 2)
 
-                # 바운딩 박스
-                cv2.rectangle(
-                    image,
-                    (lcx - BOX_WIDTH // 2, lcy - BOX_HEIGHT // 2),
-                    (lcx + BOX_WIDTH // 2, lcy + BOX_HEIGHT // 2),
-                    (0, 255, 0),
-                    2,
-                )
-                cv2.rectangle(
-                    image,
-                    (rcx - BOX_WIDTH // 2, rcy - BOX_HEIGHT // 2),
-                    (rcx + BOX_WIDTH // 2, rcy + BOX_HEIGHT // 2),
-                    (255, 0, 0),
-                    2,
-                )
+                draw_cheek(LEFT_CHEEK_IDX, (0, 255, 0))  # 초록
+                draw_cheek(RIGHT_CHEEK_IDX, (255, 0, 0))  # 파랑
 
-                # 디버깅 점
-                cv2.circle(image, (lcx, lcy), 2, (0, 0, 255), -1)
-                cv2.circle(image, (rcx, rcy), 2, (0, 0, 255), -1)
-
-        cv2.imshow("Refined Cheek Region Detection", image)
+        cv2.imshow("Cheek Detection", image)
         if cv2.waitKey(5) & 0xFF == 27:
             break
 
