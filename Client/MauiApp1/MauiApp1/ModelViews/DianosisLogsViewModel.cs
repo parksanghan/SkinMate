@@ -13,8 +13,26 @@ namespace MauiApp1.ModelViews
     public class DiagnosisLogsViewModel : INotifyPropertyChanged
     {
         public ObservableCollection<string> DiagnosisDates { get; set; } = new();// 날짜 변경 시 마다 변경
+        public Action<int>? SelectedIndexChangedAction { get; set; }
 
-
+        private int selectedDateIndex;
+        public int SelectedDateIndex
+        {
+            get => selectedDateIndex;
+            set
+            {
+                if (selectedDateIndex != value)
+                {
+                    selectedDateIndex = value;
+                    OnPropertyChanged();
+                    SelectedIndexChangedAction?.Invoke(value);
+                }
+            }
+        }
+        protected void OnPropertyChanged(string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
         public async Task LoadDiagnosisLogAsync()
         {
             var logs = HttpService.Instance.GetDiaLogEntries().ToList();

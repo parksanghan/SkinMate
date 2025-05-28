@@ -84,6 +84,7 @@
 		<PackageReference Include="Microsoft.Maui.Controls" Version="9.0.50" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0" />
 		<PackageReference Include="SkiaSharp.Views.Maui.Controls" Version="3.119.0-preview.1.2" />
+		<PackageReference Include="Syncfusion.Maui.Inputs" Version="29.2.7" />
 	</ItemGroup>
 
 	<ItemGroup>

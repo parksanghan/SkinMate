@@ -6,6 +6,7 @@ using Android.Webkit; // ✅ 이거 추가!
 using MauiApp1.Platforms.Android.AdHandler;
 #endif
 using Microsoft.Extensions.Logging;
+using Syncfusion.Maui.Core.Hosting;
 
 namespace MauiApp1
 {
@@ -36,6 +37,7 @@ namespace MauiApp1
                 .UseMauiCommunityToolkitCamera()
                 .UseMicrocharts()
                 .UseMauiCommunityToolkit()
+                .ConfigureSyncfusionCore()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -45,7 +47,8 @@ namespace MauiApp1
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif
-
+            // 여기서 라이선스 등록
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Ngo9BigBOggjHTQxAR8/V1NNaF1cWWhPYVFwWmFZfVtgfV9DZlZVRmYuP1ZhSXxWdkBhXn9XdXJRQGJYV0B9XUs=");
             return builder.Build();
         }
     }

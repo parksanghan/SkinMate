@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "FbFNxVffEZg=",
+  "dgSpecHash": "XCQTrP0dlBQ=",
   "success": true,
   "projectFilePath": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\MauiApp1.csproj",
   "expectedPackageFiles": [
@@ -43,6 +43,12 @@
     "C:\\Users\\박상한\\.nuget\\packages\\skiasharp.views.maui.controls\\3.119.0-preview.1.2\\skiasharp.views.maui.controls.3.119.0-preview.1.2.nupkg.sha512",
     "C:\\Users\\박상한\\.nuget\\packages\\skiasharp.views.maui.core\\3.119.0-preview.1.2\\skiasharp.views.maui.core.3.119.0-preview.1.2.nupkg.sha512",
     "C:\\Users\\박상한\\.nuget\\packages\\skiasharp.views.winui\\3.119.0-preview.1.2\\skiasharp.views.winui.3.119.0-preview.1.2.nupkg.sha512",
+    "C:\\Users\\박상한\\.nuget\\packages\\syncfusion.licensing\\29.2.7\\syncfusion.licensing.29.2.7.nupkg.sha512",
+    "C:\\Users\\박상한\\.nuget\\packages\\syncfusion.maui.core\\29.2.7\\syncfusion.maui.core.29.2.7.nupkg.sha512",
+    "C:\\Users\\박상한\\.nuget\\packages\\syncfusion.maui.datasource\\29.2.7\\syncfusion.maui.datasource.29.2.7.nupkg.sha512",
+    "C:\\Users\\박상한\\.nuget\\packages\\syncfusion.maui.gridcommon\\29.2.7\\syncfusion.maui.gridcommon.29.2.7.nupkg.sha512",
+    "C:\\Users\\박상한\\.nuget\\packages\\syncfusion.maui.inputs\\29.2.7\\syncfusion.maui.inputs.29.2.7.nupkg.sha512",
+    "C:\\Users\\박상한\\.nuget\\packages\\syncfusion.maui.listview\\29.2.7\\syncfusion.maui.listview.29.2.7.nupkg.sha512",
     "C:\\Users\\박상한\\.nuget\\packages\\system.runtime.interopservices.nfloat.internal\\6.0.1\\system.runtime.interopservices.nfloat.internal.6.0.1.nupkg.sha512",
     "C:\\Users\\박상한\\.nuget\\packages\\system.speech\\9.0.0\\system.speech.9.0.0.nupkg.sha512",
     "C:\\Users\\박상한\\.nuget\\packages\\xamarin.android.glide\\4.16.0.11\\xamarin.android.glide.4.16.0.11.nupkg.sha512",

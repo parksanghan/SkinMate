@@ -4,6 +4,7 @@
              xmlns:microcharts="clr-namespace:Microcharts.Maui;assembly=Microcharts.Maui"
              xmlns:skia="clr-namespace:SkiaSharp.Views.Maui.Controls;assembly=SkiaSharp.Views.Maui.Controls"
              xmlns:winui="using:Microsoft.UI.Xaml.Controls"
+             xmlns:sf="clr-namespace:Syncfusion.Maui.Inputs;assembly=Syncfusion.Maui.Inputs"
              x:Class="MauiApp1.Views.HistoryViewPage"
              Title="HistoryViewPage"
               BackgroundColor="#E1EAF2">
@@ -21,7 +22,14 @@
                 HorizontalOptions="Center">
            
             </Picker>
-           
+            <sf:SfComboBox 
+            ItemsSource="{Binding DiagnosisDates}"
+            
+            SelectedIndex="{Binding SelectedDateIndex, Mode=TwoWay}"
+            IsVisible="{OnPlatform WinUI=true, Android=false}"
+            WidthRequest="300"
+            Placeholder="진단 날짜 선택" />
+
             <microcharts:ChartView
             BackgroundColor="#E1EAF2"
             x:Name="classChartView"

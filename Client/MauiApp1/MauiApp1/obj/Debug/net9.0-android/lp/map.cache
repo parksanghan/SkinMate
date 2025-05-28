@@ -13,6 +13,11 @@ SkiaSharp.dll
 SkiaSharp.Views.Android.dll
 SkiaSharp.Views.Maui.Controls.dll
 SkiaSharp.Views.Maui.Core.dll
+Syncfusion.Maui.Core.dll
+Syncfusion.Maui.DataSource.dll
+Syncfusion.Maui.GridCommon.dll
+Syncfusion.Maui.Inputs.dll
+Syncfusion.Maui.ListView.dll
 Xamarin.Android.Glide.Annotations.dll
 Xamarin.Android.Glide.DiskLruCache.dll
 Xamarin.Android.Glide.dll

@@ -97,6 +97,10 @@
               "target": "Package",
               "version": "[3.119.0-preview.1.2, )"
             },
+            "Syncfusion.Maui.Inputs": {
+              "target": "Package",
+              "version": "[29.2.7, )"
+            },
             "Xamarin.Google.MLKit.FaceDetection": {
               "target": "Package",
               "version": "[116.1.7.2, )"
@@ -159,6 +163,10 @@
             "SkiaSharp.Views.Maui.Controls": {
               "target": "Package",
               "version": "[3.119.0-preview.1.2, )"
+            },
+            "Syncfusion.Maui.Inputs": {
+              "target": "Package",
+              "version": "[29.2.7, )"
             }
           },
           "imports": [
@@ -214,6 +222,10 @@
             "SkiaSharp.Views.Maui.Controls": {
               "target": "Package",
               "version": "[3.119.0-preview.1.2, )"
+            },
+            "Syncfusion.Maui.Inputs": {
+              "target": "Package",
+              "version": "[29.2.7, )"
             }
           },
           "imports": [
@@ -264,6 +276,10 @@
             "SkiaSharp.Views.Maui.Controls": {
               "target": "Package",
               "version": "[3.119.0-preview.1.2, )"
+            },
+            "Syncfusion.Maui.Inputs": {
+              "target": "Package",
+              "version": "[29.2.7, )"
             }
           },
           "imports": [
