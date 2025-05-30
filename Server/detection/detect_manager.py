@@ -262,7 +262,9 @@ import numpy as np
 from pathlib import Path
 
 if __name__ == "__main__":
-    image_path = Path(r"F:\WIN_20250525_03_40_42_Pro.jpg")
+    image_path = Path(
+        r"C:\Users\박상한\Pictures\Camera Roll\WIN_20250528_10_34_40_Pro.jpg"
+    )
 
     if not image_path.exists():
         print(f"[경고] 파일이 존재하지 않습니다:\n{image_path}")

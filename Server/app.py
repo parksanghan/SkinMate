@@ -66,7 +66,7 @@ def register(req: RegisterRequest):
 
 
 # 업로드 API
-@app.post("/{user_id}/upload")
+@app.post("/{user_id}/upload1")
 async def upload(user_id: str, files: list[UploadFile] = File(...)):
     try:
         # 실제 파일 읽기는 유지 (파일 업로드 구조 유지 목적)
@@ -114,7 +114,7 @@ async def upload(user_id: str, files: list[UploadFile] = File(...)):
 # 아래가 이전사용
 # 업로드 후 분석 후 분석결과 알리고
 # 알린 결과를 통해 채팅요청임임
-@app.post("/{user_id}/upload1")
+@app.post("/{user_id}/upload")
 async def upload1(user_id: str, files: list[UploadFile] = File(...)):
     try:
         for file in files:
@@ -122,7 +122,7 @@ async def upload1(user_id: str, files: list[UploadFile] = File(...)):
             contents = await file.read()
 
             # 2. 외부 진단 서버 주소
-            diagnosis_url = "http://182.210.98.131:5000/diagnose"
+            diagnosis_url = "http://192.168.204.149:5000/diagnose"
 
             # 3. forwarding 요청
             response = requests.post(

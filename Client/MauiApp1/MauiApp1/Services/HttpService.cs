@@ -256,12 +256,14 @@ namespace MauiApp1.Services
             {
   
                 Console.WriteLine($"[DEBUG] 위치 좌표: lat = {lat}, lon = {lon}");
-                return $"http://{Ip}:8080/web/main.html?lat={lat}&lon={lon}";
+                return $"https://skinmate.shop/web/main.html?lat={lat}&lon={lon}";
+
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"[DEBUG] 위치 조회 실패: {ex.Message}");
-                return $"http://{Ip}:8080/web/main.html?lat={lat}&lon={lon}";
+                return $"https://skinmate.shop/web/main.html?lat={lat}&lon={lon}";
+
             }
         }
         // app.cs에서 초기화 
