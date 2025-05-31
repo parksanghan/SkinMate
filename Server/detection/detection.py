@@ -19,7 +19,6 @@ class DetectManager:
         self.mp_face_mesh = mp.solutions.face_mesh
         self.mp_face_detection = mp.solutions.face_detection
 
-    # face mesh로 초기화
     def __call__(self, image_bgr):
         self.image_bgr = image_bgr
         self.h, self.w, _ = image_bgr.shape

@@ -5,6 +5,7 @@ import numpy as np
 import os
 from torchvision import models, transforms
 
+
 class SkinDiagnosisManager:
     def __init__(self, class_model_dir, regression_model_dir):
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -20,7 +21,7 @@ class SkinDiagnosisManager:
             3: "eyes_wrinkle",
             8: "cheek_pore",
             5: "lips_dryness",
-            7: "jaw_sagging"
+            7: "jaw_sagging",
         }
 
         self.regression_result_keys = {
@@ -28,15 +29,17 @@ class SkinDiagnosisManager:
             1: ["forehead_moisture", "forehead_elasticity"],
             3: ["eyes_wrinkle"],
             5: ["cheek_moisture", "cheek_elasticity", "cheek_pore"],
-            8: ["jaw_moisture", "jaw_elasticity"]
+            8: ["jaw_moisture", "jaw_elasticity"],
         }
 
     def preprocess_image(self, image_path):
         img = cv2.imread(image_path)
         img = cv2.resize(img, (256, 256))
-        transform = transforms.Compose([
-            transforms.ToTensor(),
-        ])
+        transform = transforms.Compose(
+            [
+                transforms.ToTensor(),
+            ]
+        )
         img = transform(img).unsqueeze(0).to(self.device)
         return img
 
@@ -49,11 +52,13 @@ class SkinDiagnosisManager:
             model = models.resnet50()
             model.fc = torch.nn.Linear(model.fc.in_features, num_classes)
             checkpoint = torch.load(checkpoint_path, map_location=self.device)
-            output_dim = checkpoint['model_state']['fc.weight'].shape[0]
+            output_dim = checkpoint["model_state"]["fc.weight"].shape[0]
             if output_dim != num_classes:
-                print(f"[오류] 모델 구조 불일치: 저장된 출력 수({output_dim}) != 기대 출력 수({num_classes})")
+                print(
+                    f"[오류] 모델 구조 불일치: 저장된 출력 수({output_dim}) != 기대 출력 수({num_classes})"
+                )
                 return None
-            model.load_state_dict(checkpoint['model_state'])
+            model.load_state_dict(checkpoint["model_state"])
             model = model.to(self.device)
             model.eval()
             return model
@@ -69,7 +74,7 @@ class SkinDiagnosisManager:
                 predicted_class = torch.argmax(probabilities, dim=1).item()
                 return predicted_class
             else:
-                output = torch.clamp(output, 0.02054755955934525, 0.98874594569206238);
+                output = torch.clamp(output, 0.02054755955934525, 0.98874594569206238)
                 return output.squeeze().cpu().numpy()
 
     def diagnose(self, image_path):
@@ -90,7 +95,7 @@ class SkinDiagnosisManager:
             if model:
                 result = self.infer(model, img, is_classification=False)
                 keys = self.regression_result_keys.get(idx, [])
-                    
+
                 if isinstance(result, np.ndarray):
                     if result.ndim == 0:
                         # 0차원 ndarray → 단일 값
@@ -108,9 +113,8 @@ class SkinDiagnosisManager:
                     if keys:
                         regression_results[keys[0]] = float(result)
                 else:
-                    print(f"[경고] 처리 불가능한 result 타입: {type(result)} / 값: {result}")
+                    print(
+                        f"[경고] 처리 불가능한 result 타입: {type(result)} / 값: {result}"
+                    )
 
-        return {
-            "class": class_results,
-            "regression": regression_results
-        }
+        return {"class": class_results, "regression": regression_results}
