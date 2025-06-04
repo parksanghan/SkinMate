@@ -37,6 +37,23 @@ class DetectManager:
         if self.results.multi_face_landmarks:
             self.face_landmarks = self.results.multi_face_landmarks[0]
 
+    def get_cropped_all_img(self):
+        try:
+            regions = {
+                "face_box": self.crop_detected_face_box(),
+                "forehead": self.crop_detected_forehead(),
+                "left_cheek": self.crop_detected_left_cheek(),
+                "right_cheek": self.crop_detected_right_cheek(),
+                "left_eyewrinkles": self.crop_detected_left_eyewrinkles(),
+                "right_eyewrinkles": self.crop_detected_right_eyewrinkles(),
+                "middle_eyebrows": self.crop_detected_middle_eyebrows(),
+                "chin": self.crop_detected_chin(),
+                "lips": self.crop_detected_lips(),
+            }
+            return regions
+        except Exception as e:
+            raise RuntimeError("get all img box error")
+
     # face box 처리
     def crop_detected_face_box(self):
         try:
@@ -308,41 +325,41 @@ class DetectManager:
             raise RuntimeError("crop error (right cheek)")
 
 
-import cv2
-import numpy as np
-from pathlib import Path
+# import cv2
+# import numpy as np
+# from pathlib import Path
 
-image_path = Path(r"C:\Users\박상한\Pictures\Camera Roll\WIN_20250528_10_34_40_Pro.jpg")
+# image_path = Path(r"C:\Users\박상한\Pictures\Camera Roll\WIN_20250528_10_34_40_Pro.jpg")
 
-if not image_path.exists():
-    print(f"[경고] 파일이 존재하지 않습니다:\n{image_path}")
-else:
-    # 한글 경로 대응 이미지 로드
-    image = cv2.imdecode(np.fromfile(str(image_path), dtype=np.uint8), cv2.IMREAD_COLOR)
+# if not image_path.exists():
+#     print(f"[경고] 파일이 존재하지 않습니다:\n{image_path}")
+# else:
+#     # 한글 경로 대응 이미지 로드
+#     image = cv2.imdecode(np.fromfile(str(image_path), dtype=np.uint8), cv2.IMREAD_COLOR)
 
-    if image is None:
-        print(f"[오류] 이미지를 읽지 못했습니다. 파일 손상 가능성:\n{image_path}")
-    else:
-        dm = DetectManager()
-        dm(image.copy())  # __call__ 호출
+#     if image is None:
+#         print(f"[오류] 이미지를 읽지 못했습니다. 파일 손상 가능성:\n{image_path}")
+#     else:
+#         dm = DetectManager()
+#         dm(image.copy())  # __call__ 호출
 
-        regions = {
-            "face_box": dm.crop_detected_face_box(),
-            "forehead": dm.crop_detected_forehead(),
-            "left_cheek": dm.crop_detected_left_cheek(),
-            "right_cheek": dm.crop_detected_right_cheek(),
-            "left_eyewrinkles": dm.crop_detected_left_eyewrinkles(),
-            "right_eyewrinkles": dm.crop_detected_right_eyewrinkles(),
-            "middle_eyebrows": dm.crop_detected_middle_eyebrows(),
-            "chin": dm.crop_detected_chin(),
-            "lips": dm.crop_detected_lips(),
-        }
+#         regions = {
+#             "face_box": dm.crop_detected_face_box(),
+#             "forehead": dm.crop_detected_forehead(),
+#             "left_cheek": dm.crop_detected_left_cheek(),
+#             "right_cheek": dm.crop_detected_right_cheek(),
+#             "left_eyewrinkles": dm.crop_detected_left_eyewrinkles(),
+#             "right_eyewrinkles": dm.crop_detected_right_eyewrinkles(),
+#             "middle_eyebrows": dm.crop_detected_middle_eyebrows(),
+#             "chin": dm.crop_detected_chin(),
+#             "lips": dm.crop_detected_lips(),
+#         }
 
-        save_dir = Path("saved_regions")
-        save_dir.mkdir(exist_ok=True)
+#         save_dir = Path("saved_regions")
+#         save_dir.mkdir(exist_ok=True)
 
-        for name, img in regions.items():
-            save_path = save_dir / f"{name}.jpg"
-            cv2.imencode(".jpg", img)[1].tofile(str(save_path))  # 한글 경로 대응 저장
+#         for name, img in regions.items():
+#             save_path = save_dir / f"{name}.jpg"
+#             cv2.imencode(".jpg", img)[1].tofile(str(save_path))  # 한글 경로 대응 저장
 
-        print("✅ 9개 영역 저장 완료:", save_dir.resolve())
+#         print("✅ 9개 영역 저장 완료:", save_dir.resolve())

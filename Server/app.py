@@ -2,6 +2,7 @@ from fastapi import FastAPI, HTTPException, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from db.db_manager import DbManager
+from detection.detection import DetectManager
 import os
 from models import RegisterRequest, LoginRequest, UserSetingPayload
 import uvicorn
@@ -13,6 +14,10 @@ import json
 import requests
 from fastapi import Request
 from fastapi.staticfiles import StaticFiles
+from io import BytesIO
+from PIL import Image
+import numpy as np
+import cv2
 
 chat_manager = ChatManager()
 app = FastAPI()
@@ -153,6 +158,51 @@ async def upload1(user_id: str, files: list[UploadFile] = File(...)):
         raise HTTPException(status_code=500, detail=str(e))
 
 
+# box 처리
+@app.post("/{user_id}/upload11")
+async def upload11(user_id: str, files: list[UploadFile] = File(...)):
+    try:
+        if not files:
+            return {"status": "fail", "msg": "No files processed"}
+        for file in files:
+            # 1. 이미지 내용 읽기
+            contents = await file.read()
+            files_to_send = {}
+            # 1개 이미지
+            image = Image.open(BytesIO(contents)).convert("RGB")
+            image_np = np.array(image)
+            image_bgr = cv2.cvtColor(image_np, cv2.COLOR_RGB2BGR)
+            detector = DetectManager()
+            detector(image_bgr)
+            regions = detector.get_cropped_all_img()
+            for name, img in regions.items():
+                success, buffer = cv2.imencode(".jpg", img)
+                if not success:
+                    raise HTTPException(status_code=500, detail=str("인코딩 에러"))
+                files_to_send[name] = (f"{name}.jpg", buffer.tobytes(), "image/jpeg")
+            # 2. 외부 진단 서버 주소
+            diagnosis_url = "http://192.168.204.149:5000/diagnose"
+            response = requests.post(
+                diagnosis_url.format(user_id=user_id), files=files_to_send
+            )
+
+            if response.status_code != 200:
+                raise Exception(
+                    f"추론 서버 오류: {response.status_code} - {response.text}"
+                )
+            print("[✅ 추론 서버 응답]")
+            print(response.json())
+            return {
+                "status": "ok",
+                "msg": "진단 서버 응답 출력 완료",
+                "diagnosis_result": response.json(),
+            }
+
+    except Exception as e:
+        print(f"❌ 업로드 실패: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
 # # 파일 업로드 API
 # @app.post("/{user_id}/upload")
 # async def upload(
@@ -267,21 +317,6 @@ async def request_setting(user_id, data: Request):
     logs = db_manager.get_user_logs(user_id)
     print(logs)
     db_manager.add_setting_log(user_id, settingdata)
-
-
-@app.get("/")
-def read_root():
-    return {"message": "Hello FastAPI!"}
-
-
-@app.get("/lol")
-def loll():
-    return {"message": "Hello dddw!"}
-
-
-@app.get("/llll")
-async def llll():
-    return {"msg": "dddd"}
 
 
 from fastapi.responses import FileResponse

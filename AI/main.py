@@ -5,7 +5,9 @@ import shutil
 import os
 import uuid
 import uvicorn
-
+from PIL import Image
+import numpy as np
+import cv2
 app = FastAPI()
 
 # 모델 관리자 인스턴스 초기화
@@ -13,6 +15,25 @@ diagnosis_manager = SkinDiagnosisManager(
     class_model_dir=r"S:\[Education]\Capstone1\NIA_019-028\checkpoint\class\testing\250414_2014",
     regression_model_dir=r"S:\[Education]\Capstone1\NIA_019-028\checkpoint\regression\testing\250414_2014"
 )
+@app.post("/diagnose2")
+async def diognose2(files: List[UploadFile]=  file(...)):
+    region_images   = {}
+    for file in files:
+        contents =  await file.read()
+        img_array = np.frombuffer(contents, np.uint8)
+        img  = cv2.imedcode(img_array, cv2.IMREAD_COLOR)
+        key = file.filename.split(".").[0]
+        region_images[key]= img
+            #    "face_box": self.crop_detected_face_box(),
+            #     "forehead": self.crop_detected_forehead(),
+            #     "left_cheek": self.crop_detected_left_cheek(),
+            #     "right_cheek": self.crop_detected_right_cheek(),
+            #     "left_eyewrinkles": self.crop_detected_left_eyewrinkles(),
+            #     "right_eyewrinkles": self.crop_detected_right_eyewrinkles(),
+            #     "middle_eyebrows": self.crop_detected_middle_eyebrows(),
+            #     "chin": self.crop_detected_chin(),
+            #     "lips": self.crop_detected_lips(),
+    results =diagnosis_manager.diagnose(region_images)
 
 @app.post("/diagnose")
 async def diagnose_skin(image: UploadFile = File(...)):

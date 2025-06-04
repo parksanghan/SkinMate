@@ -1,1 +1,1 @@
-from .detect_manager import DetectManager
+from .detection import DetectManager
