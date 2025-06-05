@@ -21,19 +21,11 @@ async def diognose2(files: List[UploadFile]=  file(...)):
     for file in files:
         contents =  await file.read()
         img_array = np.frombuffer(contents, np.uint8)
-        img  = cv2.imedcode(img_array, cv2.IMREAD_COLOR)
+        img  = cv2.imdecode(img_array, cv2.IMREAD_COLOR)
         key = file.filename.split(".").[0]
         region_images[key]= img
-            #    "face_box": self.crop_detected_face_box(),
-            #     "forehead": self.crop_detected_forehead(),
-            #     "left_cheek": self.crop_detected_left_cheek(),
-            #     "right_cheek": self.crop_detected_right_cheek(),
-            #     "left_eyewrinkles": self.crop_detected_left_eyewrinkles(),
-            #     "right_eyewrinkles": self.crop_detected_right_eyewrinkles(),
-            #     "middle_eyebrows": self.crop_detected_middle_eyebrows(),
-            #     "chin": self.crop_detected_chin(),
-            #     "lips": self.crop_detected_lips(),
-    results =diagnosis_manager.diagnose(region_images)
+ 
+    results =diagnosis_manager.diagnose3(region_images)
 
 @app.post("/diagnose")
 async def diagnose_skin(image: UploadFile = File(...)):

@@ -49,6 +49,7 @@ class DetectManager:
                 "middle_eyebrows": self.crop_detected_middle_eyebrows(),
                 "chin": self.crop_detected_chin(),
                 "lips": self.crop_detected_lips(),
+                # "left_eyewrinkles": cv2.flip(self.crop_detected_left_eyewrinkles(), 1),
             }
             return regions
         except Exception as e:

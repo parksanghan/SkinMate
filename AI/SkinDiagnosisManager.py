@@ -147,7 +147,7 @@ class SkinDiagnosisManager:
     def diagnose3(self, region_images:dict):
         class_results= {}
         regression_results = {}
-        # 영역 , 이미지 
+        # 영역 , 이미지 class_result_keys
         # 분류 모델 순회회
         for region_name , img in region_images.items():
             cls_idx = self.region_to_classification_idx.get(region_name) # 영역별 idx 
@@ -160,16 +160,16 @@ class SkinDiagnosisManager:
                 result =  self.infer(model,input_tensor,is_classification =True )
                 result_key  = self.class_result_keys.get(cls_idx)
                 if result_key:
-                    if result_key
-                        (class_results[result_key] + result)/2 
+                    if result_key in class_results:
+                        class_results[result_key]= (class_results[result_key] + result)/2 
                     else:
-                         class_results[result_key] = result
+                        class_results[result_key] = result
     
         # 회귀 모델 순회
         for region_name , img  in region_images.items():
             reg_idx =  self.region_to_regression_idx.get(region_name)
             if reg_idx is None or img is None:
-                continue
+                raise RuntimeError("No img in region")
             model = self.load_model(self.regression_model_dir, reg_idx 
             , self.regression_classes[reg_idx])
             if model :
@@ -178,19 +178,30 @@ class SkinDiagnosisManager:
                 result_keys  =  self.regression_result_keys.get(reg_idx, [])
                 if isinstance(result,np.ndarray):
                     if result.ndim == 0  and result_keys:
-                        regression_results[result_keys[0]]  = float(result.item())
+                        if result_keys[0] in regression_results:
+                            regression_results[result_keys[0]] = (regression_results[result_keys[0]] + float(result.item()))/2
+                        else:
+                            regression_results[result_keys[0]]  = float(result.item())
                     else:
                         for i,key in enumerate(result_keys):
                             if i < result.size:
-                                regression_results[key] =
-                                  float(result[i])
+                                if key in regression_results:
+                                    regression_results[key] = (regression_results[key] + float(result[i]))/2
+                                else:
+                                    regression_results[key] = float(result[i])
                 elif isinstance(result ,(list , tuple)):
                     for i , key in enumerate(result_keys):
                         if i  < len(result):
-                            regression_results[key]=float(result[i])
+                            if key in regression_results:
+                                regression_results[key]=(regression_results[key] + float(result[i]))/2
+                            else:
+                                regression_results[key] =  float(result[i])
                 elif isinstance(result , (int, float , np.float32, np.float64)):
                     if result_keys:
-                        regression_results[result_keys[0]]= float(result)
+                        if result_keys[0] in regression_results:
+                            regression_results[result_keys[0]] =  (regression_results[result_keys[0]] + float(result))/2
+                        else:                        
+                            regression_results[result_keys[0]]= float(result)
                 else:
                     print(
                         f"[경고] 처리 불가능한 result 타입: {type(result)} / 값: {result}"
