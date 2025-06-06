@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "F:\\SkinMate\\Client\\MauiApp1\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{6B6278CA-BD9C-4253-A363-D5757D9E37FD}|MauiApp1\\MauiApp1.csproj|f:\\skinmate\\client\\mauiapp1\\mauiapp1\\views\\cameraviewpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B6278CA-BD9C-4253-A363-D5757D9E37FD}|MauiApp1\\MauiApp1.csproj|solutionrelative:mauiapp1\\views\\cameraviewpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6B6278CA-BD9C-4253-A363-D5757D9E37FD}|MauiApp1\\MauiApp1.csproj|f:\\skinmate\\client\\mauiapp1\\mauiapp1\\views\\content\\resultpopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B6278CA-BD9C-4253-A363-D5757D9E37FD}|MauiApp1\\MauiApp1.csproj|solutionrelative:mauiapp1\\views\\content\\resultpopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6B6278CA-BD9C-4253-A363-D5757D9E37FD}|MauiApp1\\MauiApp1.csproj|f:\\skinmate\\client\\mauiapp1\\mauiapp1\\views\\cameraviewpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6B6278CA-BD9C-4253-A363-D5757D9E37FD}|MauiApp1\\MauiApp1.csproj|solutionrelative:mauiapp1\\views\\cameraviewpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6B6278CA-BD9C-4253-A363-D5757D9E37FD}|MauiApp1\\MauiApp1.csproj|f:\\skinmate\\client\\mauiapp1\\mauiapp1\\views\\chatviewpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B6278CA-BD9C-4253-A363-D5757D9E37FD}|MauiApp1\\MauiApp1.csproj|solutionrelative:mauiapp1\\views\\chatviewpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{6B6278CA-BD9C-4253-A363-D5757D9E37FD}|MauiApp1\\MauiApp1.csproj|f:\\skinmate\\client\\mauiapp1\\mauiapp1\\services\\httpservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6B6278CA-BD9C-4253-A363-D5757D9E37FD}|MauiApp1\\MauiApp1.csproj|solutionrelative:mauiapp1\\services\\httpservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -25,14 +41,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{6B6278CA-BD9C-4253-A363-D5757D9E37FD}|MauiApp1\\MauiApp1.csproj|f:\\skinmate\\client\\mauiapp1\\mauiapp1\\views\\menucontentview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6B6278CA-BD9C-4253-A363-D5757D9E37FD}|MauiApp1\\MauiApp1.csproj|solutionrelative:mauiapp1\\views\\menucontentview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6B6278CA-BD9C-4253-A363-D5757D9E37FD}|MauiApp1\\MauiApp1.csproj|f:\\skinmate\\client\\mauiapp1\\mauiapp1\\views\\cameraviewpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B6278CA-BD9C-4253-A363-D5757D9E37FD}|MauiApp1\\MauiApp1.csproj|solutionrelative:mauiapp1\\views\\cameraviewpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6B6278CA-BD9C-4253-A363-D5757D9E37FD}|MauiApp1\\MauiApp1.csproj|f:\\skinmate\\client\\mauiapp1\\mauiapp1\\views\\cameraviewpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{6B6278CA-BD9C-4253-A363-D5757D9E37FD}|MauiApp1\\MauiApp1.csproj|solutionrelative:mauiapp1\\views\\cameraviewpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6B6278CA-BD9C-4253-A363-D5757D9E37FD}|MauiApp1\\MauiApp1.csproj|f:\\skinmate\\client\\mauiapp1\\mauiapp1\\views\\menucontentview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -117,10 +125,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{6B6278CA-BD9C-4253-A363-D5757D9E37FD}|MauiApp1\\MauiApp1.csproj|f:\\skinmate\\client\\mauiapp1\\mauiapp1\\views\\chatviewpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{6B6278CA-BD9C-4253-A363-D5757D9E37FD}|MauiApp1\\MauiApp1.csproj|solutionrelative:mauiapp1\\views\\chatviewpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6B6278CA-BD9C-4253-A363-D5757D9E37FD}|MauiApp1\\MauiApp1.csproj|f:\\skinmate\\client\\mauiapp1\\mauiapp1\\views\\chatviewpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B6278CA-BD9C-4253-A363-D5757D9E37FD}|MauiApp1\\MauiApp1.csproj|solutionrelative:mauiapp1\\views\\chatviewpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6B6278CA-BD9C-4253-A363-D5757D9E37FD}|MauiApp1\\MauiApp1.csproj|f:\\skinmate\\client\\mauiapp1\\mauiapp1\\data\\chatmessage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -274,10 +278,6 @@
       "RelativeMoniker": "D:0:0:{6B6278CA-BD9C-4253-A363-D5757D9E37FD}|MauiApp1\\MauiApp1.csproj|solutionrelative:mauiapp1\\views\\content\\resultpopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6B6278CA-BD9C-4253-A363-D5757D9E37FD}|MauiApp1\\MauiApp1.csproj|f:\\skinmate\\client\\mauiapp1\\mauiapp1\\views\\content\\resultpopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B6278CA-BD9C-4253-A363-D5757D9E37FD}|MauiApp1\\MauiApp1.csproj|solutionrelative:mauiapp1\\views\\content\\resultpopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6B6278CA-BD9C-4253-A363-D5757D9E37FD}|MauiApp1\\MauiApp1.csproj|f:\\skinmate\\client\\mauiapp1\\mauiapp1\\data\\diagnosisresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6B6278CA-BD9C-4253-A363-D5757D9E37FD}|MauiApp1\\MauiApp1.csproj|solutionrelative:mauiapp1\\data\\diagnosisresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -366,23 +366,112 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "MauiProgram.cs",
-              "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\MauiProgram.cs",
-              "RelativeDocumentMoniker": "MauiApp1\\MauiProgram.cs",
-              "ToolTip": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\MauiProgram.cs",
-              "RelativeToolTip": "MauiApp1\\MauiProgram.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAmwCAAAAAGAAAAAAAAAA==",
+              "Title": "HttpService.cs",
+              "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Services\\HttpService.cs",
+              "RelativeDocumentMoniker": "MauiApp1\\Services\\HttpService.cs",
+              "ToolTip": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Services\\HttpService.cs",
+              "RelativeToolTip": "MauiApp1\\Services\\HttpService.cs",
+              "ViewState": "AgIAAHsAAAAAAAAAAAAAAIsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-27T12:54:32.329Z"
+              "WhenOpened": "2025-04-08T15:13:08.922Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "WebMapPopup.xaml",
+              "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Views\\Content\\WebMapPopup.xaml",
+              "RelativeDocumentMoniker": "MauiApp1\\Views\\Content\\WebMapPopup.xaml",
+              "ToolTip": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Views\\Content\\WebMapPopup.xaml",
+              "RelativeToolTip": "MauiApp1\\Views\\Content\\WebMapPopup.xaml",
+              "ViewState": "AgIAABEAAAAAAAAAAAAowBsAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-04-30T01:52:00.844Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "ChatViewPage.xaml.cs",
+              "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Views\\ChatViewPage.xaml.cs",
+              "RelativeDocumentMoniker": "MauiApp1\\Views\\ChatViewPage.xaml.cs",
+              "ToolTip": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Views\\ChatViewPage.xaml.cs",
+              "RelativeToolTip": "MauiApp1\\Views\\ChatViewPage.xaml.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAowGAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T06:05:04.261Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CameraViewPage.xaml.cs",
+              "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Views\\CameraViewPage.xaml.cs",
+              "RelativeDocumentMoniker": "MauiApp1\\Views\\CameraViewPage.xaml.cs",
+              "ToolTip": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Views\\CameraViewPage.xaml.cs",
+              "RelativeToolTip": "MauiApp1\\Views\\CameraViewPage.xaml.cs",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAvwGkAAACPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-24T15:04:59.917Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CameraViewPage.xaml",
+              "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Views\\CameraViewPage.xaml",
+              "RelativeDocumentMoniker": "MauiApp1\\Views\\CameraViewPage.xaml",
+              "ToolTip": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Views\\CameraViewPage.xaml",
+              "RelativeToolTip": "MauiApp1\\Views\\CameraViewPage.xaml",
+              "ViewState": "AgIAACEAAAAAAAAAAAAvwCsAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-24T06:04:40.871Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ResultPopup.xaml.cs",
+              "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Views\\Content\\ResultPopup.xaml.cs",
+              "RelativeDocumentMoniker": "MauiApp1\\Views\\Content\\ResultPopup.xaml.cs",
+              "ToolTip": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Views\\Content\\ResultPopup.xaml.cs",
+              "RelativeToolTip": "MauiApp1\\Views\\Content\\ResultPopup.xaml.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAvwBoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-22T18:59:53.029Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "WebMapPopup.xaml.cs",
+              "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Views\\Content\\WebMapPopup.xaml.cs",
+              "RelativeDocumentMoniker": "MauiApp1\\Views\\Content\\WebMapPopup.xaml.cs",
+              "ToolTip": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Views\\Content\\WebMapPopup.xaml.cs",
+              "RelativeToolTip": "MauiApp1\\Views\\Content\\WebMapPopup.xaml.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAvwBwAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-30T01:52:22.515Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "MenuContentView.xaml",
+              "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Views\\MenuContentView.xaml",
+              "RelativeDocumentMoniker": "MauiApp1\\Views\\MenuContentView.xaml",
+              "ToolTip": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Views\\MenuContentView.xaml",
+              "RelativeToolTip": "MauiApp1\\Views\\MenuContentView.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-03-24T06:07:45.251Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "MauiApp1.csproj",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\MauiApp1.csproj",
               "RelativeDocumentMoniker": "MauiApp1\\MauiApp1.csproj",
@@ -395,67 +484,18 @@
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "MenuContentView.xaml",
-              "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Views\\MenuContentView.xaml",
-              "RelativeDocumentMoniker": "MauiApp1\\Views\\MenuContentView.xaml",
-              "ToolTip": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Views\\MenuContentView.xaml",
-              "RelativeToolTip": "MauiApp1\\Views\\MenuContentView.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-24T06:07:45.251Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "WebMapPopup.xaml.cs",
-              "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Views\\Content\\WebMapPopup.xaml.cs",
-              "RelativeDocumentMoniker": "MauiApp1\\Views\\Content\\WebMapPopup.xaml.cs",
-              "ToolTip": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Views\\Content\\WebMapPopup.xaml.cs",
-              "RelativeToolTip": "MauiApp1\\Views\\Content\\WebMapPopup.xaml.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAvwBwAAABCAAAAAAAAAA==",
+              "Title": "MauiProgram.cs",
+              "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\MauiProgram.cs",
+              "RelativeDocumentMoniker": "MauiApp1\\MauiProgram.cs",
+              "ToolTip": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\MauiProgram.cs",
+              "RelativeToolTip": "MauiApp1\\MauiProgram.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAmwCAAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-30T01:52:22.515Z"
+              "WhenOpened": "2025-05-27T12:54:32.329Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "HttpService.cs",
-              "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Services\\HttpService.cs",
-              "RelativeDocumentMoniker": "MauiApp1\\Services\\HttpService.cs",
-              "ToolTip": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Services\\HttpService.cs",
-              "RelativeToolTip": "MauiApp1\\Services\\HttpService.cs",
-              "ViewState": "AgIAAHAAAAAAAAAAAAAvwHIAAAA+AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T15:13:08.922Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "WebMapPopup.xaml",
-              "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Views\\Content\\WebMapPopup.xaml",
-              "RelativeDocumentMoniker": "MauiApp1\\Views\\Content\\WebMapPopup.xaml",
-              "ToolTip": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Views\\Content\\WebMapPopup.xaml",
-              "RelativeToolTip": "MauiApp1\\Views\\Content\\WebMapPopup.xaml",
-              "ViewState": "AgIAABEAAAAAAAAAAAAowBsAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-30T01:52:00.844Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "CameraViewPage.xaml.cs",
-              "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Views\\CameraViewPage.xaml.cs",
-              "RelativeDocumentMoniker": "MauiApp1\\Views\\CameraViewPage.xaml.cs",
-              "ToolTip": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Views\\CameraViewPage.xaml.cs",
-              "RelativeToolTip": "MauiApp1\\Views\\CameraViewPage.xaml.cs",
-              "ViewState": "AgIAALQAAAAAAAAAAAAowMkAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T15:04:59.917Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "MenuContentView.xaml.cs",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Views\\MenuContentView.xaml.cs",
               "RelativeDocumentMoniker": "MauiApp1\\Views\\MenuContentView.xaml.cs",
@@ -467,19 +507,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "CameraViewPage.xaml",
-              "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Views\\CameraViewPage.xaml",
-              "RelativeDocumentMoniker": "MauiApp1\\Views\\CameraViewPage.xaml",
-              "ToolTip": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Views\\CameraViewPage.xaml",
-              "RelativeToolTip": "MauiApp1\\Views\\CameraViewPage.xaml",
-              "ViewState": "AgIAADAAAAAAAAAAAAAmwEUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-03-24T06:04:40.871Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "MainPage.xaml.cs",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Views\\MainPage.xaml.cs",
               "RelativeDocumentMoniker": "MauiApp1\\Views\\MainPage.xaml.cs",
@@ -491,7 +519,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "MainPage.xaml",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Views\\MainPage.xaml",
               "RelativeDocumentMoniker": "MauiApp1\\Views\\MainPage.xaml",
@@ -503,7 +531,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "MauiApp1.csproj.Backup.tmp",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\MauiApp1.csproj.Backup.tmp",
               "RelativeDocumentMoniker": "MauiApp1\\MauiApp1.csproj.Backup.tmp",
@@ -515,7 +543,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "DianosisLogsViewModel.cs",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\ModelViews\\DianosisLogsViewModel.cs",
               "RelativeDocumentMoniker": "MauiApp1\\ModelViews\\DianosisLogsViewModel.cs",
@@ -527,7 +555,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "HistoryViewPage.xaml",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Views\\HistoryViewPage.xaml",
               "RelativeDocumentMoniker": "MauiApp1\\Views\\HistoryViewPage.xaml",
@@ -539,7 +567,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "HistoryViewPage.xaml.cs",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Views\\HistoryViewPage.xaml.cs",
               "RelativeDocumentMoniker": "MauiApp1\\Views\\HistoryViewPage.xaml.cs",
@@ -551,7 +579,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "HeaderView.xaml.cs",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Views\\HeaderView.xaml.cs",
               "RelativeDocumentMoniker": "MauiApp1\\Views\\HeaderView.xaml.cs",
@@ -563,7 +591,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "Login_RegisterPage.xaml.cs",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Views\\Login_RegisterPage.xaml.cs",
               "RelativeDocumentMoniker": "MauiApp1\\Views\\Login_RegisterPage.xaml.cs",
@@ -575,7 +603,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "ChatViewPageWin.xaml",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Views\\ChatViewPageWin.xaml",
               "RelativeDocumentMoniker": "MauiApp1\\Views\\ChatViewPageWin.xaml",
@@ -587,7 +615,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "splash.png",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Resources\\Splash\\splash.png",
               "RelativeDocumentMoniker": "MauiApp1\\Resources\\Splash\\splash.png",
@@ -598,7 +626,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 21,
               "Title": "splash.svg",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Resources\\Splash\\splash.svg",
               "RelativeDocumentMoniker": "MauiApp1\\Resources\\Splash\\splash.svg",
@@ -610,7 +638,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 22,
               "Title": "DiagnosisRegression.cs",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Data\\DiagnosisRegression.cs",
               "RelativeDocumentMoniker": "MauiApp1\\Data\\DiagnosisRegression.cs",
@@ -622,7 +650,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 23,
               "Title": "exam_15360375.png",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Resources\\Images\\exam_15360375.png",
               "RelativeDocumentMoniker": "MauiApp1\\Resources\\Images\\exam_15360375.png",
@@ -633,7 +661,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 27,
               "Title": "free_icon_chatbot.png",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Resources\\Images\\free_icon_chatbot.png",
               "RelativeDocumentMoniker": "MauiApp1\\Resources\\Images\\free_icon_chatbot.png",
@@ -644,7 +672,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 26,
               "Title": "appicon.svg",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Resources\\AppIcon\\appicon.svg",
               "RelativeDocumentMoniker": "MauiApp1\\Resources\\AppIcon\\appicon.svg",
@@ -656,7 +684,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 25,
               "Title": "banner.png",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Resources\\Images\\banner.png",
               "RelativeDocumentMoniker": "MauiApp1\\Resources\\Images\\banner.png",
@@ -667,7 +695,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 24,
               "Title": "dotnet_bot.png",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Resources\\Images\\dotnet_bot.png",
               "RelativeDocumentMoniker": "MauiApp1\\Resources\\Images\\dotnet_bot.png",
@@ -678,7 +706,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 28,
               "Title": "MediaUtil.cs",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Utils\\MediaUtil.cs",
               "RelativeDocumentMoniker": "MauiApp1\\Utils\\MediaUtil.cs",
@@ -690,7 +718,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 29,
               "Title": "UserChatMessage.cs",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Data\\UserChatMessage.cs",
               "RelativeDocumentMoniker": "MauiApp1\\Data\\UserChatMessage.cs",
@@ -702,7 +730,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 30,
               "Title": "ChatViewPage.xaml",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Views\\ChatViewPage.xaml",
               "RelativeDocumentMoniker": "MauiApp1\\Views\\ChatViewPage.xaml",
@@ -714,19 +742,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "ChatViewPage.xaml.cs",
-              "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Views\\ChatViewPage.xaml.cs",
-              "RelativeDocumentMoniker": "MauiApp1\\Views\\ChatViewPage.xaml.cs",
-              "ToolTip": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Views\\ChatViewPage.xaml.cs",
-              "RelativeToolTip": "MauiApp1\\Views\\ChatViewPage.xaml.cs",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAowGAAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-24T06:05:04.261Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 31,
               "Title": "ChatMessage.cs",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Data\\ChatMessage.cs",
               "RelativeDocumentMoniker": "MauiApp1\\Data\\ChatMessage.cs",
@@ -738,7 +754,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 32,
               "Title": "ChatViewModel.cs",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\ModelViews\\ChatViewModel.cs",
               "RelativeDocumentMoniker": "MauiApp1\\ModelViews\\ChatViewModel.cs",
@@ -750,7 +766,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 33,
               "Title": "UserChatViewModel.cs",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\ModelViews\\UserChatViewModel.cs",
               "RelativeDocumentMoniker": "MauiApp1\\ModelViews\\UserChatViewModel.cs",
@@ -762,7 +778,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 34,
               "Title": "ChatTemplateSelector.cs",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Templates\\ChatTemplateSelector.cs",
               "RelativeDocumentMoniker": "MauiApp1\\Templates\\ChatTemplateSelector.cs",
@@ -774,7 +790,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 35,
               "Title": "LogEntry.cs",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Data\\LogEntry.cs",
               "RelativeDocumentMoniker": "MauiApp1\\Data\\LogEntry.cs",
@@ -786,7 +802,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 36,
               "Title": "DiagnosisClassification.cs",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Data\\DiagnosisClassification.cs",
               "RelativeDocumentMoniker": "MauiApp1\\Data\\DiagnosisClassification.cs",
@@ -798,7 +814,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 37,
               "Title": "BasicCameraView.xaml.cs",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Views\\BasicCameraView.xaml.cs",
               "RelativeDocumentMoniker": "MauiApp1\\Views\\BasicCameraView.xaml.cs",
@@ -810,7 +826,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 40,
               "Title": "ChartUtil.cs",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Utils\\ChartUtil.cs",
               "RelativeDocumentMoniker": "MauiApp1\\Utils\\ChartUtil.cs",
@@ -822,7 +838,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 38,
               "Title": "MyCameraPreview.cs",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Controller\\MyCameraPreview.cs",
               "RelativeDocumentMoniker": "MauiApp1\\Controller\\MyCameraPreview.cs",
@@ -834,7 +850,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 39,
               "Title": "FontUtil.cs",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Utils\\FontUtil.cs",
               "RelativeDocumentMoniker": "MauiApp1\\Utils\\FontUtil.cs",
@@ -846,7 +862,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 41,
               "Title": "RegisterRequest.cs",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Model\\RegisterRequest.cs",
               "RelativeDocumentMoniker": "MauiApp1\\Model\\RegisterRequest.cs",
@@ -858,7 +874,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 42,
               "Title": "ReadMe.txt",
               "DocumentMoniker": "C:\\Users\\\uBC15\uC0C1\uD55C\\.nuget\\packages\\communitytoolkit.maui\\11.2.0\\ReadMe.txt",
               "ToolTip": "C:\\Users\\\uBC15\uC0C1\uD55C\\.nuget\\packages\\communitytoolkit.maui\\11.2.0\\ReadMe.txt",
@@ -868,7 +884,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 43,
               "Title": "HttpClientProvider.cs",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Utils\\HttpClientProvider.cs",
               "RelativeDocumentMoniker": "MauiApp1\\Utils\\HttpClientProvider.cs",
@@ -880,7 +896,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 44,
               "Title": "AuthController.cs",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Controller\\AuthController.cs",
               "RelativeDocumentMoniker": "MauiApp1\\Controller\\AuthController.cs",
@@ -892,7 +908,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 45,
               "Title": "Login_RegisterPage.xaml",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Views\\Login_RegisterPage.xaml",
               "RelativeDocumentMoniker": "MauiApp1\\Views\\Login_RegisterPage.xaml",
@@ -904,7 +920,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 46,
               "Title": "FluentUI.cs",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Resources\\Fonts\\FluentUI.cs",
               "RelativeDocumentMoniker": "MauiApp1\\Resources\\Fonts\\FluentUI.cs",
@@ -916,7 +932,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 47,
               "Title": "UserSettingPayload.cs",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Data\\UserSettingPayload.cs",
               "RelativeDocumentMoniker": "MauiApp1\\Data\\UserSettingPayload.cs",
@@ -928,7 +944,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 48,
               "Title": "MauiApp1",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\MauiApp1.csproj",
               "RelativeDocumentMoniker": "MauiApp1\\MauiApp1.csproj",
@@ -939,7 +955,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 49,
               "Title": "Styles.xaml",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Resources\\Styles\\Styles.xaml",
               "RelativeDocumentMoniker": "MauiApp1\\Resources\\Styles\\Styles.xaml",
@@ -951,7 +967,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 50,
               "Title": "Xamarin.Android.Aapt2.targets",
               "DocumentMoniker": "C:\\Program Files\\dotnet\\packs\\Microsoft.Android.Sdk.Windows\\35.0.50\\tools\\Xamarin.Android.Aapt2.targets",
               "ToolTip": "C:\\Program Files\\dotnet\\packs\\Microsoft.Android.Sdk.Windows\\35.0.50\\tools\\Xamarin.Android.Aapt2.targets",
@@ -961,7 +977,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 52,
               "Title": "colors.xml",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Platforms\\Android\\Resources\\values\\colors.xml",
               "RelativeDocumentMoniker": "MauiApp1\\Platforms\\Android\\Resources\\values\\colors.xml",
@@ -973,7 +989,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 51,
               "Title": "MainActivity.cs",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Platforms\\Android\\MainActivity.cs",
               "RelativeDocumentMoniker": "MauiApp1\\Platforms\\Android\\MainActivity.cs",
@@ -985,7 +1001,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 54,
               "Title": "Camera2Preview.cs",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Platforms\\Android\\Camera2Preview.cs",
               "RelativeDocumentMoniker": "MauiApp1\\Platforms\\Android\\Camera2Preview.cs",
@@ -997,7 +1013,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 53,
               "Title": "AppShell.xaml",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Views\\AppShell.xaml",
               "RelativeDocumentMoniker": "MauiApp1\\Views\\AppShell.xaml",
@@ -1009,7 +1025,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 55,
               "Title": "AppShell.xaml.cs",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Views\\AppShell.xaml.cs",
               "RelativeDocumentMoniker": "MauiApp1\\Views\\AppShell.xaml.cs",
@@ -1021,7 +1037,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 58,
               "Title": "HomeCotent.xaml.cs",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Views\\HomeCotent.xaml.cs",
               "RelativeDocumentMoniker": "MauiApp1\\Views\\HomeCotent.xaml.cs",
@@ -1033,7 +1049,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 57,
               "Title": "LocalAreaViewPage.xaml",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Views\\LocalAreaViewPage.xaml",
               "RelativeDocumentMoniker": "MauiApp1\\Views\\LocalAreaViewPage.xaml",
@@ -1045,7 +1061,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 56,
               "Title": "LocalAreaViewPage.xaml.cs",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Views\\LocalAreaViewPage.xaml.cs",
               "RelativeDocumentMoniker": "MauiApp1\\Views\\LocalAreaViewPage.xaml.cs",
@@ -1057,7 +1073,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 60,
               "Title": "App.xaml",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Views\\App.xaml",
               "RelativeDocumentMoniker": "MauiApp1\\Views\\App.xaml",
@@ -1069,7 +1085,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 59,
               "Title": "App.xaml.cs",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Views\\App.xaml.cs",
               "RelativeDocumentMoniker": "MauiApp1\\Views\\App.xaml.cs",
@@ -1081,7 +1097,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 63,
               "Title": "Microsoft.Android.Sdk.Aot.targets",
               "DocumentMoniker": "C:\\Program Files\\dotnet\\packs\\Microsoft.Android.Sdk.Windows\\35.0.50\\targets\\Microsoft.Android.Sdk.Aot.targets",
               "ToolTip": "C:\\Program Files\\dotnet\\packs\\Microsoft.Android.Sdk.Windows\\35.0.50\\targets\\Microsoft.Android.Sdk.Aot.targets",
@@ -1091,7 +1107,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 61,
               "Title": "Microsoft.Maui.Resizetizer.After.targets",
               "DocumentMoniker": "C:\\Users\\\uBC15\uC0C1\uD55C\\.nuget\\packages\\microsoft.maui.resizetizer\\9.0.50\\buildTransitive\\Microsoft.Maui.Resizetizer.After.targets",
               "ToolTip": "C:\\Users\\\uBC15\uC0C1\uD55C\\.nuget\\packages\\microsoft.maui.resizetizer\\9.0.50\\buildTransitive\\Microsoft.Maui.Resizetizer.After.targets",
@@ -1101,7 +1117,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 62,
               "Title": "HomeBtnContent.xaml.cs",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Views\\Content\\HomeBtnContent.xaml.cs",
               "RelativeDocumentMoniker": "MauiApp1\\Views\\Content\\HomeBtnContent.xaml.cs",
@@ -1113,7 +1129,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 63,
+              "DocumentIndex": 64,
               "Title": "AndroidManifest.xml",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Platforms\\Android\\AndroidManifest.xml",
               "RelativeDocumentMoniker": "MauiApp1\\Platforms\\Android\\AndroidManifest.xml",
@@ -1125,7 +1141,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 64,
+              "DocumentIndex": 65,
               "Title": "BasicCameraView.xaml",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Views\\BasicCameraView.xaml",
               "RelativeDocumentMoniker": "MauiApp1\\Views\\BasicCameraView.xaml",
@@ -1137,7 +1153,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 65,
+              "DocumentIndex": 66,
               "Title": "HomeCotent.xaml",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Views\\HomeCotent.xaml",
               "RelativeDocumentMoniker": "MauiApp1\\Views\\HomeCotent.xaml",
@@ -1149,7 +1165,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 66,
+              "DocumentIndex": 67,
               "Title": "DiagnosisDataStore.cs",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Data\\DiagnosisDataStore.cs",
               "RelativeDocumentMoniker": "MauiApp1\\Data\\DiagnosisDataStore.cs",
@@ -1161,7 +1177,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 67,
+              "DocumentIndex": 68,
               "Title": "ReadMe.txt",
               "DocumentMoniker": "C:\\Users\\\uBC15\uC0C1\uD55C\\.nuget\\packages\\communitytoolkit.maui.camera\\2.0.2\\ReadMe.txt",
               "ToolTip": "C:\\Users\\\uBC15\uC0C1\uD55C\\.nuget\\packages\\communitytoolkit.maui.camera\\2.0.2\\ReadMe.txt",
@@ -1172,18 +1188,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 69,
-              "Title": "ResultPopup.xaml.cs",
-              "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Views\\Content\\ResultPopup.xaml.cs",
-              "RelativeDocumentMoniker": "MauiApp1\\Views\\Content\\ResultPopup.xaml.cs",
-              "ToolTip": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Views\\Content\\ResultPopup.xaml.cs",
-              "RelativeToolTip": "MauiApp1\\Views\\Content\\ResultPopup.xaml.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAzwBoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-22T18:59:53.029Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 68,
               "Title": "ResultPopup.xaml",
               "DocumentMoniker": "F:\\SkinMate\\Client\\MauiApp1\\MauiApp1\\Views\\Content\\ResultPopup.xaml",
               "RelativeDocumentMoniker": "MauiApp1\\Views\\Content\\ResultPopup.xaml",
