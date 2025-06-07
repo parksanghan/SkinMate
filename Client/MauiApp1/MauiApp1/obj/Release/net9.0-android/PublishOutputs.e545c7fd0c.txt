@@ -1,4 +1,0 @@
-F:\SkinMate\Client\MauiApp1\MauiApp1\bin\Release\net9.0-android\publish\com.snaghan.skinmate-Signed.aab
-F:\SkinMate\Client\MauiApp1\MauiApp1\bin\Release\net9.0-android\publish\com.snaghan.skinmate.aab
-F:\SkinMate\Client\MauiApp1\MauiApp1\bin\Release\net9.0-android\publish\com.snaghan.skinmate-Signed.apk
-F:\SkinMate\Client\MauiApp1\MauiApp1\bin\Release\net9.0-android\publish\_Microsoft.Android.Resource.Designer.dll

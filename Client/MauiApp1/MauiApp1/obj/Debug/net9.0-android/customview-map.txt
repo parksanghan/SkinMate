@@ -4,6 +4,8 @@
 {urn:oasis:names:tc:xliff:document:1.2}g;F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\lp\234\jl\res\values\values.xml
 adaptive-icon;obj\Debug\net9.0-android\resizetizer\r\mipmap-anydpi-v26\appicon.xml
 adaptive-icon;obj\Debug\net9.0-android\resizetizer\r\mipmap-anydpi-v26\appicon_round.xml
+adaptive-icon;obj\Debug\net9.0-android\resizetizer\r\mipmap-anydpi-v26\skinmate_icon_1024.xml
+adaptive-icon;obj\Debug\net9.0-android\resizetizer\r\mipmap-anydpi-v26\skinmate_icon_1024_round.xml
 alpha;F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\lp\207\jl\res\anim\enterfromleft.xml
 alpha;F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\lp\207\jl\res\anim\exittoleft.xml
 alpha;F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\lp\209\jl\res\anim\nav_default_enter_anim.xml
@@ -20,6 +22,8 @@ attr;F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\lp\211\jl\res
 attr;F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\lp\233\jl\res\values\values.xml
 background;obj\Debug\net9.0-android\resizetizer\r\mipmap-anydpi-v26\appicon.xml
 background;obj\Debug\net9.0-android\resizetizer\r\mipmap-anydpi-v26\appicon_round.xml
+background;obj\Debug\net9.0-android\resizetizer\r\mipmap-anydpi-v26\skinmate_icon_1024.xml
+background;obj\Debug\net9.0-android\resizetizer\r\mipmap-anydpi-v26\skinmate_icon_1024_round.xml
 bitmap;F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\lp\233\jl\res\drawable\common_google_signin_btn_icon_dark_normal.xml
 bitmap;F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\lp\233\jl\res\drawable\common_google_signin_btn_icon_disabled.xml
 bitmap;F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\lp\233\jl\res\drawable\common_google_signin_btn_icon_light_normal.xml
@@ -208,6 +212,8 @@ external-cache-path;F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-androi
 external-path;F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\lp\210\jl\res\xml\microsoft_maui_essentials_fileprovider_file_paths.xml
 foreground;obj\Debug\net9.0-android\resizetizer\r\mipmap-anydpi-v26\appicon.xml
 foreground;obj\Debug\net9.0-android\resizetizer\r\mipmap-anydpi-v26\appicon_round.xml
+foreground;obj\Debug\net9.0-android\resizetizer\r\mipmap-anydpi-v26\skinmate_icon_1024.xml
+foreground;obj\Debug\net9.0-android\resizetizer\r\mipmap-anydpi-v26\skinmate_icon_1024_round.xml
 integer;F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\lp\234\jl\res\values\values.xml
 item;F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\lp\208\jl\res\values\values.xml
 item;F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\lp\209\jl\res\drawable\maui_splash.xml
@@ -247,6 +253,8 @@ layer-list;obj\Debug\net9.0-android\resizetizer\sp\drawable-v31\maui_splash_imag
 microsoft.maui.controls.platform.compatibility.ShellFlyoutLayout;F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\lp\207\jl\res\layout\flyoutcontent.xml
 monochrome;obj\Debug\net9.0-android\resizetizer\r\mipmap-anydpi-v26\appicon.xml
 monochrome;obj\Debug\net9.0-android\resizetizer\r\mipmap-anydpi-v26\appicon_round.xml
+monochrome;obj\Debug\net9.0-android\resizetizer\r\mipmap-anydpi-v26\skinmate_icon_1024.xml
+monochrome;obj\Debug\net9.0-android\resizetizer\r\mipmap-anydpi-v26\skinmate_icon_1024_round.xml
 padding;F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\lp\233\jl\res\drawable\common_google_signin_btn_icon_disabled.xml
 padding;F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\lp\233\jl\res\drawable\common_google_signin_btn_text_disabled.xml
 paths;F:\SkinMate\Client\MauiApp1\MauiApp1\obj\Debug\net9.0-android\lp\210\jl\res\xml\microsoft_maui_essentials_fileprovider_file_paths.xml
