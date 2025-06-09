@@ -20,11 +20,11 @@ namespace MauiApp1.Data
 
         //눈가 주름
         [JsonPropertyName("eyes_wrinkle")]
-        public int EyesWrinkle { get; set; }
+        public float EyesWrinkle { get; set; }
 
         // 볼 모공
         [JsonPropertyName("cheek_pore")]
-        public int CheekPore { get; set; }
+        public float CheekPore { get; set; }
         //입술 건조도
         [JsonPropertyName("lips_dryness")]
         public int LipsDryness { get; set; }
