@@ -15,8 +15,11 @@ diagnosis_manager = SkinDiagnosisManager(
     class_model_dir=r"S:\[Education]\Capstone1\NIA_019-028\checkpoint\class\testing\250414_2014",
     regression_model_dir=r"S:\[Education]\Capstone1\NIA_019-028\checkpoint\regression\testing\250414_2014"
 )
-@app.post("/diagnose2")
+@app.post("/diagnose")
 async def diognose2(files: List[UploadFile]=  file(...)):
+    if image.content_type not in ["image/jpeg", "image/png"]:
+        raise HTTPException(status_code=400, detail="지원되지 않는 이미지 형식입니다 (jpeg 또는 png)")
+
     region_images   = {}
     for file in files:
         contents =  await file.read()

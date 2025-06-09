@@ -71,7 +71,7 @@ def register(req: RegisterRequest):
 
 
 # 업로드 API
-@app.post("/{user_id}/upload")
+@app.post("/{user_id}/upload22")
 async def upload(user_id: str, files: list[UploadFile] = File(...)):
     try:
         # 실제 파일 읽기는 유지 (파일 업로드 구조 유지 목적)
@@ -159,7 +159,7 @@ async def upload1(user_id: str, files: list[UploadFile] = File(...)):
 
 
 # box 처리
-@app.post("/{user_id}/upload11")
+@app.post("/{user_id}/upload31")
 async def upload11(user_id: str, files: list[UploadFile] = File(...)):
     try:
         if not files:
@@ -181,7 +181,7 @@ async def upload11(user_id: str, files: list[UploadFile] = File(...)):
                     raise HTTPException(status_code=500, detail=str("인코딩 에러"))
                 files_to_send[name] = (f"{name}.jpg", buffer.tobytes(), "image/jpeg")
             # 2. 외부 진단 서버 주소
-            diagnosis_url = "http://192.168.204.149:5000/diagnose"
+            diagnosis_url = "http://182.210.98.131:5000//diagnose"
             response = requests.post(
                 diagnosis_url.format(user_id=user_id), files=files_to_send
             )

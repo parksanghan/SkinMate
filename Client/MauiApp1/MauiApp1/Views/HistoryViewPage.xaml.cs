@@ -52,14 +52,14 @@ public partial class HistoryViewPage : ContentPage
             var regressionData = JsonSerializer.Deserialize<DiagnosisRegression>(regressionJson);
 
             // 데이터 → Dictionary 변환
-            var classificationDict = new Dictionary<string, int>
+            var classificationDict = new Dictionary<string, float>
             {
-                { "이마 주름", classData.ForeheadWrinkle },
-                { "미간 주름", classData.FrownWrinkle },
-                { "눈가 주름", classData.EyesWrinkle },
-                { "볼 모공", classData.CheekPore },
-                { "입술 건조", classData.LipsDryness },
-                { "턱 처짐", classData.JawSagging }
+                { "이마 주름", classData.ForeheadWrinkle/15.0f },
+                { "미간 주름", classData.FrownWrinkle/7.0f },
+                { "눈가 주름", classData.EyesWrinkle/7.0f },
+                { "볼 모공", classData.CheekPore/12.0f },
+                { "입술 건조", classData.LipsDryness/5.0f },
+                { "턱 처짐", classData.JawSagging/7.0f }
             };
 
             var regressionDict = new Dictionary<string, float>
@@ -75,7 +75,7 @@ public partial class HistoryViewPage : ContentPage
                 { "턱 탄력", regressionData.JawElasticity }
             };
 
-            await ChartUtil.SetRadarChartData(classChartView, classificationDict, "#68B9C0");
+            await ChartUtil.SetRadarChartDataFloat(classChartView, classificationDict, "#68B9C0");
             await ChartUtil.SetRadarChartDataFloat(regrssionChartview, regressionDict, "#F37F64");
         }
     }
@@ -92,13 +92,13 @@ public partial class HistoryViewPage : ContentPage
         {
             DiagnosisResult? result = DiagnosisDataStore.Instance.LatestResult;
             if (result != null) {
-                var classificationDict = new Dictionary<string, int>
-                {{ "이마 주름", result.Classification?.ForeheadWrinkle ?? 0  },
-                { "미간 주름", result.Classification?.FrownWrinkle ?? 0  },
-                { "눈가 주름", result.Classification?.EyesWrinkle ?? 0  },
-                { "볼 모공", result.Classification?.CheekPore ?? 0},
-                { "입술 건조", result.Classification?.LipsDryness ?? 0  },
-                { "턱 처짐", result.Classification?.JawSagging  ??  0}};
+                var classificationDict = new Dictionary<string, float>
+                {{ "이마 주름", result.Classification?.ForeheadWrinkle/15.0f ?? 0  },
+                { "미간 주름", result.Classification?.FrownWrinkle/7.0f ?? 0  },
+                { "눈가 주름", result.Classification?.EyesWrinkle/7.0f ?? 0  },
+                { "볼 모공", result.Classification?.CheekPore/12.0f ?? 0},
+                { "입술 건조", result.Classification?.LipsDryness/5.0f ?? 0  },
+                { "턱 처짐", result.Classification?.JawSagging/7.0f  ??  0}};
                 var regressionDict = new Dictionary<string, float>
                 {{ "얼굴 전체", result.Regression?.Face  ?? 0 },
                 { "이마 수분", result.Regression?.ForeheadMoisture  ?? 0},
@@ -110,7 +110,7 @@ public partial class HistoryViewPage : ContentPage
                 { "턱 수분", result.Regression?.JawMoisture ??  0},
                 { "턱 탄력", result.Regression?.JawElasticity ?? 0}
     };
-                await ChartUtil.SetRadarChartData(classChartView, classificationDict, "#68B9C0");
+                await ChartUtil.SetRadarChartDataFloat(classChartView, classificationDict, "#68B9C0");
                 await ChartUtil.SetRadarChartDataFloat(regrssionChartview, regressionDict, "#F37F64");
             }
         }

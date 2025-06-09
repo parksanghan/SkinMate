@@ -10,15 +10,18 @@
         <VerticalStackLayout Padding="30,0" Spacing="25" HorizontalOptions="Center">
 
             <!-- 위치 아이콘 -->
-            <Label Text="📍"
+            <Button Text="📍내 주변 피부과 "
+                   Background="#BFD3E6"
                    FontSize="20"
+                    CornerRadius="12"
                    Margin="10,10,0,0"
+                   
                    TextColor="#3A4757">
                 <!-- 진회색 -->
-                <Label.GestureRecognizers>
+                <Button.GestureRecognizers>
                     <TapGestureRecognizer Tapped="OnLocationClick"/>
-                </Label.GestureRecognizers>
-            </Label>
+                </Button.GestureRecognizers>
+            </Button>
 
             <!-- 배너 이미지 -->
             <Image Source="banner.png"

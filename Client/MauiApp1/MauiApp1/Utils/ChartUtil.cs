@@ -55,6 +55,7 @@ namespace MauiApp1.Utils
                 LabelTextSize = 30,
                 Entries = entries,
                 BackgroundColor = SKColor.Parse("#E1EAF2")
+                
             };
         }
         public static async Task SetRadarChartDataFloat(ChartView chartView, Dictionary<string, float> dataDict, string hexColor = "#68B9C0")
@@ -78,6 +79,7 @@ namespace MauiApp1.Utils
             {
                 Typeface = typeface,
                 LabelTextSize = 30,
+                MaxValue = 1.0f,
                 Entries = entries,
                 BackgroundColor = SKColor.Parse("#E1EAF2")
             };
