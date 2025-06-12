@@ -11,9 +11,11 @@ class SkinDiagnosisManager:
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.class_model_dir = class_model_dir
         self.regression_model_dir = regression_model_dir
-        self.classification_classes = {1: 15, 2: 7, 3: 7, 5: 12, 7: 5, 8: 7}
+        self.classification_classes =
+         {1: 15, 2: 7, 3: 7, 5: 12, 7: 5, 8: 7}
         # 애는 idx 의  등급 
-        self.regression_classes = {0: 1, 1: 2, 3: 1, 5: 3, 8: 2}
+        self.regression_classes =
+         {0: 1, 1: 2, 3: 1, 5: 3, 8: 2}
         # 애는 idx 의 출력의 개수 
         self.class_result_keys = {
             1: "forehead_wrinkle", 
@@ -142,7 +144,8 @@ class SkinDiagnosisManager:
                     )
 
         return {"class": class_results, "regression": regression_results}
-        #   self.classification_classes = {1: 15, 2: 7, 3: 7, 5: 12, 7: 5, 8: 7}
+        #   self.classification_classes = 
+        # {1: 15, 2: 7, 3: 7, 5: 12, 7: 5, 8: 7}
    
     def diagnose3(self, region_images:dict):
         class_results= {}
@@ -154,7 +157,7 @@ class SkinDiagnosisManager:
             if cls_idx is None or img is None:
                 continue
             model = self.load_model(self.class_model_dir, cls_idx, 
-             self.classification_classes[cls_idx])
+            self.classification_classes[cls_idx])
             if model:
                 input_tensor=self.preprocess_array(img)
                 result =  self.infer(model,input_tensor,is_classification =True )
