@@ -9,7 +9,7 @@ public partial class WebMapPopup : Popup
     {
         InitializeComponent();
         
-        //MapWebView.Source = "http://10.101.123.25:8080/web/main.html";
+     
         LoadLocationInit();
     
     }
@@ -27,18 +27,18 @@ public partial class WebMapPopup : Popup
         Console.WriteLine($"ÁÂÇ¥ Ãâ·Â: lat = {lat}, lon = {lon}");
         // Äõ¸® ÆÄ¶ó¹ÌÅÍ¿¡ ÁÂÇ¥ ºÙÀÌ±â
         MapWebView.Source = HttpService.Instance.RequestTMapLatLon(lat, lon);
-        MapWebView.Navigated += (s, e) =>
-        {
-#if ANDROID
-    if (MapWebView.Handler?.PlatformView is Android.Webkit.WebView androidWebView)
-    {
+//        MapWebView.Navigated += (s, e) =>
+//        {
+////#if ANDROID
+////    if (MapWebView.Handler?.PlatformView is Android.Webkit.WebView androidWebView)
+////    {
 
-        androidWebView.Settings.JavaScriptEnabled = true;
-        androidWebView.Settings.DomStorageEnabled = true;
-        androidWebView.Settings.SetSupportMultipleWindows(true);
-        androidWebView.Settings.JavaScriptCanOpenWindowsAutomatically = true;
-    }
-#endif
-        };
+////        androidWebView.Settings.JavaScriptEnabled = true;
+////        androidWebView.Settings.DomStorageEnabled = true;
+////        androidWebView.Settings.SetSupportMultipleWindows(true);
+////        androidWebView.Settings.JavaScriptCanOpenWindowsAutomatically = true;
+////    }
+////#endif
+//        };
     }
 }

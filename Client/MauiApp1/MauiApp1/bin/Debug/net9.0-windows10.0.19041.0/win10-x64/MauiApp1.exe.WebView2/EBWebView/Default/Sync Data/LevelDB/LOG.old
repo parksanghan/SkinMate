@@ -1,2 +1,3 @@
-2025/06/08-05:19:40.467 d234 Creating DB F:\SkinMate\Client\MauiApp1\MauiApp1\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\MauiApp1.exe.WebView2\EBWebView\Default\Sync Data\LevelDB since it was missing.
-2025/06/08-05:19:40.483 d234 Reusing MANIFEST F:\SkinMate\Client\MauiApp1\MauiApp1\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\MauiApp1.exe.WebView2\EBWebView\Default\Sync Data\LevelDB/MANIFEST-000001
+2025/06/12-15:55:19.612 7900 Reusing MANIFEST F:\SkinMate\Client\MauiApp1\MauiApp1\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\MauiApp1.exe.WebView2\EBWebView\Default\Sync Data\LevelDB/MANIFEST-000001
+2025/06/12-15:55:19.621 7900 Recovering log #3
+2025/06/12-15:55:19.622 7900 Reusing old log F:\SkinMate\Client\MauiApp1\MauiApp1\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\MauiApp1.exe.WebView2\EBWebView\Default\Sync Data\LevelDB/000003.log 

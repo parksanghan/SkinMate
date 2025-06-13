@@ -1,2 +1,3 @@
-2025/06/08-05:19:42.648 b9a8 Creating DB F:\SkinMate\Client\MauiApp1\MauiApp1\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\MauiApp1.exe.WebView2\EBWebView\Default\Session Storage since it was missing.
-2025/06/08-05:19:42.664 b9a8 Reusing MANIFEST F:\SkinMate\Client\MauiApp1\MauiApp1\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\MauiApp1.exe.WebView2\EBWebView\Default\Session Storage/MANIFEST-000001
+2025/06/12-15:55:20.661 4250 Reusing MANIFEST F:\SkinMate\Client\MauiApp1\MauiApp1\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\MauiApp1.exe.WebView2\EBWebView\Default\Session Storage/MANIFEST-000001
+2025/06/12-15:55:20.662 4250 Recovering log #3
+2025/06/12-15:55:20.664 4250 Reusing old log F:\SkinMate\Client\MauiApp1\MauiApp1\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\MauiApp1.exe.WebView2\EBWebView\Default\Session Storage/000003.log 

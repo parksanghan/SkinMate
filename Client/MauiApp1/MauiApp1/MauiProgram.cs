@@ -26,8 +26,12 @@ namespace MauiApp1
             androidWebView.Settings.JavaScriptEnabled = true;
             androidWebView.Settings.DomStorageEnabled = true;
             androidWebView.Settings.JavaScriptCanOpenWindowsAutomatically = true;
+            androidWebView.Settings.CacheMode = CacheModes.Normal;
+            androidWebView.Settings.LoadWithOverviewMode = true;
+          
             androidWebView.Settings.SetSupportMultipleWindows(true);
-            androidWebView.SetWebChromeClient(new WebChromeClient());
+            androidWebView.SetWebChromeClient(new Android.Webkit.WebChromeClient());
+
         }
     });
 #endif

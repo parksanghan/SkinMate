@@ -249,20 +249,20 @@ namespace MauiApp1.Services
             }
             return resContent;
         }
-        // 앱이 시작될 때 UserContext 초기화 
+        
         public string RequestTMapLatLon(double lat , double lon)
         {
             try
             {
   
                 Console.WriteLine($"[DEBUG] 위치 좌표: lat = {lat}, lon = {lon}");
-                return $"https://skinmate.shop/web/main.html?lat={lat}&lon={lon}";
+                return $"http://skinmate.shop/web/main.html?lat={lat}&lon={lon}";
 
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"[DEBUG] 위치 조회 실패: {ex.Message}");
-                return $"https://skinmate.shop/web/main.html?lat={lat}&lon={lon}";
+                return $"http://skinmate.shop/web/main.html?lat={lat}&lon={lon}";
 
             }
         }
