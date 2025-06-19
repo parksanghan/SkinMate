@@ -395,9 +395,6 @@ F:\SkinMate\Client\MauiApp1\MauiApp1\bin\Debug\net9.0-windows10.0.19041.0\win10-
 F:\SkinMate\Client\MauiApp1\MauiApp1\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\libGLESv2.dll
 F:\SkinMate\Client\MauiApp1\MauiApp1\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\Microsoft.Windows.SDK.NET.dll
 F:\SkinMate\Client\MauiApp1\MauiApp1\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\WinRT.Runtime.dll
-F:\SkinMate\Client\MauiApp1\MauiApp1\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\Microsoft.Maui.Controls.HotReload.Forms.dll
-F:\SkinMate\Client\MauiApp1\MauiApp1\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\Microsoft.VisualStudio.DesignTools.MobileTapContracts.dll
-F:\SkinMate\Client\MauiApp1\MauiApp1\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\Microsoft.VisualStudio.DesignTools.TapContract.dll
 F:\SkinMate\Client\MauiApp1\MauiApp1\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\Microsoft.Web.WebView2.Core.Projection.dll
 F:\SkinMate\Client\MauiApp1\MauiApp1\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\Microsoft.UI.pri
 F:\SkinMate\Client\MauiApp1\MauiApp1\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\Microsoft.UI.Xaml.Controls.pri
