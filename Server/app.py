@@ -71,7 +71,7 @@ def register(req: RegisterRequest):
 
 
 # 업로드 API
-@app.post("/{user_id}/upload22")
+@app.post("/{user_id}/upload55")
 async def upload(user_id: str, files: list[UploadFile] = File(...)):
     try:
         # 실제 파일 읽기는 유지 (파일 업로드 구조 유지 목적)
